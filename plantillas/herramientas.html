@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block title %}Tests y herramientas online gratis para entrenar la mente · Mentalit{% endblock %}
+{% block description %}Test de memoria, tiempo de reacción, agilidad mental, series numéricas y más. Gratis, sin registro y con tu resultado al momento.{% endblock %}
+{% block main %}
+<section class="wrap section guides-index">
+  <nav class="crumbs" aria-label="Ruta"><a href="{{ u('') }}">Inicio</a><span aria-hidden="true">/</span><span>Herramientas</span></nav>
+  <h1>Tests y herramientas para entrenar la mente</h1>
+  <p class="lead">Pruebas cortas que puedes hacer aquí mismo, gratis y sin registrarte. Ves tu resultado al momento y puedes repetir para mejorar. Son ejercicios para practicar, no pruebas clínicas.</p>
+  <ul class="guide-list">
+    {% for t in tools %}
+    <li>
+      <a href="{{ u(t.path) }}">
+        <span class="guide-cat">{{ t.categoria }}</span>
+        <span class="guide-title">{{ t.titulo }}</span>
+        <span class="guide-desc">{{ t.descripcion }}</span>
+      </a>
+    </li>
+    {% endfor %}
+    {% for g in interactivas %}
+    <li>
+      <a href="{{ u(g.path) }}">
+        <span class="guide-cat">{{ g.categoria }}</span>
+        <span class="guide-title">{{ g.titulo }}</span>
+        <span class="guide-desc">{{ g.descripcion }}</span>
+      </a>
+    </li>
+    {% endfor %}
+  </ul>
+</section>
+{% with cta=ctas.general, inline=false %}{% include "_cta.html" %}{% endwith %}
+{% endblock %}

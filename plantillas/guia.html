@@ -6,9 +6,10 @@
 <script type="application/ld+json">
 {"@context":"https://schema.org","@graph":[
  {"@type":"Article","headline":{{ g.titulo|tojson }},"description":{{ g.descripcion|tojson }},"inLanguage":"es-ES","datePublished":"{{ g.fecha }}","dateModified":"{{ g.actualizado }}","author":{"@type":"Organization","name":"Mentalit","url":"{{ site }}/"},"publisher":{"@type":"Organization","name":"Mentalit","logo":{"@type":"ImageObject","url":"{{ site }}/img/icon-512.png"}},"mainEntityOfPage":"{{ canonical }}","image":"{{ site }}/img/og.png"},
+ {% if g.seccion == "herramientas" %}{"@type":"WebApplication","name":{{ g.titulo|tojson }},"url":"{{ canonical }}","applicationCategory":"EducationalApplication","operatingSystem":"Cualquiera (navegador)","inLanguage":"es-ES","isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"EUR"}},{% endif %}
  {"@type":"BreadcrumbList","itemListElement":[
   {"@type":"ListItem","position":1,"name":"Inicio","item":"{{ site }}/"},
-  {"@type":"ListItem","position":2,"name":"Guías","item":"{{ site }}/guias/"},
+  {"@type":"ListItem","position":2,"name":"{{ seccion.nombre }}","item":"{{ site }}/{{ seccion.path }}"},
   {"@type":"ListItem","position":3,"name":{{ g.titulo|tojson }},"item":"{{ canonical }}"}]}
 ]}
 </script>
@@ -17,11 +18,11 @@
 <article class="article">
   <header class="wrap article-head">
     <nav class="crumbs" aria-label="Ruta">
-      <a href="{{ u('') }}">Inicio</a><span aria-hidden="true">/</span><a href="{{ u('guias/') }}">Guías</a><span aria-hidden="true">/</span><span>{{ g.categoria }}</span>
+      <a href="{{ u('') }}">Inicio</a><span aria-hidden="true">/</span><a href="{{ u(seccion.path) }}">{{ seccion.nombre }}</a><span aria-hidden="true">/</span><span>{{ g.categoria }}</span>
     </nav>
     <h1>{{ g.titulo }}</h1>
     <p class="lead">{{ g.entradilla }}</p>
-    <p class="byline">{{ c.autor }}. Actualizado el <time datetime="{{ g.actualizado }}">{{ fecha_larga(g.actualizado) }}</time>. {{ g.lectura }} min de lectura.</p>
+    <p class="byline">{{ c.autor }}. Actualizado el <time datetime="{{ g.actualizado }}">{{ fecha_larga(g.actualizado) }}</time>.{% if g.seccion != "herramientas" %} {{ g.lectura }} min de lectura.{% else %} Gratis y sin registro.{% endif %}</p>
   </header>
   <div class="wrap prose">
     {{ g.body|safe }}

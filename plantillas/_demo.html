@@ -80,6 +80,81 @@
     <span class="demo-hint">Tras cuatro pomodoros toca un descanso largo: 20 minutos con 25/5 y 30 con 50/10. Suena un aviso al cambiar de fase.</span>
   </div>
 </div>
+{% elif demo == "reaccion" %}
+<div class="demo demo-react" data-demo="reaccion">
+  <div class="demo-top">
+    <p class="demo-name">Test de tiempo de reacción</p>
+    <p class="demo-meta" data-role="meta">5 intentos</p>
+  </div>
+  <button type="button" class="react-pad" data-role="pad" data-state="idle">
+    <span class="react-big" data-role="big">Empezar</span>
+    <span class="react-small" data-role="small">Toca aquí o pulsa la barra espaciadora. Cuando el recuadro se ponga verde, toca lo más rápido que puedas.</span>
+  </button>
+  <div class="demo-result" data-role="result" hidden></div>
+</div>
+{% elif demo == "memoria" %}
+<div class="demo demo-mem" data-demo="memoria">
+  <div class="demo-top">
+    <p class="demo-name">Test de memoria visual</p>
+    <p class="demo-meta" data-role="meta">Nivel 1 · 3 vidas</p>
+  </div>
+  <p class="demo-ask" data-role="ask">Se iluminarán unas casillas durante un momento. Después, toca las mismas casillas, en cualquier orden.</p>
+  <div class="mem-grid" data-role="grid" style="--n:3" aria-label="Cuadrícula">
+    <button type="button" disabled></button><button type="button" disabled></button><button type="button" disabled></button>
+    <button type="button" disabled></button><button type="button" disabled></button><button type="button" disabled></button>
+    <button type="button" disabled></button><button type="button" disabled></button><button type="button" disabled></button>
+  </div>
+  <div class="demo-result" data-role="result" hidden></div>
+  <div class="demo-foot" data-role="foot">
+    <button type="button" class="btn btn-small" data-role="start">Empezar</button>
+    <span class="demo-hint" data-role="hint">Cada nivel añade una casilla. Un fallo te quita una vida.</span>
+  </div>
+</div>
+{% elif demo == "agilidad" %}
+<div class="demo demo-calc" data-demo="agilidad">
+  <div class="demo-top">
+    <p class="demo-name">Agilidad mental en 60 segundos</p>
+    <div class="seg" role="group" aria-label="Dificultad">
+      <button type="button" data-level="1">Fácil</button>
+      <button type="button" data-level="2" aria-pressed="true">Normal</button>
+      <button type="button" data-level="3">Difícil</button>
+    </div>
+  </div>
+  <div class="calc-face">
+    <p class="calc-op" data-role="op" aria-live="polite">12 + 9</p>
+    <label class="calc-label" for="calc-input">Tu respuesta</label>
+    <input id="calc-input" class="calc-input" data-role="input" inputmode="numeric" autocomplete="off" enterkeyhint="next" disabled>
+    <p class="calc-status"><span data-role="time">60 s</span> · <span data-role="score">0 aciertos</span></p>
+  </div>
+  <div class="demo-result" data-role="result" hidden></div>
+  <div class="demo-foot" data-role="foot">
+    <button type="button" class="btn btn-small" data-role="start">Empezar</button>
+    <button type="button" class="key key-wide" data-role="skip" disabled>Saltar</button>
+    <span class="demo-hint">Escribe el resultado: si es correcto, pasa solo a la siguiente.</span>
+  </div>
+</div>
+{% elif demo == "series" %}
+<div class="demo demo-series" data-demo="series">
+  <div class="demo-top">
+    <p class="demo-name">Series numéricas</p>
+    <p class="demo-meta" data-role="meta">10 series</p>
+  </div>
+  <p class="demo-ask">¿Qué número sigue? Escribe tu respuesta y pulsa Comprobar.</p>
+  <p class="series-row" data-role="row" aria-live="polite">2 · 4 · 6 · 8 · 10 · ?</p>
+  <div class="series-answer">
+    <label class="calc-label" for="series-input">Siguiente número</label>
+    <div class="series-inputs">
+      <input id="series-input" class="calc-input" data-role="input" inputmode="numeric" autocomplete="off" enterkeyhint="done" disabled>
+      <button type="button" class="key key-wide" data-role="check" disabled>Comprobar</button>
+    </div>
+  </div>
+  <p class="series-explain" data-role="explain" hidden></p>
+  <div class="demo-result" data-role="result" hidden></div>
+  <div class="demo-foot" data-role="foot">
+    <button type="button" class="btn btn-small" data-role="start">Empezar</button>
+    <span class="demo-hint" data-role="hint">Las series van de más fáciles a más difíciles. Tras cada respuesta verás la regla.</span>
+  </div>
+</div>
 {% elif demo == "respiracion" %}
 <div class="demo demo-breath" data-demo="respiracion">
   <div class="demo-top">

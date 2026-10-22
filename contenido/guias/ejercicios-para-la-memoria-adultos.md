@@ -76,6 +76,7 @@ La memoria de trabajo es la que usas para mantener algo en la cabeza mientras lo
 - Repetir series de números al revés.
 - Restar de 7 en 7 desde 100.
 - El juego del [N-back](../n-back/), en el que decides si una letra coincide con la que viste unos turnos antes.
+- El [test de memoria visual](../../herramientas/test-de-memoria/), en el que recuerdas casillas iluminadas en una cuadrícula.
 
 Conviene saber lo que dicen las revisiones de estudios: este tipo de entrenamiento mejora los ejercicios que practicas y otros muy parecidos, pero no hay pruebas sólidas de que aumente la inteligencia general. Practícalo porque te reta y te gusta, no esperando un salto de cociente intelectual.
 

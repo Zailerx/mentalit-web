@@ -81,9 +81,9 @@ def render_shortcodes(html, env, depth, guia=None):
     return html
 
 
-def load_guides(env):
+def load_guides(env, folder="guias"):
     guides = []
-    for f in sorted((ROOT / "contenido" / "guias").glob("*.md")):
+    for f in sorted((ROOT / "contenido" / folder).glob("*.md")):
         meta, body = parse_front_matter(f.read_text(encoding="utf-8"))
         if meta.get("borrador") == "si":
             continue
@@ -98,7 +98,8 @@ def load_guides(env):
             fuentes.append({"texto": txt.strip(), "url": url.strip()})
         guides.append({
             "slug": slug,
-            "path": f"guias/{slug}/",
+            "path": f"{folder}/{slug}/",
+            "seccion": folder,
             "titulo": meta["titulo"],
             "seo_titulo": meta.get("seo_titulo", meta["titulo"]),
             "descripcion": meta["descripcion"],
@@ -110,6 +111,7 @@ def load_guides(env):
             "relacionadas": [s.strip() for s in meta.get("relacionadas", "").split(",") if s.strip()],
             "fuentes": fuentes,
             "lectura": max(1, math.ceil(words / 220)),
+            "orden": meta.get("orden", "9"),
             "body_raw": html,
         })
     guides.sort(key=lambda g: g["fecha"], reverse=True)
@@ -126,8 +128,12 @@ def main():
         shutil.rmtree(OUT)
     shutil.copytree(ROOT / "static", OUT)
 
-    guides = load_guides(env)
-    by_slug = {g["slug"]: g for g in guides}
+    guides = load_guides(env, "guias")
+    tools = load_guides(env, "herramientas") if (ROOT / "contenido" / "herramientas").exists() else []
+    tools.sort(key=lambda t: t.get("orden", t["titulo"]))
+    by_slug = {g["slug"]: g for g in guides + tools}
+    secciones = {"guias": {"nombre": "Guías", "path": "guias/"},
+                 "herramientas": {"nombre": "Herramientas", "path": "herramientas/"}}
 
     def write(path, html):
         target = OUT / path / "index.html" if path else OUT / "index.html"
@@ -138,20 +144,24 @@ def main():
         return {"u": lambda p: page_url(p, depth), "canonical": f"{SITE}/{path}",
                 "depth": depth, "path": path}
 
-    # Guías
-    for g in guides:
+    # Guías y herramientas
+    for g in guides + tools:
         depth = 2
         g["body"] = render_shortcodes(g["body_raw"], env, depth, g)
         rel = [by_slug[s] for s in g["relacionadas"] if s in by_slug]
         rel += [x for x in guides if x is not g and x not in rel]
         write(g["path"], env.get_template("guia.html").render(
-            g=g, relacionadas=rel[:3], **ctx(g["path"], depth)))
+            g=g, relacionadas=rel[:3], seccion=secciones[g["seccion"]], **ctx(g["path"], depth)))
 
-    # Índice de guías
+    # Índices
     write("guias/", env.get_template("guias.html").render(guides=guides, **ctx("guias/", 1)))
+    interactivas = [by_slug[s] for s in ("test-de-stroop", "n-back", "tecnica-pomodoro") if s in by_slug]
+    if tools:
+        write("herramientas/", env.get_template("herramientas.html").render(
+            tools=tools, interactivas=interactivas, **ctx("herramientas/", 1)))
 
     # Portada
-    write("", env.get_template("home.html").render(guides=guides, **ctx("", 0)))
+    write("", env.get_template("home.html").render(guides=guides, tools=tools, **ctx("", 0)))
 
     # 404
     (OUT / "404.html").write_text(
@@ -160,7 +170,9 @@ def main():
 
     # sitemap y robots
     urls = [("", date.today().isoformat()), ("guias/", guides[0]["actualizado"] if guides else date.today().isoformat())]
-    urls += [(g["path"], g["actualizado"]) for g in guides]
+    if tools:
+        urls.append(("herramientas/", max(t["actualizado"] for t in tools)))
+    urls += [(g["path"], g["actualizado"]) for g in guides + tools]
     sm = ['<?xml version="1.0" encoding="UTF-8"?>',
           '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
     for p, lm in urls:
@@ -169,7 +181,7 @@ def main():
     (OUT / "sitemap.xml").write_text("\n".join(sm) + "\n", encoding="utf-8")
     (OUT / "robots.txt").write_text(f"User-agent: *\nAllow: /\n\nSitemap: {SITE}/sitemap.xml\n",
                                     encoding="utf-8")
-    print(f"OK: {len(guides)} guías -> {OUT}")
+    print(f"OK: {len(guides)} guías, {len(tools)} herramientas -> {OUT}")
 
 
 if __name__ == "__main__":

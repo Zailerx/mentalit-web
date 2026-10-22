@@ -6,6 +6,7 @@ Web estática con portada, índice de guías y guías con ejercicios jugables. N
 
 - `public/`: la web terminada. **Esto es lo que se sube.**
 - `contenido/guias/`: una guía por archivo `.md`.
+- `contenido/herramientas/`: los tests online (misma cabecera que las guías, más `orden`).
 - `contenido/ctas.json`: los textos de las llamadas a descargar la app.
 - `plantillas/`: el diseño de las páginas.
 - `static/`: estilos, scripts, fuentes e imágenes.
@@ -34,9 +35,9 @@ y abre http://localhost:8000.
 
 1. Crea `contenido/guias/mi-guia.md` copiando la cabecera de otra guía.
 2. Escribe el texto en Markdown. Puedes usar:
-   - `{{cta memoria}}`, `{{cta foco}}`, `{{cta meditacion}}`, `{{cta stroop}}`, `{{cta nback}}`, `{{cta general}}` para una llamada a la app.
-   - `{{demo stroop}}`, `{{demo nback}}`, `{{demo palabras}}`, `{{demo pomodoro}}`, `{{demo respiracion}}` para un ejercicio jugable.
-   - Enlaces a otras guías con `../slug-de-la-guia/`.
+   - `{{cta memoria}}`, `{{cta foco}}`, `{{cta meditacion}}`, `{{cta stroop}}`, `{{cta nback}}`, `{{cta calculo}}`, `{{cta logica}}`, `{{cta atencion}}`, `{{cta general}}` para una llamada a la app.
+   - `{{demo stroop}}`, `{{demo nback}}`, `{{demo palabras}}`, `{{demo pomodoro}}`, `{{demo respiracion}}`, `{{demo reaccion}}`, `{{demo memoria}}`, `{{demo agilidad}}`, `{{demo series}}` para un ejercicio jugable.
+   - Enlaces a otras guías con `../slug-de-la-guia/` y a herramientas con `../../herramientas/slug/`.
 3. Ejecuta `python build.py`. La portada, el índice y el sitemap se actualizan solos.
 
 ## Cuando tengas dominio

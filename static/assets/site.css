@@ -150,6 +150,41 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .breath-ring{width:90px;height:90px;border-radius:50%;background:radial-gradient(circle at 35% 30%,var(--violet-2),var(--violet));opacity:.85;transform:scale(1)}
 .breath-word{position:absolute;font-family:var(--display);font-weight:600;font-size:1.3rem;color:var(--on-violet);text-shadow:0 1px 2px #0003}
 
+.react-pad{display:grid;place-items:center;align-content:center;gap:8px;width:100%;min-height:220px;border:0;border-radius:var(--r-md);padding:20px;cursor:pointer;
+  font-family:var(--body);background:var(--surface-2);color:var(--ink);touch-action:manipulation;-webkit-user-select:none;user-select:none;-webkit-tap-highlight-color:transparent}
+.react-big{font-family:var(--display);font-weight:600;font-size:clamp(2rem,1.6rem + 2vw,2.8rem);line-height:1.1;font-variant-numeric:tabular-nums}
+.react-small{font-weight:700;color:var(--ink-2);max-width:40ch;text-align:center}
+.react-pad[data-state="wait"]{background:var(--c-red);color:#fff}
+.react-pad[data-state="early"]{background:var(--c-yellow);color:#1c1640}
+.react-pad[data-state="go"]{background:var(--c-green);color:#fff}
+.react-pad[data-state="wait"] .react-small,.react-pad[data-state="go"] .react-small{color:#ffffffd9}
+.react-pad[data-state="early"] .react-small{color:#1c1640cc}
+
+.mem-grid{display:grid;grid-template-columns:repeat(var(--n),minmax(0,1fr));gap:8px;width:100%;max-width:380px;margin-inline:auto}
+.mem-grid button{aspect-ratio:1;border:0;border-radius:12px;background:var(--surface-2);cursor:pointer;transition:background .15s,transform .08s;max-width:100%}
+.mem-grid button:disabled{cursor:default}
+.mem-grid button:not(:disabled):active{transform:scale(.94)}
+.mem-grid button.lit{background:var(--violet)}
+.mem-grid button.ok{background:var(--mint)}
+.mem-grid button.bad{background:var(--coral)}
+.mem-grid button.missed{background:color-mix(in srgb,var(--violet) 45%,var(--surface-2))}
+
+.calc-face{display:grid;justify-items:center;gap:8px;background:var(--surface-2);border-radius:var(--r-md);padding:20px 14px}
+.calc-op{font-family:var(--display);font-weight:600;font-size:clamp(2.2rem,1.8rem + 2vw,3rem);line-height:1.1;font-variant-numeric:tabular-nums}
+.calc-label{font-size:.85rem;font-weight:800;color:var(--muted)}
+.calc-input{font:inherit;font-family:var(--display);font-size:1.6rem;font-weight:600;text-align:center;width:min(220px,100%);padding:10px 12px;border-radius:14px;
+  border:2px solid var(--line);background:var(--surface);color:var(--ink);font-variant-numeric:tabular-nums}
+.calc-input:focus{outline:none;border-color:var(--violet)}
+.calc-input:disabled{opacity:.6}
+.calc-status{color:var(--muted);font-weight:800;font-variant-numeric:tabular-nums}
+.flash-ok .calc-face,.flash-ok .series-row{box-shadow:inset 0 0 0 3px var(--ok)}
+.flash-bad .calc-face,.flash-bad .series-row{box-shadow:inset 0 0 0 3px var(--bad)}
+
+.series-row{font-family:var(--display);font-weight:600;font-size:clamp(1.5rem,1.2rem + 1.6vw,2.1rem);text-align:center;background:var(--surface-2);border-radius:var(--r-md);padding:22px 12px;font-variant-numeric:tabular-nums;overflow-wrap:anywhere}
+.series-answer{display:grid;gap:6px;justify-items:center}
+.series-inputs{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;align-items:center}
+.series-explain{background:color-mix(in srgb,var(--violet) 10%,var(--surface));border-radius:var(--r-sm);padding:12px 14px;font-weight:700;color:var(--ink)}
+
 /* Dentro de la app */
 .band{background:var(--surface);border-block:1px solid var(--line);padding-block:clamp(48px,7vw,88px)}
 .band h2{margin-bottom:28px}
@@ -260,6 +295,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 @media (max-width:640px){
   body{font-size:1.03rem}
   .head-nav{gap:12px}
+  .head-nav>a:not(.btn){font-size:.95rem}
   .inside-grid{grid-template-columns:minmax(0,1fr)}
   .inside-panel{grid-template-columns:96px minmax(0,1fr);grid-template-rows:none;align-items:center}
   .inside-panel img{height:120px}
@@ -275,5 +311,11 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
   .guide-list{grid-template-columns:minmax(0,1fr)}
   .cta-inline{grid-template-columns:minmax(0,1fr)}
   .cta-inline img{width:48px;height:48px}
+}
+@media (max-width:520px){
+  .site-head .brand span{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+}
+@media (max-width:350px){
+  .head-nav .btn-small{padding:8px 10px;font-size:.88rem}
 }
 @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}

@@ -362,7 +362,240 @@
     });
   }
 
-  var DEMOS = { stroop: stroop, nback: nback, palabras: palabras, pomodoro: pomodoro, respiracion: respiracion };
+  function rnd(a, b) { return a + Math.floor(Math.random() * (b - a + 1)); }
+  function pick(arr) { return arr[Math.floor(Math.random() * arr.length)]; }
+  function stat(label, value) { return '<div class="stat"><span>' + label + "</span><b>" + value + "</b></div>"; }
+
+  /* ---------- Tiempo de reacción ---------- */
+  function reaccion(root) {
+    var N = 5, times = [], state = "idle", timer = null, t0 = 0;
+    var pad = $(root, "pad"), big = $(root, "big"), small = $(root, "small"), meta = $(root, "meta"), result = $(root, "result");
+    function set(st, b, s) { state = st; pad.setAttribute("data-state", st); big.textContent = b; small.textContent = s || ""; }
+    function arm() {
+      set("wait", "Espera…", "Toca cuando se ponga verde.");
+      meta.textContent = "Intento " + (times.length + 1) + " de " + N;
+      timer = setTimeout(function () {
+        set("go", "¡Ya!", "");
+        t0 = performance.now();
+        requestAnimationFrame(function () { requestAnimationFrame(function () { if (state === "go") t0 = Math.min(performance.now(), t0 + 34); }); });
+      }, 1500 + Math.random() * 2500);
+    }
+    function finish() {
+      var sum = times.reduce(function (a, b) { return a + b; }, 0), avg = Math.round(sum / times.length), best = Math.min.apply(null, times);
+      set("done", avg + " ms", "Tu media en 5 intentos. Toca para repetir.");
+      meta.textContent = "Resultado";
+      result.innerHTML = "<p>En laboratorio, la referencia para reaccionar a una luz ronda los 220 ms. En una pantalla suele salir algo más alto, porque el ratón, el táctil y la propia pantalla añaden su retraso.</p>" +
+        '<div class="stat-row">' + stat("Media", avg + " ms") + stat("Mejor intento", best + " ms") + stat("Intentos", times.join(" · ") + " ms") + "</div>";
+      result.hidden = false;
+    }
+    function press() {
+      if (state === "idle" || state === "done") { times = []; result.hidden = true; arm(); return; }
+      if (state === "wait") { clearTimeout(timer); set("early", "Demasiado pronto", "Espera a que se ponga verde. Toca para repetir el intento."); return; }
+      if (state === "early" || state === "shown") { arm(); return; }
+      if (state === "go") {
+        times.push(Math.max(1, Math.round(performance.now() - t0)));
+        if (times.length >= N) return finish();
+        set("shown", times[times.length - 1] + " ms", "Toca para el siguiente intento.");
+      }
+    }
+    pad.addEventListener("pointerdown", function (e) { if (e.button > 0) return; e.preventDefault(); press(); });
+    pad.addEventListener("click", function (e) { if (e.detail === 0) press(); });
+    document.addEventListener("keydown", function (e) {
+      if ((e.code === "Space" || e.key === " ") && (state !== "idle" || document.activeElement === pad)) {
+        var tag = (document.activeElement && document.activeElement.tagName) || "";
+        if (tag === "INPUT" || tag === "TEXTAREA") return;
+        e.preventDefault(); press();
+      }
+    });
+  }
+
+  /* ---------- Memoria visual ---------- */
+  function memoria(root) {
+    var grid = $(root, "grid"), meta = $(root, "meta"), ask = $(root, "ask"), result = $(root, "result"), startBtn = $(root, "start");
+    var level = 1, lives = 3, target = [], found = [], accepting = false, best = 0;
+    function size(l) { return l <= 2 ? 3 : l <= 5 ? 4 : l <= 9 ? 5 : 6; }
+    function draw(n) {
+      grid.style.setProperty("--n", n);
+      var h = "";
+      for (var i = 0; i < n * n; i++) h += '<button type="button" data-i="' + i + '" aria-label="Casilla ' + (i + 1) + '" disabled></button>';
+      grid.innerHTML = h;
+    }
+    function cells() { return grid.querySelectorAll("button"); }
+    function round() {
+      var n = size(level), count = level + 2;
+      draw(n);
+      var all = []; for (var i = 0; i < n * n; i++) all.push(i);
+      target = shuffle(all).slice(0, count); found = []; accepting = false;
+      meta.textContent = "Nivel " + level + " · " + lives + (lives === 1 ? " vida" : " vidas");
+      ask.textContent = "Memoriza " + count + " casillas…";
+      setTimeout(function () {
+        target.forEach(function (i) { cells()[i].classList.add("lit"); });
+        setTimeout(function () {
+          target.forEach(function (i) { cells()[i].classList.remove("lit"); });
+          cells().forEach(function (b) { b.disabled = false; });
+          accepting = true;
+          ask.textContent = "Toca las " + count + " casillas que se han iluminado.";
+        }, 900 + count * 120);
+      }, 500);
+    }
+    function lose() {
+      accepting = false; lives--;
+      target.forEach(function (i) { if (found.indexOf(i) < 0) cells()[i].classList.add("missed"); });
+      if (lives <= 0) return setTimeout(finish, 900);
+      ask.textContent = "Fallo. Te quedan " + lives + (lives === 1 ? " vida." : " vidas.") + " Repetimos el nivel.";
+      setTimeout(round, 1300);
+    }
+    function finish() {
+      cells().forEach(function (b) { b.disabled = true; });
+      meta.textContent = "Resultado";
+      ask.textContent = "Fin de la partida.";
+      result.innerHTML = "<p>Has completado " + best + (best === 1 ? " nivel" : " niveles") + ". Tu mejor marca: recordar " + (best > 0 ? best + 2 : 0) + " casillas a la vez.</p>" +
+        '<div class="stat-row">' + stat("Nivel alcanzado", level) + stat("Casillas recordadas", best > 0 ? best + 2 : 0) + "</div>";
+      result.hidden = false;
+      startBtn.hidden = false; startBtn.textContent = "Jugar otra vez";
+    }
+    grid.addEventListener("click", function (e) {
+      var b = e.target.closest("button[data-i]");
+      if (!b || !accepting || b.disabled) return;
+      var i = +b.getAttribute("data-i");
+      b.disabled = true;
+      if (target.indexOf(i) >= 0) {
+        b.classList.add("ok"); found.push(i);
+        if (found.length === target.length) {
+          accepting = false; best = level; level++;
+          ask.textContent = "¡Correcto! Siguiente nivel.";
+          setTimeout(round, 700);
+        }
+      } else { b.classList.add("bad"); lose(); }
+    });
+    startBtn.addEventListener("click", function () {
+      level = 1; lives = 3; best = 0; result.hidden = true; startBtn.hidden = true; round();
+    });
+  }
+
+  /* ---------- Agilidad mental ---------- */
+  function agilidad(root) {
+    var lvl = 2, ans = 0, ok = 0, skipped = 0, endAt = 0, tick = null, running = false;
+    var op = $(root, "op"), input = $(root, "input"), timeEl = $(root, "time"), scoreEl = $(root, "score"), result = $(root, "result");
+    var startBtn = $(root, "start"), skipBtn = $(root, "skip"), seg = root.querySelector(".seg");
+    function gen() {
+      var t = pick(lvl === 1 ? ["+", "-"] : ["+", "-", "×", "÷"]), a, b;
+      if (lvl === 1) { a = rnd(2, 20); b = rnd(1, 10); }
+      else if (lvl === 2) { a = rnd(10, 99); b = rnd(2, 49); }
+      else { a = rnd(100, 999); b = rnd(11, 99); }
+      if (t === "-" && b > a) { var s = a; a = b; b = s; }
+      if (t === "×") { a = lvl === 2 ? rnd(2, 10) : rnd(11, 25); b = lvl === 2 ? rnd(2, 10) : rnd(3, 9); }
+      if (t === "÷") { b = lvl === 2 ? rnd(2, 10) : rnd(3, 12); var q = lvl === 2 ? rnd(2, 10) : rnd(11, 30); a = b * q; }
+      ans = t === "+" ? a + b : t === "-" ? a - b : t === "×" ? a * b : a / b;
+      op.textContent = a + " " + (t === "-" ? "−" : t) + " " + b;
+      input.value = "";
+    }
+    function update() {
+      var left = Math.max(0, Math.ceil((endAt - Date.now()) / 1000));
+      timeEl.textContent = left + " s";
+      scoreEl.textContent = ok + (ok === 1 ? " acierto" : " aciertos");
+      if (left <= 0) finish();
+    }
+    function finish() {
+      running = false; clearInterval(tick);
+      input.disabled = true; skipBtn.disabled = true;
+      seg.querySelectorAll("button").forEach(function (b) { b.disabled = false; });
+      op.textContent = ok + (ok === 1 ? " acierto" : " aciertos");
+      result.innerHTML = "<p>" + (ok >= 20 ? "Muy buen ritmo. Prueba el nivel siguiente." : ok >= 10 ? "Buen resultado. Repite unas cuantas veces y mira cómo sube tu marca." : "Es normal empezar despacio. Con práctica, las operaciones salen solas.") + "</p>" +
+        '<div class="stat-row">' + stat("Aciertos en 60 s", ok) + stat("Saltadas", skipped) + "</div>";
+      result.hidden = false;
+      startBtn.hidden = false; startBtn.textContent = "Repetir";
+    }
+    function start() {
+      ok = 0; skipped = 0; running = true; result.hidden = true; startBtn.hidden = true;
+      seg.querySelectorAll("button").forEach(function (b) { b.disabled = true; });
+      input.disabled = false; skipBtn.disabled = false; gen(); input.focus();
+      endAt = Date.now() + 60000; update(); tick = setInterval(update, 200);
+    }
+    input.addEventListener("input", function () {
+      if (!running) return;
+      if (input.value.replace(/\s/g, "") === String(ans)) { ok++; flash(root, true); gen(); update(); }
+    });
+    input.addEventListener("keydown", function (e) {
+      if (e.key === "Enter" && running) { e.preventDefault(); if (input.value !== "") { flash(root, false); input.select(); } }
+    });
+    skipBtn.addEventListener("click", function () { if (running) { skipped++; gen(); input.focus(); } });
+    seg.addEventListener("click", function (e) {
+      var b = e.target.closest("button[data-level]");
+      if (!b || running) return;
+      segSelect(seg, b); lvl = +b.getAttribute("data-level");
+    });
+    startBtn.addEventListener("click", start);
+  }
+
+  /* ---------- Series numéricas ---------- */
+  function series(root) {
+    var TIERS = [
+      [function () { var s = rnd(1, 20), k = rnd(2, 9); return lin(s, k, 5, "Se suma " + k + " cada vez."); },
+       function () { var s = rnd(60, 99), k = rnd(3, 9); return lin(s, -k, 5, "Se resta " + k + " cada vez."); },
+       function () { var s = rnd(1, 5); return geo(s, 2, 5, "Cada número es el doble del anterior."); }],
+      [function () { var s = rnd(1, 10), d = rnd(1, 3), t = [s]; for (var i = 0; i < 5; i++) t.push(t[i] + d + i); return { t: t.slice(0, 5), a: t[5], r: "La diferencia aumenta en 1 cada vez: +" + d + ", +" + (d + 1) + ", +" + (d + 2) + "…" }; },
+       function () { var s = rnd(10, 30), a = rnd(4, 9), b = rnd(1, 3), t = [s]; for (var i = 0; i < 6; i++) t.push(t[i] + (i % 2 === 0 ? a : -b)); return { t: t.slice(0, 6), a: t[6], r: "Se alterna: +" + a + " y −" + b + "." }; },
+       function () { var s = rnd(1, 4); return geo(s, 3, 5, "Cada número es el triple del anterior."); },
+       function () { var n = rnd(1, 4), t = []; for (var i = 0; i < 6; i++) t.push((n + i) * (n + i)); return { t: t.slice(0, 5), a: t[5], r: "Son cuadrados consecutivos: " + n + "², " + (n + 1) + "², " + (n + 2) + "²…" }; },
+       function () { var a = rnd(1, 9), b = rnd(20, 40), ka = rnd(2, 4), kb = rnd(3, 6), t = []; for (var i = 0; i < 4; i++) { t.push(a + i * ka); t.push(b + i * kb); } return { t: t.slice(0, 6), a: t[6], r: "Son dos series intercaladas: en las posiciones impares se suma " + ka + " y en las pares se suma " + kb + "." }; }],
+      [function () { var s = rnd(1, 5), t = [s]; for (var i = 0; i < 6; i++) t.push(i % 2 === 0 ? t[i] * 2 : t[i] + 1); return { t: t.slice(0, 6), a: t[6], r: "Se alterna: ×2 y +1." }; },
+       function () { var a = rnd(1, 4), b = rnd(2, 6), t = [a, b]; for (var i = 2; i < 7; i++) t.push(t[i - 1] + t[i - 2]); return { t: t.slice(0, 6), a: t[6], r: "Cada número es la suma de los dos anteriores (como la serie de Fibonacci)." }; },
+       function () { var s = rnd(2, 10), t = [s]; for (var i = 0; i < 5; i++) t.push(t[i] + Math.pow(2, i)); return { t: t.slice(0, 5), a: t[5], r: "La diferencia se duplica cada vez: +1, +2, +4, +8…" }; },
+       function () { var s = rnd(1, 3), t = [s]; for (var i = 1; i < 6; i++) t.push(t[i - 1] * (i + 1)); return { t: t.slice(0, 5), a: t[5], r: "Se multiplica por 2, luego por 3, por 4, por 5…" }; },
+       function () { var n = rnd(1, 3), t = []; for (var i = 0; i < 6; i++) t.push(Math.pow(n + i, 2) + 1); return { t: t.slice(0, 5), a: t[5], r: "Cada número es un cuadrado más 1: " + n + "²+1, " + (n + 1) + "²+1…" }; }]
+    ];
+    function lin(s, k, n, r) { var t = []; for (var i = 0; i <= n; i++) t.push(s + k * i); return { t: t.slice(0, n), a: t[n], r: r }; }
+    function geo(s, k, n, r) { var t = []; for (var i = 0; i <= n; i++) t.push(s * Math.pow(k, i)); return { t: t.slice(0, n), a: t[n], r: r }; }
+    var row = $(root, "row"), input = $(root, "input"), check = $(root, "check"), explain = $(root, "explain"), meta = $(root, "meta"), result = $(root, "result"), startBtn = $(root, "start");
+    var list = [], idx = 0, ok = 0, phase = "idle";
+    function build() {
+      var plan = [0, 0, 0, 1, 1, 1, 1, 2, 2, 2], out = [], used = {};
+      plan.forEach(function (tier) {
+        var opts = TIERS[tier].map(function (f, i) { return i; }).filter(function (i) { return !used[tier + "-" + i]; });
+        if (!opts.length) opts = TIERS[tier].map(function (f, i) { return i; });
+        var i = pick(opts); used[tier + "-" + i] = 1; out.push(TIERS[tier][i]());
+      });
+      return out;
+    }
+    function show() {
+      var s = list[idx];
+      row.textContent = s.t.join(" · ") + " · ?";
+      meta.textContent = "Serie " + (idx + 1) + " de " + list.length;
+      input.value = ""; input.disabled = false; explain.hidden = true;
+      check.textContent = "Comprobar"; phase = "answer"; input.focus();
+    }
+    function act() {
+      if (phase === "answer") {
+        if (input.value.trim() === "") { input.focus(); return; }
+        var s = list[idx], right = parseInt(input.value.replace(/\s/g, ""), 10) === s.a;
+        if (right) ok++;
+        flash(root, right);
+        row.textContent = s.t.join(" · ") + " · " + s.a;
+        explain.textContent = (right ? "Correcto. " : "La respuesta era " + s.a + ". ") + s.r;
+        explain.hidden = false; input.disabled = true;
+        check.textContent = idx + 1 < list.length ? "Siguiente" : "Ver resultado";
+        phase = "review"; check.focus();
+      } else if (phase === "review") {
+        idx++;
+        if (idx < list.length) return show();
+        phase = "idle"; check.disabled = true; explain.hidden = true;
+        row.textContent = ok + " de " + list.length;
+        meta.textContent = "Resultado";
+        result.innerHTML = "<p>" + (ok >= 8 ? "Excelente. Las series difíciles son las que más se repiten en los psicotécnicos: sigue practicándolas." : ok >= 5 ? "Buen resultado. Repasa los tipos de serie de abajo y vuelve a intentarlo." : "Las series se aprenden reconociendo patrones. Lee los tipos de abajo y repite: verás cómo mejoras rápido.") + "</p>" +
+          '<div class="stat-row">' + stat("Aciertos", ok + " de " + list.length) + "</div>";
+        result.hidden = false; startBtn.hidden = false; startBtn.textContent = "Otras 10 series";
+      }
+    }
+    check.addEventListener("click", act);
+    input.addEventListener("keydown", function (e) { if (e.key === "Enter") { e.preventDefault(); act(); } });
+    startBtn.addEventListener("click", function () {
+      list = build(); idx = 0; ok = 0; result.hidden = true; startBtn.hidden = true; check.disabled = false; show();
+    });
+  }
+
+  var DEMOS = { stroop: stroop, nback: nback, palabras: palabras, pomodoro: pomodoro, respiracion: respiracion,
+    reaccion: reaccion, memoria: memoria, agilidad: agilidad, series: series };
   document.querySelectorAll("[data-demo]").forEach(function (el) {
     var fn = DEMOS[el.getAttribute("data-demo")];
     if (fn) { try { fn(el); } catch (e) { /* una demo rota no debe romper la página */ } }

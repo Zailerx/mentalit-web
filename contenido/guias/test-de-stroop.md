@@ -50,7 +50,7 @@ Tu resultado varía según el cansancio, si usas teclado o pantalla táctil y cu
 
 Practicar el test te hará mejor en el test, y probablemente en tareas muy parecidas. Lo que la investigación no ha demostrado con solidez es que esa mejora se traslade a la atención en general, como concentrarte mejor al estudiar o conducir.
 
-Aun así, tiene sentido como ejercicio: es corto, exige concentración total durante un par de minutos y sirve de calentamiento antes de una tarea que requiera atención. Si lo que buscas es concentrarte mejor en tu día a día, combina este tipo de juegos con los cambios de hábitos que explicamos en [cómo mejorar la concentración al estudiar](../como-mejorar-la-concentracion-al-estudiar/).
+Si te interesa la rapidez pura, sin la trampa de la palabra, prueba el [test de tiempo de reacción](../../herramientas/test-tiempo-de-reaccion/). Aun así, el Stroop tiene sentido como ejercicio: es corto, exige concentración total durante un par de minutos y sirve de calentamiento antes de una tarea que requiera atención. Si lo que buscas es concentrarte mejor en tu día a día, combina este tipo de juegos con los cambios de hábitos que explicamos en [cómo mejorar la concentración al estudiar](../como-mejorar-la-concentracion-al-estudiar/).
 
 ## Variantes para ponértelo más difícil
 

@@ -28,5 +28,20 @@
     "titulo": "Entrena el N-back con niveles",
     "texto": "En Mentalit puedes jugar al N-back con 1, 2 o 3 turnos de distancia, con un ejemplo antes de empezar y tu progreso guardado en el móvil.",
     "boton": "Descargar Mentalit"
+  },
+  "calculo": {
+    "titulo": "Más cálculo mental, en formato juego",
+    "texto": "En Mentalit tienes ejercicios de cálculo como La casa, donde cuentas las personas que entran y salen, El cambio exacto o ¿Cuál es mayor?, que compara resultados de operaciones. Con seis niveles de dificultad para ir subiendo poco a poco.",
+    "boton": "Descargar Mentalit"
+  },
+  "logica": {
+    "titulo": "Practica series y lógica cada día",
+    "texto": "Mentalit incluye series numéricas, sudoku y otros retos de lógica con seis niveles de dificultad. El entrenamiento diario te propone cuatro juegos distintos cada día, así practicas sin pensar qué toca.",
+    "boton": "Descargar Mentalit"
+  },
+  "atencion": {
+    "titulo": "Entrena los reflejos y la atención",
+    "texto": "En Mentalit tienes juegos de reacción y atención como Go / No-Go, donde solo puedes tocar el círculo lleno, Color en conflicto o Flecha central. Partidas de un par de minutos con seis niveles de dificultad.",
+    "boton": "Descargar Mentalit"
   }
 }

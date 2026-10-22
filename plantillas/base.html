@@ -38,6 +38,7 @@
       <span>Mentalit</span>
     </a>
     <nav class="head-nav" aria-label="Principal">
+      <a href="{{ u('herramientas/') }}"{% if path.startswith('herramientas') %} aria-current="page"{% endif %}>Herramientas</a>
       <a href="{{ u('guias/') }}"{% if path.startswith('guias') %} aria-current="page"{% endif %}>Guías</a>
       <a class="btn btn-small" href="{{ c.app_store_url }}" data-cta="cabecera">Descargar</a>
     </nav>
@@ -58,6 +59,7 @@
       <p class="foot-note">Juegos para practicar memoria, atención, cálculo y lógica, con temporizador de foco y meditación. Mentalit ofrece práctica y bienestar personal; no es un producto sanitario ni previene o trata enfermedades.</p>
     </div>
     <nav aria-label="Pie de página" class="foot-links">
+      <a href="{{ u('herramientas/') }}">Herramientas gratis</a>
       <a href="{{ u('guias/') }}">Todas las guías</a>
       <a href="{{ c.app_store_url }}">Mentalit en la App Store</a>
       <a href="{{ c.privacidad_url }}">Privacidad</a>

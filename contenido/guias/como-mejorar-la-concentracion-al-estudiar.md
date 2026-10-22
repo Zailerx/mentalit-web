@@ -65,6 +65,7 @@ La atención también se puede practicar. Dos opciones sencillas:
 
 - **Meditar cinco minutos al día.** El ejercicio consiste en llevar la atención a la respiración y volver cada vez que te distraes. Ese gesto de darte cuenta y volver es justo el que necesitas al estudiar. Tienes una guía paso a paso en [cómo meditar para principiantes](../meditar-para-principiantes/).
 - **Juegos de atención.** El [test de Stroop](../test-de-stroop/) te obliga a ignorar lo que lees para fijarte en el color. Es un buen calentamiento de dos minutos antes de una sesión.
+- **Cálculo contra reloj.** El [test de agilidad mental](../../herramientas/test-agilidad-mental/) te obliga a mantener la atención durante un minuto entero.
 
 ## Un plan para tu próxima sesión
 

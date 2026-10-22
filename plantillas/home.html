@@ -63,6 +63,26 @@
   </div>
 </section>
 
+{% if tools %}
+<section class="wrap section" aria-labelledby="herramientas-home">
+  <div class="section-head">
+    <h2 id="herramientas-home">Pon a prueba tu mente, gratis</h2>
+    <a class="link-quiet" href="{{ u('herramientas/') }}">Ver todas</a>
+  </div>
+  <ul class="guide-list">
+    {% for t in tools %}
+    <li>
+      <a href="{{ u(t.path) }}">
+        <span class="guide-cat">{{ t.categoria }}</span>
+        <span class="guide-title">{{ t.titulo }}</span>
+        <span class="guide-desc">{{ t.descripcion }}</span>
+      </a>
+    </li>
+    {% endfor %}
+  </ul>
+</section>
+{% endif %}
+
 <section class="wrap section" aria-labelledby="guias-recientes">
   <div class="section-head">
     <h2 id="guias-recientes">Guías para entrenar la mente</h2>
