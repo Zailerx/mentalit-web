@@ -1,0 +1,75 @@
+{%- set bare = preview and depth == 0 -%}
+{%- if not bare %}<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+{%- endif %}
+<title>{% block title %}{% endblock %}</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="{% block description %}{% endblock %}">
+<link rel="canonical" href="{{ canonical }}">
+<meta name="apple-itunes-app" content="app-id={{ c.app_id }}">
+<meta name="theme-color" content="#f6f4ff" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#141029" media="(prefers-color-scheme: dark)">
+<meta property="og:site_name" content="Mentalit">
+<meta property="og:locale" content="es_ES">
+<meta property="og:type" content="{% block ogtype %}website{% endblock %}">
+<meta property="og:title" content="{{ self.title() }}">
+<meta property="og:description" content="{{ self.description() }}">
+<meta property="og:url" content="{{ canonical }}">
+<meta property="og:image" content="{{ site }}/img/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="{{ u('favicon.svg') }}" type="image/svg+xml">
+<link rel="apple-touch-icon" href="{{ u('img/icon-180.png') }}">
+<link rel="preload" href="{{ u('assets/fonts/fredoka-latin-wght-normal.woff2') }}" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="{{ u('assets/fonts/nunito-latin-wght-normal.woff2') }}" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="{{ u('assets/site.css') }}">
+{% block schema %}{% endblock %}
+{%- if not bare %}
+</head>
+<body class="{% block bodyclass %}{% endblock %}">
+{%- endif %}
+<a class="skip" href="#contenido">Saltar al contenido</a>
+<header class="site-head">
+  <div class="wrap head-row">
+    <a class="brand" href="{{ u('') }}">
+      <img src="{{ u('img/icon-96.webp') }}" width="36" height="36" alt="">
+      <span>Mentalit</span>
+    </a>
+    <nav class="head-nav" aria-label="Principal">
+      <a href="{{ u('guias/') }}"{% if path.startswith('guias') %} aria-current="page"{% endif %}>Guías</a>
+      <a class="btn btn-small" href="{{ c.app_store_url }}" data-cta="cabecera">Descargar</a>
+    </nav>
+  </div>
+</header>
+
+<main id="contenido">
+{% block main %}{% endblock %}
+</main>
+
+<footer class="site-foot">
+  <div class="wrap foot-grid">
+    <div>
+      <a class="brand" href="{{ u('') }}">
+        <img src="{{ u('img/icon-96.webp') }}" width="32" height="32" alt="">
+        <span>Mentalit</span>
+      </a>
+      <p class="foot-note">Juegos para practicar memoria, atención, cálculo y lógica, con temporizador de foco y meditación. Mentalit ofrece práctica y bienestar personal; no es un producto sanitario ni previene o trata enfermedades.</p>
+    </div>
+    <nav aria-label="Pie de página" class="foot-links">
+      <a href="{{ u('guias/') }}">Todas las guías</a>
+      <a href="{{ c.app_store_url }}">Mentalit en la App Store</a>
+      <a href="{{ c.privacidad_url }}">Privacidad</a>
+      <a href="{{ c.terminos_url }}">Términos</a>
+      <span class="foot-mail">Contacto: {{ c.contacto }}</span>
+    </nav>
+  </div>
+</footer>
+
+{% block sticky %}{% endblock %}
+<script src="{{ u('assets/site.js') }}" defer></script>
+{%- if not bare %}
+</body>
+</html>
+{%- endif %}

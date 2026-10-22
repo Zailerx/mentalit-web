@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>N-back online: qué es, cómo se juega y si mejora la memoria</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Qué es el N-back, cómo se juega en sus niveles 1, 2 y 3, qué dice la investigación sobre el dual N-back y una versión para jugar online.">
+<link rel="canonical" href="https://mentalitapp.com/guias/n-back/">
+<meta name="apple-itunes-app" content="app-id=6817341061">
+<meta name="theme-color" content="#f6f4ff" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#141029" media="(prefers-color-scheme: dark)">
+<meta property="og:site_name" content="Mentalit">
+<meta property="og:locale" content="es_ES">
+<meta property="og:type" content="article">
+<meta property="og:title" content="N-back online: qué es, cómo se juega y si mejora la memoria">
+<meta property="og:description" content="Qué es el N-back, cómo se juega en sus niveles 1, 2 y 3, qué dice la investigación sobre el dual N-back y una versión para jugar online.">
+<meta property="og:url" content="https://mentalitapp.com/guias/n-back/">
+<meta property="og:image" content="https://mentalitapp.com/img/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../../img/icon-180.png">
+<link rel="preload" href="../../assets/fonts/fredoka-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../../assets/fonts/nunito-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../../assets/site.css">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+ {"@type":"Article","headline":"N-back: qu\u00e9 es y c\u00f3mo funciona el ejercicio de memoria de trabajo","description":"Qu\u00e9 es el N-back, c\u00f3mo se juega en sus niveles 1, 2 y 3, qu\u00e9 dice la investigaci\u00f3n sobre el dual N-back y una versi\u00f3n para jugar online.","inLanguage":"es-ES","datePublished":"2026-10-22","dateModified":"2026-10-22","author":{"@type":"Organization","name":"Mentalit","url":"https://mentalitapp.com/"},"publisher":{"@type":"Organization","name":"Mentalit","logo":{"@type":"ImageObject","url":"https://mentalitapp.com/img/icon-512.png"}},"mainEntityOfPage":"https://mentalitapp.com/guias/n-back/","image":"https://mentalitapp.com/img/og.png"},
+ {"@type":"BreadcrumbList","itemListElement":[
+  {"@type":"ListItem","position":1,"name":"Inicio","item":"https://mentalitapp.com/"},
+  {"@type":"ListItem","position":2,"name":"Guías","item":"https://mentalitapp.com/guias/"},
+  {"@type":"ListItem","position":3,"name":"N-back: qu\u00e9 es y c\u00f3mo funciona el ejercicio de memoria de trabajo","item":"https://mentalitapp.com/guias/n-back/"}]}
+]}
+</script>
+
+</head>
+<body class="">
+<a class="skip" href="#contenido">Saltar al contenido</a>
+<header class="site-head">
+  <div class="wrap head-row">
+    <a class="brand" href="../../">
+      <img src="../../img/icon-96.webp" width="36" height="36" alt="">
+      <span>Mentalit</span>
+    </a>
+    <nav class="head-nav" aria-label="Principal">
+      <a href="../../guias/" aria-current="page">Guías</a>
+      <a class="btn btn-small" href="https://apps.apple.com/es/app/mentalit-entrena-tu-mente/id6817341061" data-cta="cabecera">Descargar</a>
+    </nav>
+  </div>
+</header>
+
+<main id="contenido">
+
+<article class="article">
+  <header class="wrap article-head">
+    <nav class="crumbs" aria-label="Ruta">
+      <a href="../../">Inicio</a><span aria-hidden="true">/</span><a href="../../guias/">Guías</a><span aria-hidden="true">/</span><span>Memoria</span>
+    </nav>
+    <h1>N-back: qué es y cómo funciona el ejercicio de memoria de trabajo</h1>
+    <p class="lead">El N-back es uno de los ejercicios más usados en los laboratorios para estudiar la memoria de trabajo. Aquí puedes jugarlo con letras, entender por qué cuesta tanto y saber qué puedes esperar si lo practicas.</p>
+    <p class="byline">Equipo de Mentalit. Actualizado el <time datetime="2026-10-22">22 de octubre de 2026</time>. 4 min de lectura.</p>
+  </header>
+  <div class="wrap prose">
+    <h2 id="juega-al-n-back">Juega al N-back</h2>
+<p>Verás una letra cada dos segundos y medio. Pulsa <strong>Coincide</strong> (o la barra espaciadora) cuando la letra sea la misma que apareció <strong>N turnos antes</strong>. Si no coincide, no hagas nada. Empieza por 2-back; si se te hace muy difícil, baja a 1-back.</p>
+
+<div class="demo demo-nback" data-demo="nback">
+  <div class="demo-top">
+    <p class="demo-name">N-back de letras</p>
+    <div class="seg" role="group" aria-label="Nivel">
+      <button type="button" data-n="1">1-back</button>
+      <button type="button" data-n="2" aria-pressed="true">2-back</button>
+      <button type="button" data-n="3">3-back</button>
+    </div>
+  </div>
+  <p class="demo-ask" data-role="ask">Pulsa «Coincide» cuando la letra sea igual a la de hace 2 turnos.</p>
+  <div class="nback-stage" data-role="stage" aria-live="off">
+    <span class="nback-letter" data-role="letter">K</span>
+    <span class="nback-count" data-role="count">Turno 0 de 22</span>
+  </div>
+  <div class="demo-foot" data-role="foot">
+    <button type="button" class="btn btn-small" data-role="start">Empezar</button>
+    <button type="button" class="key key-wide" data-role="hit" disabled>Coincide <kbd>Espacio</kbd></button>
+  </div>
+</div>
+
+<h2 id="como-funciona-con-un-ejemplo">Cómo funciona, con un ejemplo</h2>
+<p>Imagina esta secuencia de letras en 2-back:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Turno</th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+<th>6</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Letra</td>
+<td>K</td>
+<td>R</td>
+<td>K</td>
+<td>T</td>
+<td>K</td>
+<td>T</td>
+</tr>
+<tr>
+<td>¿Coincide con la de hace 2?</td>
+<td></td>
+<td></td>
+<td>Sí</td>
+<td>No</td>
+<td>Sí</td>
+<td>Sí</td>
+</tr>
+</tbody>
+</table></div>
+<p>En el turno 3 aparece una K, igual que en el turno 1: hay que pulsar. En el turno 4 aparece una T, pero dos turnos antes había una R: no se pulsa.</p>
+<p>La dificultad está en que la lista se mueve todo el rato. Tienes que mantener en la cabeza las dos últimas letras, compararlas con la nueva y actualizar la lista en cada turno, olvidando la más antigua. En 3-back, son tres letras en movimiento.</p>
+<h2 id="que-es-la-memoria-de-trabajo">Qué es la memoria de trabajo</h2>
+<p>Es la memoria que usas para mantener información durante unos segundos mientras la manejas. La usas al hacer una cuenta de cabeza, al recordar un número mientras lo marcas o al seguir el hilo de una frase larga. Tiene una capacidad muy limitada, y por eso el N-back se vuelve difícil tan rápido al subir de nivel.</p>
+<p>El ejercicio lo propuso Wayne Kirchner en 1958 para estudiar cómo cambia con la edad la capacidad de retener información que cambia rápido. Desde entonces se ha usado en miles de estudios, muchos de ellos con resonancia magnética, para observar qué zonas del cerebro se activan al usar la memoria de trabajo.</p>
+
+<aside class="cta-inline" aria-label="Mentalit">
+  <img src="../../img/icon-96.webp" width="56" height="56" alt="">
+  <div>
+    <p class="cta-title">Entrena el N-back con niveles</p>
+    <p>En Mentalit puedes jugar al N-back con 1, 2 o 3 turnos de distancia, con un ejemplo antes de empezar y tu progreso guardado en el móvil.</p>
+    <a class="btn" href="https://apps.apple.com/es/app/mentalit-entrena-tu-mente/id6817341061" data-cta="articulo">Descargar Mentalit</a>
+  </div>
+</aside>
+
+<h2 id="el-dual-n-back-y-la-polemica-de-la-inteligencia">El dual N-back y la polémica de la inteligencia</h2>
+<p>En 2008, un estudio de Susanne Jaeggi y su equipo publicado en <em>PNAS</em> se hizo muy famoso. Usaron el <strong>dual N-back</strong>, una versión en la que hay que seguir a la vez una posición en una cuadrícula y una letra que se oye. Las personas que lo entrenaron durante varias semanas mejoraron en una prueba de razonamiento, y el estudio se interpretó como la prueba de que se podía aumentar la inteligencia.</p>
+<p>Los estudios posteriores no han confirmado ese resultado. Una revisión de 2016 que reunió 87 publicaciones concluyó que entrenar la memoria de trabajo mejora el rendimiento en la tarea entrenada y en otras muy parecidas, pero no en medidas de inteligencia ni en otras habilidades más alejadas.</p>
+<p>En resumen: si practicas el N-back, mejorarás en el N-back. Puede que también notes que mantienes mejor la atención en tareas parecidas. No esperes que suba tu cociente intelectual.</p>
+<h2 id="entonces-merece-la-pena">Entonces, ¿merece la pena?</h2>
+<p>Depende de lo que busques. A favor:</p>
+<ul>
+<li>Es un reto exigente y medible: ves tu progreso nivel a nivel.</li>
+<li>Obliga a mantener la atención sin interrupciones durante un par de minutos.</li>
+<li>A mucha gente le resulta entretenido, como un rompecabezas.</li>
+</ul>
+<p>Si tu objetivo es recordar mejor cosas concretas, como lo que estudias o los nombres de la gente, te servirán más las técnicas de la guía de <a href="../ejercicios-para-la-memoria-adultos/">ejercicios para la memoria</a>, como recordar sin mirar o el palacio de la memoria.</p>
+<h2 id="consejos-para-jugar-mejor">Consejos para jugar mejor</h2>
+<ul>
+<li><strong>Repite las letras en voz baja.</strong> En 2-back, ve diciendo las dos últimas: «K, R», «R, K», «K, T». Te ayuda a actualizar la lista.</li>
+<li><strong>No pulses por intuición.</strong> Las falsas alarmas cuentan como errores. Si dudas, no pulses.</li>
+<li><strong>Sube de nivel solo cuando aciertes más del 85 %.</strong> Si bajas del 65 %, vuelve al nivel anterior.</li>
+<li><strong>Juega poco y a menudo.</strong> Varias partidas cortas al día rinden más que una sesión larga en la que acabas cansado.</li>
+</ul>
+<h2 id="preguntas-frecuentes">Preguntas frecuentes</h2>
+<p><strong>¿Qué nivel es bueno en el N-back?</strong> La mayoría de la gente maneja el 1-back sin problema y nota el salto en el 2-back. Mantener una precisión alta en 3-back requiere práctica.</p>
+<p><strong>¿Qué diferencia hay entre N-back y dual N-back?</strong> En el N-back simple sigues un solo estímulo, aquí las letras. En el dual sigues dos a la vez, normalmente una posición y un sonido, y es bastante más difícil.</p>
+<p><strong>¿Cuánto tiempo hay que practicar?</strong> En los estudios suelen usarse unos 20 minutos al día durante varias semanas. Para usarlo como ejercicio de atención, con 5 o 10 minutos es suficiente.</p>
+
+    
+    <section class="sources" aria-labelledby="fuentes">
+      <h2 id="fuentes">Fuentes</h2>
+      <ul>
+        <li><a href="https://doi.org/10.1037/h0043688" rel="noopener">Kirchner, W. K. (1958). Age differences in short-term retention of rapidly changing information. Journal of Experimental Psychology</a></li><li><a href="https://pubmed.ncbi.nlm.nih.gov/18443283/" rel="noopener">Jaeggi y otros (2008). Improving fluid intelligence with training on working memory. PNAS</a></li><li><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC4968033/" rel="noopener">Melby-Lervåg, Redick y Hulme (2016). Working memory training does not improve performance on measures of intelligence or other measures of far transfer</a></li>
+      </ul>
+    </section>
+    
+  </div>
+</article>
+
+<section class="wrap section related" aria-labelledby="sigue">
+  <h2 id="sigue">Sigue leyendo</h2>
+  <ul class="guide-list">
+    
+    <li>
+      <a href="../../guias/ejercicios-para-la-memoria-adultos/">
+        <span class="guide-cat">Memoria</span>
+        <span class="guide-title">Ejercicios para la memoria en adultos: 9 que puedes hacer hoy</span>
+        <span class="guide-desc">Nueve ejercicios para la memoria que puedes hacer en casa, gratis y sin material, y una prueba de 12 palabras para medir tu punto de partida.</span>
+      </a>
+    </li>
+    
+    <li>
+      <a href="../../guias/test-de-stroop/">
+        <span class="guide-cat">Atención</span>
+        <span class="guide-title">Test de Stroop online: qué mide y cómo hacerlo</span>
+        <span class="guide-desc">Haz el test de Stroop online y mide tu efecto Stroop en milisegundos. Te explicamos qué mide, por qué cuesta tanto y cómo se usa en psicología.</span>
+      </a>
+    </li>
+    
+    <li>
+      <a href="../../guias/como-mejorar-la-concentracion-al-estudiar/">
+        <span class="guide-cat">Concentración</span>
+        <span class="guide-title">Cómo mejorar la concentración al estudiar: 10 cambios que funcionan</span>
+        <span class="guide-desc">Diez cambios concretos para concentrarte al estudiar: qué hacer con el móvil, cuánto estudiar seguido, cómo descansar y cómo estudiar de forma activa.</span>
+      </a>
+    </li>
+    
+  </ul>
+</section>
+
+
+<section class="cta-end" aria-labelledby="cta-final">
+  <div class="wrap cta-end-inner">
+    <img src="../../img/train.webp" width="406" height="720" alt="" loading="lazy">
+    <div>
+      <h2 id="cta-final">Entrena unos minutos al día con Mentalit</h2>
+      <p>Juegos cortos de memoria, atención, cálculo y lógica, con un entrenamiento diario de cuatro retos. Empieza con un test inicial que ajusta la dificultad a tu nivel.</p>
+      <a class="btn btn-light" href="https://apps.apple.com/es/app/mentalit-entrena-tu-mente/id6817341061" data-cta="final">Descargar en la App Store</a>
+    </div>
+  </div>
+</section>
+
+
+</main>
+
+<footer class="site-foot">
+  <div class="wrap foot-grid">
+    <div>
+      <a class="brand" href="../../">
+        <img src="../../img/icon-96.webp" width="32" height="32" alt="">
+        <span>Mentalit</span>
+      </a>
+      <p class="foot-note">Juegos para practicar memoria, atención, cálculo y lógica, con temporizador de foco y meditación. Mentalit ofrece práctica y bienestar personal; no es un producto sanitario ni previene o trata enfermedades.</p>
+    </div>
+    <nav aria-label="Pie de página" class="foot-links">
+      <a href="../../guias/">Todas las guías</a>
+      <a href="https://apps.apple.com/es/app/mentalit-entrena-tu-mente/id6817341061">Mentalit en la App Store</a>
+      <a href="https://zailerx.github.io/mentalit-legal/privacy.html">Privacidad</a>
+      <a href="https://zailerx.github.io/mentalit-legal/terms.html">Términos</a>
+      <span class="foot-mail">Contacto: zailerx@gmail.com</span>
+    </nav>
+  </div>
+</footer>
+
+
+<div class="sticky-cta" data-role="sticky" hidden>
+  <img src="../../img/icon-96.webp" width="36" height="36" alt="">
+  <p><strong>Mentalit</strong><span>Juegos para entrenar la mente</span></p>
+  <a class="btn btn-small" href="https://apps.apple.com/es/app/mentalit-entrena-tu-mente/id6817341061" data-cta="barra">Descargar</a>
+  <button type="button" class="sticky-close" aria-label="Cerrar">×</button>
+</div>
+
+<script src="../../assets/site.js" defer></script>
+</body>
+</html>

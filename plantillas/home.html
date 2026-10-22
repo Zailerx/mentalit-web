@@ -1,0 +1,114 @@
+{% extends "base.html" %}
+{% block title %}Mentalit: juegos de memoria, atención y cálculo mental{% endblock %}
+{% block description %}Entrena memoria, atención, cálculo mental y lógica con {{ c.num_juegos }} juegos cortos. Incluye temporizador de foco y meditación guiada. App para iPhone y iPad.{% endblock %}
+{% block schema %}
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+ {"@type":"WebSite","name":"Mentalit","url":"{{ site }}/","inLanguage":"es-ES"},
+ {"@type":"MobileApplication","name":"Mentalit - Entrena tu Mente","operatingSystem":"iOS 15.0 o posterior","applicationCategory":"HealthApplication","inLanguage":"es","url":"{{ c.app_store_url }}","offers":{"@type":"Offer","price":"0","priceCurrency":"EUR"}}
+]}
+</script>
+{% endblock %}
+{% block main %}
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <h1>Entrena la mente con retos de dos minutos</h1>
+      <p class="lead">Mentalit reúne {{ c.num_juegos }} juegos de memoria, atención, cálculo mental y lógica, un entrenamiento diario de cuatro retos, un temporizador para concentrarte y meditaciones cortas. Para iPhone y iPad.</p>
+      <div class="hero-actions">
+        <a class="btn" href="{{ c.app_store_url }}" data-cta="hero">Descargar en la App Store</a>
+        <a class="link-quiet" href="{{ u('guias/') }}">Leer las guías</a>
+      </div>
+      <p class="fine">Empiezas con un test inicial que ajusta la dificultad. Los juegos requieren suscripción.</p>
+    </div>
+    <div class="hero-demo">
+      {% with demo="stroop", short=true %}{% include "_demo.html" %}{% endwith %}
+    </div>
+  </div>
+</section>
+
+<section class="band" aria-labelledby="dentro">
+  <div class="wrap">
+    <h2 id="dentro">Qué hay dentro de la app</h2>
+    <div class="inside-grid">
+      <div class="inside-games">
+        <h3>Juegos</h3>
+        <p>Partidas de un par de minutos con seis niveles de dificultad, de Suave a Extremo. Lee las instrucciones, juega y mira cómo cambian tus marcas.</p>
+        <ul class="chips" aria-label="Tipos de juegos">
+          <li class="chip c-violet">Memoria</li>
+          <li class="chip c-sky">Atención</li>
+          <li class="chip c-gold">Cálculo mental</li>
+          <li class="chip c-mint">Lógica</li>
+          <li class="chip c-coral">Rotación mental</li>
+          <li class="chip c-pink">Palabras</li>
+        </ul>
+        <h3>Hoy</h3>
+        <p>Cada día, cuatro juegos con objetivos. Sumas experiencia, subes de nivel y mantienes tu racha.</p>
+      </div>
+      <div class="inside-panel">
+        <img src="{{ u('img/focus.webp') }}" width="453" height="560" alt="Ilustración de una chica estudiando en su escritorio" loading="lazy">
+        <div>
+          <h3>Foco</h3>
+          <p>Elige 15, 30 o 60 minutos y deja el móvil. Mientras trabajas, una semilla crece. Si sales de la app, la planta se pierde. Hay 60 especies para tu jardín.</p>
+        </div>
+      </div>
+      <div class="inside-panel">
+        <img src="{{ u('img/meditate.webp') }}" width="514" height="560" alt="Ilustración de un chico meditando" loading="lazy">
+        <div>
+          <h3>Meditación</h3>
+          <p>Sesiones de 3, 5, 10 o 20 minutos centradas en la respiración, con voz guiada opcional. Después escribes en tu diario cómo ha ido.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="wrap section" aria-labelledby="guias-recientes">
+  <div class="section-head">
+    <h2 id="guias-recientes">Guías para entrenar la mente</h2>
+    <a class="link-quiet" href="{{ u('guias/') }}">Ver todas</a>
+  </div>
+  <ul class="guide-list">
+    {% for g in guides[:6] %}
+    <li>
+      <a href="{{ u(g.path) }}">
+        <span class="guide-cat">{{ g.categoria }}</span>
+        <span class="guide-title">{{ g.titulo }}</span>
+        <span class="guide-desc">{{ g.descripcion }}</span>
+      </a>
+    </li>
+    {% endfor %}
+  </ul>
+</section>
+
+<section class="wrap section honest" aria-labelledby="honesto">
+  <img src="{{ u('img/assessment.webp') }}" width="425" height="640" alt="" loading="lazy">
+  <div>
+    <h2 id="honesto">Lo que Mentalit es, y lo que no</h2>
+    <p>Mentalit es una forma entretenida de practicar cada día: retos cortos que piden memoria, atención y rapidez, con un registro de tu progreso. Mejorarás en los juegos que practiques.</p>
+    <p>No te vamos a prometer que subirá tu cociente intelectual ni que prevendrá enfermedades. La investigación no respalda esas promesas, y el test inicial es una referencia de juego, no una evaluación clínica. Si te preocupa tu memoria, habla con tu médico.</p>
+  </div>
+</section>
+
+<section class="wrap section faq" aria-labelledby="preguntas">
+  <h2 id="preguntas">Preguntas frecuentes</h2>
+  <details>
+    <summary>¿Cuánto cuesta?</summary>
+    <p>La descarga, la bienvenida y el test inicial son gratis. Para usar Juegos, Hoy, Foco y Meditación necesitas una suscripción. Los precios de referencia en España son 19,99 € al año o 5,99 € a la semana. El precio exacto de tu país aparece en la App Store antes de confirmar.</p>
+  </details>
+  <details>
+    <summary>¿Está para Android?</summary>
+    <p>Por ahora, Mentalit está disponible solo en iPhone y iPad, a través de la App Store.</p>
+  </details>
+  <details>
+    <summary>¿Dónde se guarda mi progreso?</summary>
+    <p>Tu progreso, tu jardín y tu diario se guardan en tu dispositivo. No se sincronizan solos entre dispositivos, pero puedes exportar una copia desde la app e importarla en otro.</p>
+  </details>
+  <details>
+    <summary>¿Para quién es?</summary>
+    <p>Para cualquiera que quiera dedicar unos minutos al día a ejercitar la memoria y la atención: estudiantes, gente que teletrabaja y adultos mayores que disfrutan con los pasatiempos. Puedes elegir la dificultad o dejar que se ajuste sola.</p>
+  </details>
+</section>
+
+{% with cta=ctas.general, inline=false %}{% include "_cta.html" %}{% endwith %}
+{% endblock %}

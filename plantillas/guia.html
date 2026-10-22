@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+{% block title %}{{ g.seo_titulo }}{% endblock %}
+{% block description %}{{ g.descripcion }}{% endblock %}
+{% block ogtype %}article{% endblock %}
+{% block schema %}
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+ {"@type":"Article","headline":{{ g.titulo|tojson }},"description":{{ g.descripcion|tojson }},"inLanguage":"es-ES","datePublished":"{{ g.fecha }}","dateModified":"{{ g.actualizado }}","author":{"@type":"Organization","name":"Mentalit","url":"{{ site }}/"},"publisher":{"@type":"Organization","name":"Mentalit","logo":{"@type":"ImageObject","url":"{{ site }}/img/icon-512.png"}},"mainEntityOfPage":"{{ canonical }}","image":"{{ site }}/img/og.png"},
+ {"@type":"BreadcrumbList","itemListElement":[
+  {"@type":"ListItem","position":1,"name":"Inicio","item":"{{ site }}/"},
+  {"@type":"ListItem","position":2,"name":"Guías","item":"{{ site }}/guias/"},
+  {"@type":"ListItem","position":3,"name":{{ g.titulo|tojson }},"item":"{{ canonical }}"}]}
+]}
+</script>
+{% endblock %}
+{% block main %}
+<article class="article">
+  <header class="wrap article-head">
+    <nav class="crumbs" aria-label="Ruta">
+      <a href="{{ u('') }}">Inicio</a><span aria-hidden="true">/</span><a href="{{ u('guias/') }}">Guías</a><span aria-hidden="true">/</span><span>{{ g.categoria }}</span>
+    </nav>
+    <h1>{{ g.titulo }}</h1>
+    <p class="lead">{{ g.entradilla }}</p>
+    <p class="byline">{{ c.autor }}. Actualizado el <time datetime="{{ g.actualizado }}">{{ fecha_larga(g.actualizado) }}</time>. {{ g.lectura }} min de lectura.</p>
+  </header>
+  <div class="wrap prose">
+    {{ g.body|safe }}
+
+    {% if g.fuentes %}
+    <section class="sources" aria-labelledby="fuentes">
+      <h2 id="fuentes">Fuentes</h2>
+      <ul>
+        {% for f in g.fuentes %}<li><a href="{{ f.url }}" rel="noopener">{{ f.texto }}</a></li>{% endfor %}
+      </ul>
+    </section>
+    {% endif %}
+  </div>
+</article>
+
+<section class="wrap section related" aria-labelledby="sigue">
+  <h2 id="sigue">Sigue leyendo</h2>
+  <ul class="guide-list">
+    {% for r in relacionadas %}
+    <li>
+      <a href="{{ u(r.path) }}">
+        <span class="guide-cat">{{ r.categoria }}</span>
+        <span class="guide-title">{{ r.titulo }}</span>
+        <span class="guide-desc">{{ r.descripcion }}</span>
+      </a>
+    </li>
+    {% endfor %}
+  </ul>
+</section>
+
+{% with cta=ctas.general, inline=false %}{% include "_cta.html" %}{% endwith %}
+{% endblock %}
+{% block sticky %}
+<div class="sticky-cta" data-role="sticky" hidden>
+  <img src="{{ u('img/icon-96.webp') }}" width="36" height="36" alt="">
+  <p><strong>Mentalit</strong><span>Juegos para entrenar la mente</span></p>
+  <a class="btn btn-small" href="{{ c.app_store_url }}" data-cta="barra">Descargar</a>
+  <button type="button" class="sticky-close" aria-label="Cerrar">×</button>
+</div>
+{% endblock %}

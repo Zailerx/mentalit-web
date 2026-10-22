@@ -1,0 +1,32 @@
+{
+  "general": {
+    "titulo": "Entrena unos minutos al día con Mentalit",
+    "texto": "Juegos cortos de memoria, atención, cálculo y lógica, con un entrenamiento diario de cuatro retos. Empieza con un test inicial que ajusta la dificultad a tu nivel.",
+    "boton": "Descargar en la App Store"
+  },
+  "memoria": {
+    "titulo": "¿Quieres practicar esto cada día?",
+    "texto": "En Mentalit tienes juegos de memoria como Recuerda las palabras, recordar posiciones en una cuadrícula y reproducir secuencias. Cada partida dura un par de minutos y la dificultad se ajusta según tus resultados.",
+    "boton": "Probar los juegos de memoria"
+  },
+  "foco": {
+    "titulo": "Un temporizador que te hace dejar el móvil",
+    "texto": "Foco, dentro de Mentalit, te deja elegir 15, 30 o 60 minutos. Mientras dura, una semilla crece hasta convertirse en planta. Si sales de la app, la planta se pierde. Hay 60 especies para coleccionar en tu jardín.",
+    "boton": "Descargar Mentalit"
+  },
+  "meditacion": {
+    "titulo": "Medita con un reloj de arena y un diario",
+    "texto": "Mentalit tiene sesiones de 3, 5, 10 y 20 minutos con voz guiada opcional. Al terminar, anotas cómo de presente te has sentido y cuántas veces te has distraído, y puedes ver tu evolución por fechas.",
+    "boton": "Descargar Mentalit"
+  },
+  "stroop": {
+    "titulo": "Juega a Color en conflicto",
+    "texto": "Es el ejercicio de Stroop de Mentalit. Tiene seis niveles de dificultad, de Suave a Extremo. En modo automático, la dificultad se adapta a tus resultados.",
+    "boton": "Descargar Mentalit"
+  },
+  "nback": {
+    "titulo": "Entrena el N-back con niveles",
+    "texto": "En Mentalit puedes jugar al N-back con 1, 2 o 3 turnos de distancia, con un ejemplo antes de empezar y tu progreso guardado en el móvil.",
+    "boton": "Descargar Mentalit"
+  }
+}

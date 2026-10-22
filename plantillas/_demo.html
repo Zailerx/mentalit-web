@@ -1,0 +1,102 @@
+{% if demo == "stroop" %}
+<div class="demo demo-stroop" data-demo="stroop" data-trials="{{ 12 if short else 24 }}">
+  <div class="demo-top">
+    <p class="demo-name">Color en conflicto</p>
+    <p class="demo-meta" data-role="meta">{{ 12 if short else 24 }} palabras</p>
+  </div>
+  <p class="demo-ask">Pulsa el color de la tinta, no lo que pone.</p>
+  <div class="stroop-stage" data-role="stage" aria-live="polite">
+    <span class="stroop-word" data-role="word" style="color:var(--c-red)">AZUL</span>
+  </div>
+  <div class="stroop-keys" data-role="keys">
+    <button type="button" class="key k-red" data-color="red">Rojo<kbd>1</kbd></button>
+    <button type="button" class="key k-blue" data-color="blue">Azul<kbd>2</kbd></button>
+    <button type="button" class="key k-green" data-color="green">Verde<kbd>3</kbd></button>
+    <button type="button" class="key k-yellow" data-color="yellow">Amarillo<kbd>4</kbd></button>
+  </div>
+  <div class="demo-foot" data-role="foot">
+    <button type="button" class="btn btn-small" data-role="start">Empezar</button>
+    <span class="demo-hint">En la palabra de arriba, la respuesta correcta es rojo.</span>
+  </div>
+</div>
+{% elif demo == "nback" %}
+<div class="demo demo-nback" data-demo="nback">
+  <div class="demo-top">
+    <p class="demo-name">N-back de letras</p>
+    <div class="seg" role="group" aria-label="Nivel">
+      <button type="button" data-n="1">1-back</button>
+      <button type="button" data-n="2" aria-pressed="true">2-back</button>
+      <button type="button" data-n="3">3-back</button>
+    </div>
+  </div>
+  <p class="demo-ask" data-role="ask">Pulsa «Coincide» cuando la letra sea igual a la de hace 2 turnos.</p>
+  <div class="nback-stage" data-role="stage" aria-live="off">
+    <span class="nback-letter" data-role="letter">K</span>
+    <span class="nback-count" data-role="count">Turno 0 de 22</span>
+  </div>
+  <div class="demo-foot" data-role="foot">
+    <button type="button" class="btn btn-small" data-role="start">Empezar</button>
+    <button type="button" class="key key-wide" data-role="hit" disabled>Coincide <kbd>Espacio</kbd></button>
+  </div>
+</div>
+{% elif demo == "palabras" %}
+<div class="demo demo-words" data-demo="palabras">
+  <div class="demo-top">
+    <p class="demo-name">Prueba de las 12 palabras</p>
+    <p class="demo-meta" data-role="meta">40 segundos para memorizar</p>
+  </div>
+  <p class="demo-ask" data-role="ask">Memoriza la lista. Después escribe todas las palabras que recuerdes, en cualquier orden.</p>
+  <ol class="word-grid" data-role="grid">
+    <li>?</li><li>?</li><li>?</li><li>?</li><li>?</li><li>?</li><li>?</li><li>?</li><li>?</li><li>?</li><li>?</li><li>?</li>
+  </ol>
+  <div class="words-answer" data-role="answer" hidden>
+    <label for="words-input">Escribe las palabras separadas por espacios o comas</label>
+    <textarea id="words-input" rows="3" autocomplete="off" autocapitalize="off" spellcheck="false"></textarea>
+  </div>
+  <div class="demo-foot" data-role="foot">
+    <button type="button" class="btn btn-small" data-role="start">Ver la lista</button>
+    <span class="demo-hint" data-role="hint">Hay dos listas distintas para que puedas repetir con otra técnica.</span>
+  </div>
+</div>
+{% elif demo == "pomodoro" %}
+<div class="demo demo-pomo" data-demo="pomodoro">
+  <div class="demo-top">
+    <p class="demo-name">Temporizador Pomodoro</p>
+    <div class="seg" role="group" aria-label="Duración">
+      <button type="button" data-work="25" data-rest="5" aria-pressed="true">25 / 5</button>
+      <button type="button" data-work="50" data-rest="10">50 / 10</button>
+    </div>
+  </div>
+  <div class="pomo-face">
+    <p class="pomo-phase" data-role="phase">Trabajo</p>
+    <p class="pomo-time" data-role="time">25:00</p>
+    <ol class="pomo-dots" data-role="dots" aria-label="Pomodoros completados">
+      <li></li><li></li><li></li><li></li>
+    </ol>
+  </div>
+  <div class="demo-foot" data-role="foot">
+    <button type="button" class="btn btn-small" data-role="start">Empezar</button>
+    <button type="button" class="key key-wide" data-role="reset">Reiniciar</button>
+    <span class="demo-hint">Tras cuatro pomodoros toca un descanso largo: 20 minutos con 25/5 y 30 con 50/10. Suena un aviso al cambiar de fase.</span>
+  </div>
+</div>
+{% elif demo == "respiracion" %}
+<div class="demo demo-breath" data-demo="respiracion">
+  <div class="demo-top">
+    <p class="demo-name">Respira conmigo</p>
+    <div class="seg" role="group" aria-label="Duración">
+      <button type="button" data-min="1" aria-pressed="true">1 min</button>
+      <button type="button" data-min="3">3 min</button>
+      <button type="button" data-min="5">5 min</button>
+    </div>
+  </div>
+  <div class="breath-stage">
+    <div class="breath-ring" data-role="ring"></div>
+    <p class="breath-word" data-role="word">Listo</p>
+  </div>
+  <div class="demo-foot" data-role="foot">
+    <button type="button" class="btn btn-small" data-role="start">Empezar</button>
+    <span class="demo-hint" data-role="hint">Inspira 4 segundos, suelta el aire 6. Sigue el círculo.</span>
+  </div>
+</div>
+{% endif %}
