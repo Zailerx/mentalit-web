@@ -24,7 +24,7 @@
 <link rel="apple-touch-icon" href="{{ u('img/icon-180.png') }}">
 <link rel="preload" href="{{ u('assets/fonts/fredoka-latin-wght-normal.woff2') }}" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="{{ u('assets/fonts/nunito-latin-wght-normal.woff2') }}" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="{{ u('assets/site.css') }}">
+<link rel="stylesheet" href="{{ u('assets/site.css') }}?v={{ v_css }}">
 {% block schema %}{% endblock %}
 {%- if not bare %}
 </head>
@@ -70,7 +70,7 @@
 </footer>
 
 {% block sticky %}{% endblock %}
-<script src="{{ u('assets/site.js') }}" defer></script>
+<script src="{{ u('assets/site.js') }}?v={{ v_js }}" defer></script>
 {%- if not bare %}
 </body>
 </html>

@@ -8,6 +8,7 @@ Uso:
 Para añadir una guía: crea contenido/guias/<slug>.md con su cabecera (ver las existentes)
 y vuelve a ejecutar el script. El sitemap, el índice de guías y la portada se actualizan solos.
 """
+import hashlib
 import json
 import math
 import re
@@ -121,6 +122,9 @@ def load_guides(env, folder="guias"):
 def main():
     env = Environment(loader=FileSystemLoader(ROOT / "plantillas"),
                       autoescape=select_autoescape(["html"]))
+    def short_hash(rel):
+        return hashlib.md5((ROOT / "static" / rel).read_bytes()).hexdigest()[:10]
+    env.globals.update(v_css=short_hash("assets/site.css"), v_js=short_hash("assets/site.js"))
     env.globals.update(c=CONFIG, ctas=CTAS, site=SITE, preview=PREVIEW, fecha_larga=fecha_larga,
                        hoy=date.today().isoformat())
 

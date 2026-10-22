@@ -398,8 +398,11 @@
         set("shown", times[times.length - 1] + " ms", "Toca para el siguiente intento.");
       }
     }
-    pad.addEventListener("pointerdown", function (e) { if (e.button > 0) return; e.preventDefault(); press(); });
-    pad.addEventListener("click", function (e) { if (e.detail === 0) press(); });
+    var lastPointer = -1e9;
+    pad.addEventListener("pointerdown", function (e) { if (e.button > 0) return; lastPointer = performance.now(); e.preventDefault(); press(); });
+    // El clic que llega después de un toque o de un clic de ratón ya se ha contado en pointerdown:
+    // solo se atiende el clic sin puntero (tecla Intro con el botón enfocado).
+    pad.addEventListener("click", function () { if (performance.now() - lastPointer > 1000) press(); });
     document.addEventListener("keydown", function (e) {
       if ((e.code === "Space" || e.key === " ") && (state !== "idle" || document.activeElement === pad)) {
         var tag = (document.activeElement && document.activeElement.tagName) || "";

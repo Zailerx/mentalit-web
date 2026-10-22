@@ -36,6 +36,7 @@
 
 *,*::before,*::after{box-sizing:border-box}
 [hidden]{display:none!important}
+button,a,input{touch-action:manipulation}
 html{-webkit-text-size-adjust:100%;scroll-padding-top:84px}
 body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:1.0625rem;line-height:1.65;font-weight:450;-webkit-font-smoothing:antialiased}
 img{max-width:100%;height:auto;display:block}
