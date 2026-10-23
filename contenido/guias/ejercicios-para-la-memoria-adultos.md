@@ -94,6 +94,8 @@ La actividad física regular, mantener la vida social y controlar el estrés tam
 
 Entre 10 y 15 minutos al día son suficientes. Lo importante es la constancia y variar los ejercicios: si siempre haces el mismo, mejorarás en ese ejercicio y poco más.
 
+Si buscas actividades para un familiar de más edad, tienes [ejercicios de memoria para personas mayores](../ejercicios-memoria-personas-mayores/) con soluciones y una rutina semanal.
+
 ## Cuándo consultar con un médico
 
 Olvidar dónde has dejado las gafas o el nombre de un actor es normal a cualquier edad. Consulta con tu médico si los olvidos empiezan a afectar a tu vida diaria: repetir las mismas preguntas, perderte en sitios conocidos, tener problemas para seguir una conversación o que alguien cercano te diga que te nota distinto. Estos ejercicios no sustituyen una valoración profesional.
