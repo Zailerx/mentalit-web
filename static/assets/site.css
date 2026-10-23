@@ -366,3 +366,24 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .qa-sol summary{cursor:pointer;font-weight:800;font-size:.9rem;color:var(--violet)}
 .qa-sol p{margin-top:6px;font-weight:700}
 @media (max-width:640px){.pair-row{grid-template-columns:minmax(0,1fr)}.pair-row em{grid-column:1}}
+
+/* Sudoku */
+.sdk{display:grid;grid-template-columns:repeat(var(--n),1fr);width:min(100%,calc(var(--n) * 58px));margin:16px auto 0;
+  border:3px solid var(--ink);border-radius:12px;overflow:hidden;background:var(--surface)}
+.sdk-c{aspect-ratio:1;font:inherit;font-weight:850;font-size:clamp(1.15rem,5.5vw,1.6rem);color:var(--violet);background:var(--surface);
+  border:0;border-right:1px solid var(--line);border-bottom:1px solid var(--line);padding:0;cursor:pointer;
+  font-variant-numeric:tabular-nums;-webkit-tap-highlight-color:transparent}
+.sdk-c.lc{border-right:0} .sdk-c.lr{border-bottom:0}
+.sdk-c.br{border-right:3px solid var(--ink)}
+.sdk-c.bb{border-bottom:3px solid var(--ink)}
+.sdk-c.given{color:var(--ink);cursor:default}
+.sdk-c.peer{background:var(--surface-2)}
+.sdk-c.same{background:color-mix(in srgb,var(--violet) 16%,var(--surface))}
+.sdk-c.sel{background:color-mix(in srgb,var(--violet) 30%,var(--surface));outline:none}
+.sdk-c:focus-visible{outline:3px solid var(--violet);outline-offset:-3px}
+.sdk-c.bad{color:var(--bad);background:color-mix(in srgb,var(--bad) 14%,var(--surface))}
+.sdk-c.hinted{color:var(--ok)}
+.is-solved .sdk{border-color:var(--ok)}
+.is-solved .sdk-pad{display:none}
+.sdk-pad{display:grid;grid-template-columns:repeat(var(--k),1fr);gap:6px;width:min(100%,calc(var(--k) * 58px));margin:14px auto 4px}
+.sdk-pad .key{padding:12px 0;font-size:1.15rem}

@@ -50,6 +50,7 @@ Bloques que se abren con `:::nombre` y se cierran con `:::` (cada uno en su prop
 - `:::parejas 60` una pareja por línea (`gato = reloj`); se memorizan y luego se completa la segunda palabra.
 - `:::numeros` una serie por línea (`4 7 2`); se muestran de una en una y se escriben en orden o al revés.
 - `:::preguntas` una por línea (`Pregunta = respuesta`); el lector escribe y comprueba, o abre la respuesta.
+- `:::sudoku` sudoku jugable de 4×4 o 6×6: una fila por línea, números separados por espacios y `.` en las casillas vacías. Al generar la web se comprueba que tenga una única solución (si no, da error). Para obtener uno nuevo: `python build.py --sudoku 4` o `python build.py --sudoku 6`.
 
 Los bloques `recordar`, `parejas`, `numeros` y `preguntas` pueden ir dentro de un `:::ejercicio`.
 

@@ -73,18 +73,113 @@ def page_url(path, depth):
 #   :::parejas 60             una pareja por línea: «gato = reloj»
 #   :::numeros                una serie por línea: «4 7 2»
 #   :::preguntas              una por línea: «Pregunta = respuesta»
+#   :::sudoku                 sudoku 4×4 o 6×6, una fila por línea, «.» = casilla vacía
 #   :::                       cierra el bloque abierto
 # ---------------------------------------------------------------------------
 CONTAINERS = {"ejercicio", "solucion"}
-LEAVES = {"recordar", "parejas", "numeros", "preguntas"}
+LEAVES = {"recordar", "parejas", "numeros", "preguntas", "sudoku"}
 
 
 def esc(t):
     return htmlmod.escape(t.strip(), quote=True)
 
 
+SUDOKU_BOX = {4: (2, 2), 6: (2, 3)}
+
+
+def sudoku_count(grid, n, bh, bw, limit=2):
+    """Cuenta soluciones (hasta 'limit'). grid: lista de n*n enteros, 0 = vacía."""
+    g = grid[:]
+    sols = []
+
+    def ok(i, v):
+        r, c = divmod(i, n)
+        if any(g[r * n + k] == v for k in range(n)) or any(g[k * n + c] == v for k in range(n)):
+            return False
+        r0, c0 = r - r % bh, c - c % bw
+        return not any(g[(r0 + a) * n + c0 + b] == v for a in range(bh) for b in range(bw))
+
+    def rec():
+        if len(sols) >= limit:
+            return
+        try:
+            i = g.index(0)
+        except ValueError:
+            sols.append(g[:])
+            return
+        for v in range(1, n + 1):
+            if ok(i, v):
+                g[i] = v
+                rec()
+                g[i] = 0
+    rec()
+    return sols
+
+
+def sudoku_generate(n=6, clues=None, seed=None):
+    """Genera un sudoku con solución única (para usar desde la línea de comandos)."""
+    import random
+    rnd = random.Random(seed)
+    bh, bw = SUDOKU_BOX[n]
+    base = [[(bw * (r % bh) + r // bh + c) % n + 1 for c in range(n)] for r in range(n)]
+    perm = list(range(1, n + 1)); rnd.shuffle(perm)
+    sol = [perm[v - 1] for row in base for v in row]
+    cells = list(range(n * n)); rnd.shuffle(cells)
+    puzzle = sol[:]
+    target = clues or (6 if n == 4 else 14)
+    for i in cells:
+        if sum(1 for v in puzzle if v) <= target:
+            break
+        keep = puzzle[i]; puzzle[i] = 0
+        if len(sudoku_count(puzzle, n, bh, bw)) != 1:
+            puzzle[i] = keep
+    return "\n".join(" ".join(str(v) if v else "." for v in puzzle[r * n:(r + 1) * n]) for r in range(n))
+
+
+def render_sudoku(lines):
+    rows = [re.findall(r"[0-9.]", l) for l in lines]
+    n = len(rows)
+    if n not in SUDOKU_BOX or any(len(r) != n for r in rows):
+        raise ValueError("El sudoku debe ser de 4×4 o 6×6, una fila por línea")
+    grid = [0 if x == "." else int(x) for r in rows for x in r]
+    bh, bw = SUDOKU_BOX[n]
+    sols = sudoku_count(grid, n, bh, bw)
+    if len(sols) != 1:
+        raise ValueError(f"El sudoku tiene {len(sols)} soluciones; debe tener exactamente una")
+    sol = "".join(map(str, sols[0]))
+    cells = []
+    for i, v in enumerate(grid):
+        r, c = divmod(i, n)
+        cls = ["sdk-c"]
+        if (c + 1) % bw == 0 and c < n - 1: cls.append("br")
+        if (r + 1) % bh == 0 and r < n - 1: cls.append("bb")
+        if c == n - 1: cls.append("lc")
+        if r == n - 1: cls.append("lr")
+        if v:
+            cls.append("given")
+            cells.append(f'<button type="button" class="{" ".join(cls)}" data-i="{i}" aria-disabled="true" aria-label="Fila {r + 1}, columna {c + 1}: {v}">{v}</button>')
+        else:
+            cells.append(f'<button type="button" class="{" ".join(cls)}" data-i="{i}" aria-label="Fila {r + 1}, columna {c + 1}: vacía"></button>')
+    keys = "".join(f'<button type="button" class="key" data-num="{k}">{k}</button>' for k in range(1, n + 1))
+    keys += '<button type="button" class="key" data-num="0" aria-label="Borrar">⌫</button>'
+    empty = sum(1 for v in grid if not v)
+    rule = f"Rellena la cuadrícula para que cada fila, cada columna y cada bloque de {bh}×{bw} tenga los números del 1 al {n}, sin repetir."
+    return (f'<div class="demo ix ix-sudoku" data-demo="sudoku" data-n="{n}" data-bh="{bh}" data-bw="{bw}" data-sol="{sol}">'
+            f'<div class="demo-top"><p class="demo-name">Sudoku {n}×{n}</p>'
+            f'<p class="demo-meta" data-role="meta">{empty} casillas vacías</p></div>'
+            f'<p class="demo-ask">{rule}</p>'
+            f'<div class="sdk sdk-{n}" data-role="board" style="--n:{n}">{"".join(cells)}</div>'
+            f'<div class="sdk-pad" data-role="pad" style="--k:{n + 1}">{keys}</div>'
+            f'<p class="ix-feedback" data-role="feedback" aria-live="polite" hidden></p>'
+            f'<div class="demo-foot" data-role="foot"><button type="button" class="btn btn-small" data-act="hint">Pista</button>'
+            f'<button type="button" class="key key-wide" data-act="reset">Borrar todo</button>'
+            f'<span class="demo-hint">Toca una casilla vacía y después el número. Si no es el correcto, se marcará en rojo.</span></div></div>')
+
+
 def render_leaf(kind, arg, lines):
     lines = [l.strip() for l in lines if l.strip()]
+    if kind == "sudoku":
+        return render_sudoku(lines)
     if kind == "recordar":
         words = [w.strip() for w in " ".join(lines).split(",") if w.strip()]
         secs = int(arg or 40)
@@ -310,4 +405,9 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    if "--sudoku" in sys.argv:
+        # Genera un sudoku con solución única: python build.py --sudoku 6
+        size = int(sys.argv[sys.argv.index("--sudoku") + 1]) if len(sys.argv) > sys.argv.index("--sudoku") + 1 else 6
+        print(sudoku_generate(size))
+    else:
+        main()

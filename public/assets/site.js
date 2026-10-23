@@ -781,9 +781,101 @@
     });
   }
 
+  function sudoku(root) {
+    var n = +root.getAttribute("data-n"), bh = +root.getAttribute("data-bh"), bw = +root.getAttribute("data-bw");
+    var sol = root.getAttribute("data-sol"), board = $(root, "board"), pad = $(root, "pad"), meta = $(root, "meta");
+    var cells = Array.prototype.slice.call(board.children), sel = -1, mistakes = 0, hints = 0, t0 = 0, done = false;
+    function rc(i) { return [Math.floor(i / n), i % n]; }
+    function sameUnit(a, b) {
+      var A = rc(a), B = rc(b);
+      return A[0] === B[0] || A[1] === B[1] ||
+        (Math.floor(A[0] / bh) === Math.floor(B[0] / bh) && Math.floor(A[1] / bw) === Math.floor(B[1] / bw));
+    }
+    function open() { return cells.filter(function (c) { return !c.classList.contains("given") && c.textContent !== sol[+c.getAttribute("data-i")]; }).length; }
+    function paint() {
+      var v = sel >= 0 ? cells[sel].textContent : "";
+      cells.forEach(function (c, i) {
+        c.classList.toggle("sel", i === sel);
+        c.classList.toggle("peer", sel >= 0 && i !== sel && sameUnit(i, sel));
+        c.classList.toggle("same", !!v && i !== sel && c.textContent === v);
+      });
+      var left = open();
+      meta.textContent = left ? left + (left === 1 ? " casilla" : " casillas") + " por resolver" : "¡Completado!";
+    }
+    function select(i) {
+      if (done) return;
+      sel = i; paint();
+    }
+    function put(num) {
+      if (done || sel < 0) return;
+      var c = cells[sel];
+      if (c.classList.contains("given") || c.classList.contains("fixed")) return;
+      if (!t0) t0 = Date.now();
+      c.classList.remove("bad", "ok");
+      if (!num) { c.textContent = ""; c.setAttribute("aria-label", c.getAttribute("aria-label").replace(/:.*$/, ": vacía")); paint(); return; }
+      c.textContent = String(num);
+      c.setAttribute("aria-label", c.getAttribute("aria-label").replace(/:.*$/, ": " + num));
+      if (String(num) === sol[sel]) { c.classList.add("ok", "fixed"); }
+      else { c.classList.add("bad"); mistakes++; }
+      paint();
+      if (!open()) finish();
+    }
+    function finish() {
+      done = true; sel = -1; paint(); root.classList.add("is-solved");
+      var secs = t0 ? Math.round((Date.now() - t0) / 1000) : 0;
+      var time = secs >= 60 ? Math.floor(secs / 60) + " min " + (secs % 60) + " s" : secs + " s";
+      feedback(root, "¡Resuelto en " + time + "! " +
+        (mistakes ? "Te has equivocado " + mistakes + (mistakes === 1 ? " vez" : " veces") : "Sin ningún error") +
+        (hints ? " y has usado " + hints + (hints === 1 ? " pista." : " pistas.") : "."));
+    }
+    function hint() {
+      if (done) return;
+      var i = sel >= 0 && cells[sel].textContent !== sol[sel] && !cells[sel].classList.contains("given") ? sel : -1;
+      if (i < 0) for (var k = 0; k < cells.length; k++) {
+        if (!cells[k].classList.contains("given") && cells[k].textContent !== sol[k]) { i = k; break; }
+      }
+      if (i < 0) return;
+      hints++; sel = i; put(+sol[i]); cells[i].classList.add("hinted");
+    }
+    function reset() {
+      cells.forEach(function (c) {
+        if (c.classList.contains("given")) return;
+        c.textContent = ""; c.className = c.className.replace(/\b(ok|bad|fixed|hinted)\b/g, "").replace(/\s+/g, " ").trim();
+      });
+      sel = -1; mistakes = 0; hints = 0; t0 = 0; done = false;
+      root.classList.remove("is-solved"); $(root, "feedback").hidden = true; paint();
+    }
+    board.addEventListener("click", function (e) {
+      var c = e.target.closest(".sdk-c"); if (!c) return;
+      select(+c.getAttribute("data-i"));
+    });
+    pad.addEventListener("click", function (e) {
+      var b = e.target.closest("button[data-num]"); if (!b) return;
+      put(+b.getAttribute("data-num"));
+    });
+    root.addEventListener("click", function (e) {
+      var b = e.target.closest("button[data-act]"); if (!b) return;
+      var a = b.getAttribute("data-act");
+      if (a === "hint") hint(); else if (a === "reset") reset();
+    });
+    board.addEventListener("keydown", function (e) {
+      if (sel < 0) return;
+      var k = e.key, r = rc(sel);
+      if (/^[1-9]$/.test(k) && +k <= n) { put(+k); e.preventDefault(); }
+      else if (k === "Backspace" || k === "Delete" || k === "0") { put(0); e.preventDefault(); }
+      else {
+        var d = { ArrowUp: [-1, 0], ArrowDown: [1, 0], ArrowLeft: [0, -1], ArrowRight: [0, 1] }[k];
+        if (!d) return;
+        var nr = (r[0] + d[0] + n) % n, nc = (r[1] + d[1] + n) % n;
+        select(nr * n + nc); cells[sel].focus(); e.preventDefault();
+      }
+    });
+    paint();
+  }
+
   var DEMOS = { stroop: stroop, nback: nback, palabras: palabras, pomodoro: pomodoro, respiracion: respiracion,
     reaccion: reaccion, memoria: memoria, agilidad: agilidad, series: series,
-    recordar: recordar, parejas: parejas, numeros: numeros, preguntas: preguntas };
+    recordar: recordar, parejas: parejas, numeros: numeros, preguntas: preguntas, sudoku: sudoku };
   document.querySelectorAll("[data-demo]").forEach(function (el) {
     var fn = DEMOS[el.getAttribute("data-demo")];
     if (fn) { try { fn(el); } catch (e) { /* una demo rota no debe romper la página */ } }
