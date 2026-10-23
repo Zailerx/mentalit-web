@@ -27,38 +27,59 @@ Tienes 40 segundos para memorizar la lista. Después escribe las que recuerdes, 
 
 Si prefieres algo más visual, el [test de memoria visual](../../herramientas/test-de-memoria/) te pide recordar casillas iluminadas en una cuadrícula.
 
+Cada ejercicio se puede hacer aquí mismo, en la pantalla, o en papel. Las soluciones están ocultas: ábrelas solo cuando hayas terminado.
+
+:::ejercicio 3 minutos
+
 ## 1. La lista de la compra por grupos
 
-Lee esta lista una vez, despacio:
+Pulsa Empezar y memoriza la lista. Un truco: antes de que se oculte, ordénala mentalmente por grupos, como si fueras por los pasillos del supermercado.
 
-*manzanas, lejía, pan, plátanos, yogures, servilletas, tomates, queso, esponjas, galletas, leche, peras*
+:::recordar 40
+manzanas, lejía, pan, plátanos, yogures, servilletas, tomates, queso, esponjas, galletas, leche, peras
+:::
 
-Ahora tápala y ordénala mentalmente por grupos antes de intentar recordarla: **fruta y verdura**, **lácteos**, **panadería** y **limpieza**. Escribe todo lo que recuerdes.
+:::solucion
+Los cuatro grupos son **fruta y verdura** (manzanas, plátanos, tomates, peras), **lácteos** (yogures, queso, leche), **panadería** (pan, galletas) y **limpieza** (lejía, servilletas, esponjas). Doce productos sueltos cuestan; cuatro grupos de tres son mucho más fáciles.
+:::
 
-**Solución:** fruta y verdura (manzanas, plátanos, tomates, peras), lácteos (yogures, queso, leche), panadería (pan, galletas) y limpieza (lejía, servilletas, esponjas). Doce productos sueltos cuestan; cuatro grupos de tres son mucho más fáciles.
+:::
+
+:::ejercicio 5 minutos
 
 ## 2. Números hacia delante y hacia atrás
 
-Pide a alguien que te lea una serie de números, uno por segundo, y repítela. Luego intenta repetirla al revés.
+Verás los números de uno en uno, al ritmo de uno por segundo. Después escribe la serie. Empieza en orden y, cuando te salga bien, prueba al revés, que es bastante más difícil.
 
-| Serie | Al revés |
-|---|---|
-| 4 - 7 - 2 | 2 - 7 - 4 |
-| 8 - 1 - 5 - 3 | 3 - 5 - 1 - 8 |
-| 6 - 9 - 2 - 7 - 4 | 4 - 7 - 2 - 9 - 6 |
-| 3 - 8 - 1 - 6 - 5 - 2 | 2 - 5 - 6 - 1 - 8 - 3 |
+:::numeros
+4 7 2
+8 1 5 3
+6 9 2 7 4
+3 8 1 6 5 2
+:::
 
-Empieza por las series cortas y sube un número cuando aciertes dos veces seguidas. Si estás solo, tapa la columna de la derecha con un papel.
+En papel se hace igual: otra persona te lee la serie despacio y tú la repites. Sube un número cuando aciertes dos veces seguidas.
+
+:::
+
+:::ejercicio 3 minutos
 
 ## 3. Parejas de palabras
 
-Lee estas seis parejas durante un minuto. Imagina una escena que una las dos palabras, por ejemplo un gato durmiendo encima de un reloj.
+Memoriza estas seis parejas. Para cada una, imagina una escena que una las dos palabras, por ejemplo un gato durmiendo encima de un reloj. Cuanto más absurda sea la imagen, mejor se recuerda.
 
-*gato – reloj · río – cuchara · abuela – bicicleta · nube – zapato · tren – naranja · libro – farola*
+:::parejas 60
+gato = reloj
+río = cuchara
+abuela = bicicleta
+nube = zapato
+tren = naranja
+libro = farola
+:::
 
-Tapa la lista y completa: gato – ?, río – ?, abuela – ?, nube – ?, tren – ?, libro – ?
+:::
 
-**Solución:** reloj, cuchara, bicicleta, zapato, naranja y farola. Cuanto más absurda sea la imagen, mejor se recuerda.
+:::ejercicio 10 minutos · en familia
 
 ## 4. El juego de Kim
 
@@ -66,23 +87,35 @@ Es un clásico para jugar en familia. Una persona pone entre 8 y 12 objetos en u
 
 **Variante más difícil:** en lugar de tapar la bandeja, se quita un objeto a escondidas y hay que adivinar cuál falta.
 
+:::
+
+:::ejercicio 3 minutos
+
 ## 5. Refranes a medias
 
-Completa estos refranes. Recuperar lo que ya sabes también es memoria.
+Recuperar lo que ya sabes también es memoria. Escribe cómo termina cada refrán y pulsa Comprobar.
 
-1. A quien madruga…
-2. Más vale pájaro en mano…
-3. No por mucho madrugar…
-4. En casa del herrero…
-5. Cría cuervos…
+:::preguntas
+A quien madruga… = Dios le ayuda
+Más vale pájaro en mano… = que ciento volando
+No por mucho madrugar… = amanece más temprano
+En casa del herrero… = cuchillo de palo
+Cría cuervos… = y te sacarán los ojos
+:::
 
-**Soluciones:** 1) Dios le ayuda. 2) que ciento volando. 3) amanece más temprano. 4) cuchillo de palo. 5) y te sacarán los ojos.
+Para hacerlo más difícil, intenta escribir en un papel cinco refranes más que empiecen por «Más vale».
 
-Para hacerlo más difícil, intenta escribir cinco refranes más que empiecen por «Más vale».
+:::
+
+:::ejercicio 2 minutos
 
 ## 6. Un minuto de palabras
 
 Pon un reloj y di o escribe, en un minuto, todos los animales que se te ocurran. Otro día, palabras que empiecen por P. Otro, nombres de pueblos o ciudades de tu provincia. Apunta cuántas dices cada vez: verás que mejoras al repetir el mismo tipo de prueba.
+
+:::
+
+:::ejercicio 5 minutos
 
 ## 7. Repasa el día de ayer
 
@@ -95,25 +128,41 @@ Antes de dormir o con el café de la mañana, responde por escrito:
 
 Al principio saldrán respuestas generales. Con unas semanas de práctica te fijarás más en los detalles durante el día, porque sabrás que después los vas a buscar.
 
+:::
+
 {{cta memoria}}
+
+:::ejercicio 3 minutos
 
 ## 8. Las cuentas de la compra
 
-El cálculo de cabeza obliga a mantener números en la memoria mientras operas con ellos.
+El cálculo de cabeza obliga a mantener números en la memoria mientras operas con ellos. Resuélvelas sin papel.
 
-1. Compras pan por 1,20 € y leche por 0,95 €. Pagas con 5 €. ¿Cuánto te devuelven?
-2. Tres paquetes de café a 2,50 € cada uno. ¿Cuánto pagas?
-3. Una camisa de 30 € con un 20 % de descuento. ¿Cuánto cuesta?
+:::preguntas
+Compras pan por 1,20 € y leche por 0,95 €. Pagas con 5 €. ¿Cuánto te devuelven? = 2,85 €
+Tres paquetes de café a 2,50 € cada uno. ¿Cuánto pagas? = 7,50 €
+Una camisa de 30 € con un 20 % de descuento. ¿Cuánto cuesta? = 24 €
+:::
 
-**Soluciones:** 1) 2,85 €. 2) 7,50 €. 3) 24 €. Si te apetece seguir, el [test de agilidad mental](../../herramientas/test-agilidad-mental/) te propone operaciones durante 60 segundos.
+Si te apetece seguir, el [test de agilidad mental](../../herramientas/test-agilidad-mental/) te propone operaciones durante 60 segundos.
+
+:::
+
+:::ejercicio 15 minutos · en familia
 
 ## 9. Recuerdos con fotos
 
 Elige una foto antigua, de una boda, un viaje o la calle donde creciste. Cuenta todo lo que recuerdes: quién está, qué año era, qué pasó ese día, qué se comió. Si lo haces con un nieto o un hijo, que te haga preguntas. Es un ejercicio de memoria que además da conversación.
 
+:::
+
+:::ejercicio 5 minutos
+
 ## 10. El recorrido de memoria
 
 Cierra los ojos y recorre mentalmente un sitio que conozcas bien, por ejemplo tu casa de la infancia o el camino al mercado. Describe en orden lo que ves: la puerta, el portal, la tienda de la esquina… Cuando lo domines, úsalo para recordar listas colocando cada cosa en un punto del recorrido. Es el método que se conoce como palacio de la memoria y lo explicamos con más detalle en los [ejercicios para la memoria en adultos](../ejercicios-para-la-memoria-adultos/).
+
+:::
 
 ## Rutina semanal de 15 minutos
 

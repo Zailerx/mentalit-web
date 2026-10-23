@@ -40,6 +40,19 @@ y abre http://localhost:8000.
    - Enlaces a otras guías con `../slug-de-la-guia/` y a herramientas con `../../herramientas/slug/`.
 3. Ejecuta `python build.py`. La portada, el índice y el sitemap se actualizan solos.
 
+## Ejercicios interactivos dentro de las guías
+
+Bloques que se abren con `:::nombre` y se cierran con `:::` (cada uno en su propia línea, con líneas en blanco alrededor):
+
+- `:::ejercicio 3 minutos` … `:::` tarjeta de ejercicio. Dentro va Markdown normal (título `##`, texto, listas…).
+- `:::solucion` … `:::` solución oculta tras «Ver solución».
+- `:::recordar 40` lista de palabras separadas por comas para memorizar durante 40 s; luego se ocultan y se comprueban.
+- `:::parejas 60` una pareja por línea (`gato = reloj`); se memorizan y luego se completa la segunda palabra.
+- `:::numeros` una serie por línea (`4 7 2`); se muestran de una en una y se escriben en orden o al revés.
+- `:::preguntas` una por línea (`Pregunta = respuesta`); el lector escribe y comprueba, o abre la respuesta.
+
+Los bloques `recordar`, `parejas`, `numeros` y `preguntas` pueden ir dentro de un `:::ejercicio`.
+
 ## Cuando tengas dominio
 
 Cambia `site_url` en `config.json` (por ejemplo `https://mentalit.es`) y vuelve a generar la web. Las URL canónicas y el sitemap usan ese valor.

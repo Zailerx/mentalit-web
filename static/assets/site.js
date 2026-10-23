@@ -597,8 +597,193 @@
     });
   }
 
+  /* ---------- Piezas interactivas de las guías ---------- */
+  function norm(s) {
+    return String(s).toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "")
+      .replace(/[€%.,;:¡!¿?«»"()\-–—]/g, " ").replace(/\s+/g, " ").trim();
+  }
+  function sameAnswer(given, expected) {
+    var g = norm(given), e = norm(expected);
+    if (!g) return false;
+    var gn = parseFloat(String(given).replace(",", ".").replace(/[^\d.\-]/g, ""));
+    var en = parseFloat(String(expected).replace(",", ".").replace(/[^\d.\-]/g, ""));
+    if (!isNaN(gn) && !isNaN(en) && /\d/.test(expected)) return Math.abs(gn - en) < 0.005;
+    if (g === e) return true;
+    var ew = e.split(" "), gw = g.split(" "), hit = 0;
+    ew.forEach(function (w) { if (w.length > 2 && gw.indexOf(w) >= 0) hit++; });
+    var key = ew.filter(function (w) { return w.length > 2; }).length || 1;
+    return hit / key >= 0.6;
+  }
+  function sing(w) { return w.replace(/(es|s)$/, ""); }
+  function escHtml(t) { var d = document.createElement("div"); d.textContent = t; return d.innerHTML; }
+  function feedback(root, text) { var f = $(root, "feedback"); f.textContent = text; f.hidden = false; }
+  function countdown(root, secs, done) {
+    var meta = $(root, "meta"), left = secs, base = meta.textContent;
+    meta.textContent = left + " s";
+    var t = setInterval(function () {
+      left--; meta.textContent = left + " s";
+      if (left <= 0) { clearInterval(t); meta.textContent = base; done(); }
+    }, 1000);
+    return function () { clearInterval(t); meta.textContent = base; };
+  }
+
+  function recordar(root) {
+    var grid = $(root, "grid"), answer = $(root, "answer"), foot = $(root, "foot"), input = answer.querySelector("textarea");
+    var words = Array.prototype.map.call(grid.children, function (li) { return li.textContent; });
+    var secs = +root.getAttribute("data-secs") || 40, stop = null;
+    grid.classList.add("is-covered");
+    function setFoot(html) { foot.innerHTML = html; }
+    function study() {
+      grid.classList.remove("is-covered");
+      Array.prototype.forEach.call(grid.children, function (li) { li.className = ""; });
+      answer.hidden = true; $(root, "feedback").hidden = true; input.value = "";
+      setFoot('<button type="button" class="btn btn-small" data-act="recall">Ya las tengo</button><span class="demo-hint">Memoriza todas las palabras que puedas.</span>');
+      stop = countdown(root, secs, recall);
+    }
+    function recall() {
+      if (stop) stop();
+      grid.classList.add("is-covered"); answer.hidden = false; input.focus();
+      setFoot('<button type="button" class="btn btn-small" data-act="check">Comprobar</button>');
+    }
+    function check() {
+      var typed = norm(input.value).split(" ");
+      var hits = 0;
+      Array.prototype.forEach.call(grid.children, function (li, i) {
+        var w = norm(words[i]);
+        var ok = typed.some(function (t) { return t && (sing(t) === sing(w) || w.split(" ").length > 1 && w.split(" ").indexOf(t) >= 0); });
+        li.className = ok ? "hit" : "miss"; if (ok) hits++;
+      });
+      grid.classList.remove("is-covered"); answer.hidden = true;
+      feedback(root, "Has recordado " + hits + " de " + words.length + ". Las que faltan aparecen en gris.");
+      setFoot('<button type="button" class="btn btn-small" data-act="study">Repetir</button>');
+    }
+    root.addEventListener("click", function (e) {
+      var b = e.target.closest("button"); if (!b) return;
+      var a = b.getAttribute("data-act") || b.getAttribute("data-role");
+      if (a === "start" || a === "study") study(); else if (a === "recall") recall(); else if (a === "check") check();
+    });
+  }
+
+  function parejas(root) {
+    var list = $(root, "list"), quiz = $(root, "quiz"), foot = $(root, "foot");
+    var pairs = Array.prototype.map.call(list.children, function (li) { return [li.getAttribute("data-a"), li.getAttribute("data-b")]; });
+    var secs = +root.getAttribute("data-secs") || 60, stop = null;
+    list.classList.add("is-covered");
+    function setFoot(html) { foot.innerHTML = html; }
+    function study() {
+      list.hidden = false; list.classList.remove("is-covered"); quiz.hidden = true; $(root, "feedback").hidden = true;
+      setFoot('<button type="button" class="btn btn-small" data-act="recall">Ya las tengo</button><span class="demo-hint">Imagina una escena para cada pareja.</span>');
+      stop = countdown(root, secs, recall);
+    }
+    function recall() {
+      if (stop) stop();
+      list.hidden = true;
+      var order = shuffle(pairs.map(function (p, i) { return i; }));
+      quiz.innerHTML = order.map(function (i) {
+        return '<label class="pair-row" data-i="' + i + '"><span>' + escHtml(pairs[i][0]) + ' →</span><input autocomplete="off" autocapitalize="off" spellcheck="false"><em hidden></em></label>';
+      }).join("");
+      quiz.hidden = false; quiz.querySelector("input").focus();
+      setFoot('<button type="button" class="btn btn-small" data-act="check">Comprobar</button>');
+    }
+    function check() {
+      var hits = 0;
+      quiz.querySelectorAll(".pair-row").forEach(function (row) {
+        var p = pairs[+row.getAttribute("data-i")], inp = row.querySelector("input"), em = row.querySelector("em");
+        var ok = sameAnswer(inp.value, p[1]) || sing(norm(inp.value)) === sing(norm(p[1]));
+        row.classList.add(ok ? "ok" : "bad"); inp.disabled = true;
+        if (!ok) { em.textContent = p[1]; em.hidden = false; } else hits++;
+      });
+      feedback(root, "Has acertado " + hits + " de " + pairs.length + " parejas.");
+      setFoot('<button type="button" class="btn btn-small" data-act="study">Repetir</button>');
+    }
+    root.addEventListener("click", function (e) {
+      var b = e.target.closest("button"); if (!b) return;
+      var a = b.getAttribute("data-act") || b.getAttribute("data-role");
+      if (a === "start" || a === "study") study(); else if (a === "recall") recall(); else if (a === "check") check();
+    });
+    root.addEventListener("keydown", function (e) {
+      if (e.key !== "Enter" || e.target.tagName !== "INPUT") return;
+      e.preventDefault();
+      var inputs = Array.prototype.slice.call(quiz.querySelectorAll("input")), i = inputs.indexOf(e.target);
+      if (i < inputs.length - 1) inputs[i + 1].focus(); else check();
+    });
+  }
+
+  function numeros(root) {
+    var list = $(root, "list"), stage = $(root, "stage"), big = $(root, "big"), count = $(root, "count");
+    var answer = $(root, "answer"), input = answer.querySelector("input"), foot = $(root, "foot"), seg = root.querySelector(".seg");
+    var series = Array.prototype.map.call(list.children, function (li) { return li.textContent.split(" "); });
+    var mode = "fwd", idx = 0, ok = 0, timers = [];
+    list.hidden = true;
+    function setFoot(html) { foot.innerHTML = html; }
+    function clear() { timers.forEach(clearTimeout); timers = []; }
+    seg.addEventListener("click", function (e) {
+      var b = e.target.closest("button[data-mode]"); if (!b) return;
+      segSelect(seg, b); mode = b.getAttribute("data-mode");
+    });
+    function show() {
+      clear(); answer.hidden = true; $(root, "feedback").hidden = true; stage.hidden = false;
+      seg.querySelectorAll("button").forEach(function (b) { b.disabled = true; });
+      var s = series[idx];
+      count.textContent = "Serie " + (idx + 1) + " de " + series.length + " · " + s.length + " números";
+      big.textContent = "";
+      setFoot('<span class="demo-hint">Mira con atención…</span>');
+      s.forEach(function (d, i) {
+        timers.push(setTimeout(function () { big.textContent = d; }, 600 + i * 1000));
+        timers.push(setTimeout(function () { big.textContent = ""; }, 600 + i * 1000 + 750));
+      });
+      timers.push(setTimeout(function () {
+        big.textContent = "?"; answer.hidden = false; input.value = ""; input.focus();
+        setFoot('<button type="button" class="btn btn-small" data-act="check">Comprobar</button><span class="demo-hint">' + (mode === "rev" ? "Escríbela al revés." : "Escríbela en el mismo orden.") + '</span>');
+      }, 600 + s.length * 1000));
+    }
+    function check() {
+      var s = series[idx], target = (mode === "rev" ? s.slice().reverse() : s).join("");
+      var given = input.value.replace(/\D/g, "");
+      var right = given === target; if (right) ok++;
+      big.textContent = (mode === "rev" ? s.slice().reverse() : s).join(" ");
+      answer.hidden = true;
+      feedback(root, right ? "¡Correcto!" : "La serie era " + (mode === "rev" ? s.slice().reverse() : s).join(" - ") + ".");
+      idx++;
+      if (idx < series.length) setFoot('<button type="button" class="btn btn-small" data-act="next">Siguiente serie</button>');
+      else {
+        feedback(root, (right ? "¡Correcto! " : "") + "Has acertado " + ok + " de " + series.length + " series. Prueba ahora el otro modo.");
+        seg.querySelectorAll("button").forEach(function (b) { b.disabled = false; });
+        setFoot('<button type="button" class="btn btn-small" data-act="restart">Empezar de nuevo</button>');
+      }
+    }
+    root.addEventListener("click", function (e) {
+      var b = e.target.closest("button[data-act], button[data-role=start]"); if (!b) return;
+      var a = b.getAttribute("data-act") || "start";
+      if (a === "start" || a === "restart") { idx = 0; ok = 0; show(); }
+      else if (a === "next") show(); else if (a === "check") check();
+    });
+    input.addEventListener("keydown", function (e) { if (e.key === "Enter") { e.preventDefault(); check(); } });
+  }
+
+  function preguntas(root) {
+    root.querySelectorAll(".qa").forEach(function (li) {
+      var expected = li.getAttribute("data-answer"), det = li.querySelector(".qa-sol");
+      var row = document.createElement("div");
+      row.className = "qa-row";
+      row.innerHTML = '<input autocomplete="off" aria-label="Tu respuesta" placeholder="Tu respuesta"><button type="button" class="key key-wide">Comprobar</button><span class="qa-mark" aria-live="polite"></span>';
+      li.insertBefore(row, det);
+      var inp = row.querySelector("input"), mark = row.querySelector(".qa-mark");
+      function go() {
+        if (!inp.value.trim()) { inp.focus(); return; }
+        var ok = sameAnswer(inp.value, expected);
+        li.classList.remove("ok", "bad"); li.classList.add(ok ? "ok" : "bad");
+        mark.textContent = ok ? "¡Correcto!" : "No es eso";
+        if (ok) det.open = true;
+      }
+      row.querySelector("button").addEventListener("click", go);
+      inp.addEventListener("keydown", function (e) { if (e.key === "Enter") { e.preventDefault(); go(); } });
+    });
+  }
+
   var DEMOS = { stroop: stroop, nback: nback, palabras: palabras, pomodoro: pomodoro, respiracion: respiracion,
-    reaccion: reaccion, memoria: memoria, agilidad: agilidad, series: series };
+    reaccion: reaccion, memoria: memoria, agilidad: agilidad, series: series,
+    recordar: recordar, parejas: parejas, numeros: numeros, preguntas: preguntas };
   document.querySelectorAll("[data-demo]").forEach(function (el) {
     var fn = DEMOS[el.getAttribute("data-demo")];
     if (fn) { try { fn(el); } catch (e) { /* una demo rota no debe romper la página */ } }

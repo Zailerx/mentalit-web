@@ -9,6 +9,7 @@ Para añadir una guía: crea contenido/guias/<slug>.md con su cabecera (ver las 
 y vuelve a ejecutar el script. El sitemap, el índice de guías y la portada se actualizan solos.
 """
 import hashlib
+import html as htmlmod
 import json
 import math
 import re
@@ -63,6 +64,123 @@ def page_url(path, depth):
     return prefix + path if (prefix + path) else "./"
 
 
+# ---------------------------------------------------------------------------
+# Bloques interactivos en Markdown
+#
+#   :::ejercicio 3 min        tarjeta de ejercicio (contiene Markdown normal)
+#   :::solucion               «Ver solución» desplegable (contiene Markdown)
+#   :::recordar 40            lista para memorizar (palabras separadas por comas)
+#   :::parejas 60             una pareja por línea: «gato = reloj»
+#   :::numeros                una serie por línea: «4 7 2»
+#   :::preguntas              una por línea: «Pregunta = respuesta»
+#   :::                       cierra el bloque abierto
+# ---------------------------------------------------------------------------
+CONTAINERS = {"ejercicio", "solucion"}
+LEAVES = {"recordar", "parejas", "numeros", "preguntas"}
+
+
+def esc(t):
+    return htmlmod.escape(t.strip(), quote=True)
+
+
+def render_leaf(kind, arg, lines):
+    lines = [l.strip() for l in lines if l.strip()]
+    if kind == "recordar":
+        words = [w.strip() for w in " ".join(lines).split(",") if w.strip()]
+        secs = int(arg or 40)
+        items = "".join(f"<li>{esc(w)}</li>" for w in words)
+        return (f'<div class="demo ix ix-recall" data-demo="recordar" data-secs="{secs}">'
+                f'<div class="demo-top"><p class="demo-name">Memoriza la lista</p>'
+                f'<p class="demo-meta" data-role="meta">{len(words)} palabras · {secs} s</p></div>'
+                f'<ol class="word-grid" data-role="grid">{items}</ol>'
+                f'<div class="words-answer" data-role="answer" hidden><label>Escribe las que recuerdes, separadas por comas o espacios'
+                f'<textarea rows="3" autocomplete="off" autocapitalize="off" spellcheck="false"></textarea></label></div>'
+                f'<p class="ix-feedback" data-role="feedback" hidden></p>'
+                f'<div class="demo-foot" data-role="foot"><button type="button" class="btn btn-small" data-role="start">Empezar</button>'
+                f'<span class="demo-hint" data-role="hint">Al pulsar, tendrás {secs} segundos. Luego la lista se ocultará.</span></div></div>')
+    if kind == "parejas":
+        pairs = [tuple(x.strip() for x in l.split("=", 1)) for l in lines if "=" in l]
+        secs = int(arg or 60)
+        items = "".join(f'<li data-a="{esc(a)}" data-b="{esc(b)}"><span>{esc(a)}</span><span aria-hidden="true">→</span><span>{esc(b)}</span></li>' for a, b in pairs)
+        return (f'<div class="demo ix ix-pairs" data-demo="parejas" data-secs="{secs}">'
+                f'<div class="demo-top"><p class="demo-name">Parejas de palabras</p>'
+                f'<p class="demo-meta" data-role="meta">{len(pairs)} parejas · {secs} s</p></div>'
+                f'<ul class="pair-list" data-role="list">{items}</ul>'
+                f'<div class="pair-quiz" data-role="quiz" hidden></div>'
+                f'<p class="ix-feedback" data-role="feedback" hidden></p>'
+                f'<div class="demo-foot" data-role="foot"><button type="button" class="btn btn-small" data-role="start">Empezar</button>'
+                f'<span class="demo-hint" data-role="hint">Imagina una escena que una cada pareja. Luego tendrás que completar la segunda palabra.</span></div></div>')
+    if kind == "numeros":
+        series = [" ".join(re.findall(r"\d", l)) for l in lines]
+        series = [x for x in series if x]
+        items = "".join(f"<li>{esc(x)}</li>" for x in series)
+        return (f'<div class="demo ix ix-digits" data-demo="numeros">'
+                f'<div class="demo-top"><p class="demo-name">Series de números</p>'
+                f'<div class="seg" role="group" aria-label="Modo"><button type="button" data-mode="fwd" aria-pressed="true">En orden</button>'
+                f'<button type="button" data-mode="rev">Al revés</button></div></div>'
+                f'<ol class="digit-list" data-role="list">{items}</ol>'
+                f'<div class="digit-stage" data-role="stage" hidden><span class="digit-big" data-role="big"></span>'
+                f'<span class="digit-count" data-role="count"></span></div>'
+                f'<div class="series-answer" data-role="answer" hidden><label class="calc-label">Escribe la serie'
+                f'<input class="calc-input" inputmode="numeric" autocomplete="off" enterkeyhint="done"></label></div>'
+                f'<p class="ix-feedback" data-role="feedback" hidden></p>'
+                f'<div class="demo-foot" data-role="foot"><button type="button" class="btn btn-small" data-role="start">Empezar</button>'
+                f'<span class="demo-hint" data-role="hint">Verás los números de uno en uno. Después escríbelos en el orden elegido.</span></div></div>')
+    if kind == "preguntas":
+        qs = [tuple(x.strip() for x in l.rsplit("=", 1)) for l in lines if "=" in l]
+        items = "".join(
+            f'<li class="qa" data-answer="{esc(a)}"><p class="qa-q">{esc(q)}</p>'
+            f'<details class="qa-sol"><summary>Ver respuesta</summary><p>{esc(a)}</p></details></li>'
+            for q, a in qs)
+        return f'<ol class="ix ix-qa" data-demo="preguntas">{items}</ol>'
+    return ""
+
+
+def preprocess_blocks(text):
+    """Convierte los bloques ::: en marcadores que se sustituyen tras el Markdown."""
+    out, stack, leaf, store = [], [], None, {}
+    for line in text.split("\n"):
+        m = re.match(r"^:::\s*([a-z]+)?\s*(.*)$", line.strip()) if line.strip().startswith(":::") else None
+        if leaf is not None:
+            if m and not m.group(1):
+                key = f"IX{len(store)}"
+                store[key] = render_leaf(leaf[0], leaf[1], leaf[2])
+                out += ["", "{{" + key + "}}", ""]
+                leaf = None
+            else:
+                leaf[2].append(line)
+            continue
+        if m and m.group(1) in LEAVES:
+            leaf = (m.group(1), m.group(2).strip(), [])
+            continue
+        if m and m.group(1) in CONTAINERS:
+            stack.append(m.group(1))
+            key = f"IX{len(store)}"
+            if m.group(1) == "ejercicio":
+                meta = esc(m.group(2)) if m.group(2).strip() else ""
+                store[key] = '<section class="ex-card">' + (f'<p class="ex-meta">{meta}</p>' if meta else "")
+            else:
+                store[key] = '<details class="ex-sol"><summary>Ver solución</summary><div class="ex-sol-body">'
+            out += ["", "{{" + key + "}}", ""]
+            continue
+        if m and not m.group(1) and stack:
+            kind = stack.pop()
+            key = f"IX{len(store)}"
+            store[key] = "</section>" if kind == "ejercicio" else "</div></details>"
+            out += ["", "{{" + key + "}}", ""]
+            continue
+        out.append(line)
+    if stack or leaf:
+        raise ValueError("Bloque ::: sin cerrar")
+    return "\n".join(out), store
+
+
+def restore_blocks(html, store):
+    for key, value in store.items():
+        html = html.replace("<p>{{" + key + "}}</p>", value)
+    return html
+
+
 def render_shortcodes(html, env, depth, guia=None):
     def cta(m):
         key = m.group(1)
@@ -91,7 +209,10 @@ def load_guides(env, folder="guias"):
         slug = meta.get("slug") or f.stem
         md = markdown.Markdown(extensions=["extra", "sane_lists", "toc"],
                                extension_configs={"toc": {"permalink": False}})
-        html = md.convert(body)
+        body_md, blocks = preprocess_blocks(body)
+        html = restore_blocks(md.convert(body_md), blocks)
+        if "{{IX" in html:
+            raise ValueError(f"{f.name}: un bloque interactivo no se ha podido colocar (deja líneas en blanco alrededor)")
         words = len(re.findall(r"\w+", body))
         fuentes = []
         for item in meta.get("fuentes", []):
