@@ -51,6 +51,9 @@ Bloques que se abren con `:::nombre` y se cierran con `:::` (cada uno en su prop
 - `:::numeros` una serie por línea (`4 7 2`); se muestran de una en una y se escriben en orden o al revés.
 - `:::preguntas` una por línea (`Pregunta = respuesta`); el lector escribe y comprueba, o abre la respuesta.
 - `:::sudoku` sudoku jugable de 4×4 o 6×6: una fila por línea, números separados por espacios y `.` en las casillas vacías. Al generar la web se comprueba que tenga una única solución (si no, da error). Para obtener uno nuevo: `python build.py --sudoku 4` o `python build.py --sudoku 6`.
+- `:::rotacion 12` (y `:::` en la línea siguiente) test de rotación mental: ¿la figura está girada o es su reflejo? El número es la cantidad de figuras (12 por defecto). Al final da aciertos y compara el tiempo con giros pequeños y grandes.
+
+**Iconos de categoría.** Cada tarjeta de guía o herramienta lleva un icono según su `categoria` (plantillas/_iconos.html): Memoria, Concentración, Atención, Meditación, Cálculo mental y Lógica. Cualquier otra categoría usa un icono genérico.
 
 Los bloques `recordar`, `parejas`, `numeros` y `preguntas` pueden ir dentro de un `:::ejercicio`.
 

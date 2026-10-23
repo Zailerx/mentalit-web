@@ -1,16 +1,22 @@
 {% extends "base.html" %}
+{% import "_iconos.html" as ico %}
 {% block title %}Guías para entrenar la memoria y la concentración · Mentalit{% endblock %}
 {% block description %}Guías prácticas sobre memoria, concentración, cálculo mental y meditación, con ejercicios que puedes probar en la propia página.{% endblock %}
 {% block main %}
 <section class="wrap section guides-index">
   <nav class="crumbs" aria-label="Ruta"><a href="{{ u('') }}">Inicio</a><span aria-hidden="true">/</span><span>Guías</span></nav>
-  <h1>Guías para entrenar la mente</h1>
-  <p class="lead">Ejercicios de memoria, trucos para concentrarte y pruebas clásicas de la psicología que puedes hacer aquí mismo. Sin promesas milagrosas: solo lo que funciona y por qué.</p>
+  <div class="page-head">
+    <div class="page-copy">
+    <h1>Guías para entrenar la mente</h1>
+    <p class="lead">Ejercicios de memoria, trucos para concentrarte y pruebas clásicas de la psicología que puedes hacer aquí mismo. Sin promesas milagrosas: solo lo que funciona y por qué.</p>
+    </div>
+    {{ ico.arte(u) }}
+  </div>
   <ul class="guide-list">
     {% for g in guides %}
     <li>
       <a href="{{ u(g.path) }}">
-        <span class="guide-cat">{{ g.categoria }}</span>
+        <span class="guide-cat">{{ ico.icono(g.categoria) }}{{ g.categoria }}</span>
         <span class="guide-title">{{ g.titulo }}</span>
         <span class="guide-desc">{{ g.descripcion }}</span>
       </a>

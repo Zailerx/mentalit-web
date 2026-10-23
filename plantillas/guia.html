@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% import "_iconos.html" as ico %}
 {% block title %}{{ g.seo_titulo }}{% endblock %}
 {% block description %}{{ g.descripcion }}{% endblock %}
 {% block ogtype %}article{% endblock %}
@@ -44,7 +45,7 @@
     {% for r in relacionadas %}
     <li>
       <a href="{{ u(r.path) }}">
-        <span class="guide-cat">{{ r.categoria }}</span>
+        <span class="guide-cat">{{ ico.icono(r.categoria) }}{{ r.categoria }}</span>
         <span class="guide-title">{{ r.titulo }}</span>
         <span class="guide-desc">{{ r.descripcion }}</span>
       </a>

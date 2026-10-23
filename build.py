@@ -74,10 +74,11 @@ def page_url(path, depth):
 #   :::numeros                una serie por línea: «4 7 2»
 #   :::preguntas              una por línea: «Pregunta = respuesta»
 #   :::sudoku                 sudoku 4×4 o 6×6, una fila por línea, «.» = casilla vacía
+#   :::rotacion [rondas]      test de rotación mental (¿misma figura girada o su reflejo?); sin líneas
 #   :::                       cierra el bloque abierto
 # ---------------------------------------------------------------------------
 CONTAINERS = {"ejercicio", "solucion"}
-LEAVES = {"recordar", "parejas", "numeros", "preguntas", "sudoku"}
+LEAVES = {"recordar", "parejas", "numeros", "preguntas", "sudoku", "rotacion"}
 
 
 def esc(t):
@@ -180,6 +181,20 @@ def render_leaf(kind, arg, lines):
     lines = [l.strip() for l in lines if l.strip()]
     if kind == "sudoku":
         return render_sudoku(lines)
+    if kind == "rotacion":
+        rounds = int(arg) if arg.strip().isdigit() else 12
+        rounds = max(6, min(rounds, 30))
+        return (f'<div class="demo ix ix-rot" data-demo="rotacion" data-rounds="{rounds}">'
+                f'<div class="demo-top"><p class="demo-name">Rotación mental</p>'
+                f'<p class="demo-meta" data-role="meta">{rounds} figuras</p></div>'
+                f'<p class="demo-ask">¿La figura de la derecha es la misma que la de la izquierda, solo que girada, o es su reflejo en un espejo?</p>'
+                f'<div class="rot-stage" data-role="stage"><svg class="rot-fig" data-role="a" viewBox="-64 -64 128 128" aria-hidden="true"></svg>'
+                f'<svg class="rot-fig" data-role="b" viewBox="-64 -64 128 128" aria-hidden="true"></svg></div>'
+                f'<div class="rot-keys" data-role="keys" hidden><button type="button" class="key" data-ans="same">Igual, girada <kbd>←</kbd></button>'
+                f'<button type="button" class="key" data-ans="mirror">Es el reflejo <kbd>→</kbd></button></div>'
+                f'<p class="ix-feedback" data-role="feedback" aria-live="polite" hidden></p>'
+                f'<div class="demo-foot" data-role="foot"><button type="button" class="btn btn-small" data-role="start">Empezar</button>'
+                f'<span class="demo-hint">Responde lo más rápido que puedas sin fallar. Mediremos tus aciertos y tu tiempo.</span></div></div>')
     if kind == "recordar":
         words = [w.strip() for w in " ".join(lines).split(",") if w.strip()]
         secs = int(arg or 40)

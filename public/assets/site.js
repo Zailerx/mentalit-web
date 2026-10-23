@@ -873,9 +873,84 @@
     paint();
   }
 
+  function rotacion(root) {
+    var SHAPES = [
+      [[1,0],[2,0],[0,1],[1,1],[1,2]], [[0,0],[0,1],[0,2],[0,3],[1,3]], [[0,0],[0,1],[1,1],[1,2],[1,3]],
+      [[0,0],[1,0],[0,1],[1,1],[0,2]], [[1,0],[0,1],[1,1],[1,2],[1,3]], [[0,0],[1,0],[1,1],[1,2],[2,2],[1,3]],
+      [[0,0],[0,1],[0,2],[1,2],[2,2],[2,1],[3,1]], [[0,0],[1,0],[2,0],[2,1],[2,2],[3,2]], [[1,0],[1,1],[0,1],[1,2],[2,2],[2,3]]
+    ];
+    var total = +root.getAttribute("data-rounds") || 12, a = $(root, "a"), b = $(root, "b"), stage = $(root, "stage");
+    var keys = $(root, "keys"), foot = $(root, "foot"), meta = $(root, "meta"), baseMeta = meta.textContent;
+    var plan = [], idx = 0, t0 = 0, res = [], busy = false, running = false, NS = "http://www.w3.org/2000/svg";
+    function draw(svg, cells, angle, mirror) {
+      var C = 22, xs = cells.map(function (c) { return c[0]; }), ys = cells.map(function (c) { return c[1]; });
+      var cx = (Math.min.apply(null, xs) + Math.max.apply(null, xs) + 1) * C / 2, cy = (Math.min.apply(null, ys) + Math.max.apply(null, ys) + 1) * C / 2;
+      var g = document.createElementNS(NS, "g");
+      g.setAttribute("transform", "rotate(" + angle + ") scale(" + (mirror ? -1 : 1) + ",1)");
+      cells.forEach(function (c) {
+        var r = document.createElementNS(NS, "rect");
+        r.setAttribute("x", c[0] * C - cx + 1); r.setAttribute("y", c[1] * C - cy + 1);
+        r.setAttribute("width", C - 2); r.setAttribute("height", C - 2); r.setAttribute("rx", 4);
+        g.appendChild(r);
+      });
+      svg.textContent = ""; svg.appendChild(g);
+    }
+    function build() {
+      var deltas = [45, 90, 135, 180], p = [];
+      for (var i = 0; i < total; i++) p.push({ mirror: i % 2 === 1, delta: deltas[i % 4] });
+      return shuffle(p).map(function (r) {
+        r.shape = pick(SHAPES); r.base = pick([0, 90, 180, 270]);
+        r.angle = r.base + (Math.random() < 0.5 ? -1 : 1) * r.delta; return r;
+      });
+    }
+    function show() {
+      var r = plan[idx];
+      draw(a, r.shape, r.base, false); draw(b, r.shape, r.angle, r.mirror);
+      meta.textContent = (idx + 1) + " de " + total; busy = false; t0 = performance.now();
+    }
+    function start() {
+      plan = build(); idx = 0; res = []; running = true;
+      $(root, "feedback").hidden = true; keys.hidden = false; stage.classList.add("on");
+      foot.innerHTML = '<span class="demo-hint">← Igual · → Reflejo</span>';
+      show();
+    }
+    function answer(ans) {
+      if (!running || busy) return;
+      busy = true;
+      var r = plan[idx], ok = (ans === "mirror") === r.mirror;
+      res.push({ ok: ok, rt: performance.now() - t0, delta: r.delta });
+      flash(root, ok);
+      setTimeout(function () { idx++; if (idx < total) show(); else finish(); }, 380);
+    }
+    function avg(list) { return list.length ? list.reduce(function (s, x) { return s + x.rt; }, 0) / list.length : 0; }
+    function secs(ms) { return (ms / 1000).toFixed(1).replace(".", ",") + " s"; }
+    function finish() {
+      running = false; keys.hidden = true; stage.classList.remove("on"); meta.textContent = baseMeta;
+      var good = res.filter(function (x) { return x.ok; });
+      var small = good.filter(function (x) { return x.delta <= 90; }), big = good.filter(function (x) { return x.delta >= 135; });
+      var text = "Has acertado " + good.length + " de " + total + (good.length ? ", con un tiempo medio de " + secs(avg(good)) + "." : ".");
+      if (small.length >= 2 && big.length >= 2) {
+        text += " Con giros pequeños (45° o 90°) tardaste " + secs(avg(small)) + " de media y con giros grandes (135° o 180°), " + secs(avg(big)) + ".";
+        if (avg(big) - avg(small) >= 150) text += " Es lo habitual: cuanto más hay que girar la figura en la cabeza, más se tarda.";
+      }
+      feedback(root, text);
+      foot.innerHTML = '<button type="button" class="btn btn-small" data-role="start">Repetir</button>';
+    }
+    root.addEventListener("click", function (e) {
+      var k = e.target.closest("button[data-ans]"); if (k) { answer(k.getAttribute("data-ans")); return; }
+      if (e.target.closest("button[data-role=start]")) start();
+    });
+    document.addEventListener("keydown", function (e) {
+      if (!running || e.target.closest("input,textarea")) return;
+      if (e.key === "ArrowLeft") { e.preventDefault(); answer("same"); }
+      else if (e.key === "ArrowRight") { e.preventDefault(); answer("mirror"); }
+    });
+    draw(a, SHAPES[0], 0, false); draw(b, SHAPES[0], 90, true);
+  }
+
   var DEMOS = { stroop: stroop, nback: nback, palabras: palabras, pomodoro: pomodoro, respiracion: respiracion,
     reaccion: reaccion, memoria: memoria, agilidad: agilidad, series: series,
-    recordar: recordar, parejas: parejas, numeros: numeros, preguntas: preguntas, sudoku: sudoku };
+    recordar: recordar, parejas: parejas, numeros: numeros, preguntas: preguntas, sudoku: sudoku, rotacion: rotacion };
   document.querySelectorAll("[data-demo]").forEach(function (el) {
     var fn = DEMOS[el.getAttribute("data-demo")];
     if (fn) { try { fn(el); } catch (e) { /* una demo rota no debe romper la página */ } }
