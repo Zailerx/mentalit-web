@@ -92,7 +92,7 @@ La actividad física regular, mantener la vida social y controlar el estrés tam
 
 ## ¿Cuánto tiempo hay que dedicarle?
 
-Entre 10 y 15 minutos al día son suficientes. Lo importante es la constancia y variar los ejercicios: si siempre haces el mismo, mejorarás en ese ejercicio y poco más.
+Entre 10 y 15 minutos al día son suficientes. Lo importante es la constancia y variar los ejercicios: si siempre haces el mismo, mejorarás en ese ejercicio y poco más. Para variar, tienes 12 [juegos mentales para adultos con respuesta](../juegos-mentales-para-adultos/), de lógica, números y palabras.
 
 Si buscas actividades para un familiar de más edad, tienes [ejercicios de memoria para personas mayores](../ejercicios-memoria-personas-mayores/) con soluciones y una rutina semanal.
 
