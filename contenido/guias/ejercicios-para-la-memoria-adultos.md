@@ -45,7 +45,7 @@ Si en un repaso lo recuerdas sin esfuerzo, alarga el siguiente intervalo. Si te 
 
 Retenemos mejor pocos bloques que muchos elementos sueltos. Un número de teléfono como 6 1 7 4 5 2 3 9 8 son nueve cifras; 617 452 398 son tres bloques. Lo mismo vale para matrículas, contraseñas o el número de cuenta.
 
-**Cómo practicarlo:** cuando tengas que retener una cifra larga, divídela en grupos de tres o cuatro y busca algo conocido en cada grupo: un año, una edad, un código postal.
+**Cómo practicarlo:** cuando tengas que retener una cifra larga, divídela en grupos de tres o cuatro y busca algo conocido en cada grupo: un año, una edad, un código postal. Tienes más ejercicios de este tipo en la guía de [memoria a corto plazo](../memoria-a-corto-plazo-ejercicios/).
 
 ## 4. Construye un palacio de la memoria
 

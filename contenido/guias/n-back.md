@@ -33,7 +33,7 @@ La dificultad está en que la lista se mueve todo el rato. Tienes que mantener e
 
 ## Qué es la memoria de trabajo
 
-Es la memoria que usas para mantener información durante unos segundos mientras la manejas. La usas al hacer una cuenta de cabeza, al recordar un número mientras lo marcas o al seguir el hilo de una frase larga. Tiene una capacidad muy limitada, y por eso el N-back se vuelve difícil tan rápido al subir de nivel.
+Es la memoria que usas para mantener información durante unos segundos mientras la manejas. La usas al hacer una cuenta de cabeza, al recordar un número mientras lo marcas o al seguir el hilo de una frase larga. Tiene una capacidad muy limitada, y por eso el N-back se vuelve difícil tan rápido al subir de nivel. Si quieres empezar por algo más sencillo, prueba estos [ejercicios de memoria a corto plazo](../memoria-a-corto-plazo-ejercicios/).
 
 El ejercicio lo propuso Wayne Kirchner en 1958 para estudiar cómo cambia con la edad la capacidad de retener información que cambia rápido. Desde entonces se ha usado en miles de estudios, muchos de ellos con resonancia magnética, para observar qué zonas del cerebro se activan al usar la memoria de trabajo.
 
