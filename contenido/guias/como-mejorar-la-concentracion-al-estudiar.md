@@ -47,6 +47,8 @@ Otras formas de estudio activo:
 - Explicar el tema a alguien, o a una silla vacía.
 - Convertir un texto en un esquema sin copiar frases enteras.
 
+Si lo que más te cuesta es no perder el hilo con los apuntes, tienes ejercicios concretos en [cómo mejorar la concentración al leer](../concentracion-al-leer/).
+
 ## 7. Empieza por lo que más cuesta
 
 La concentración suele ser mayor al principio de la sesión. Aprovéchala para la asignatura difícil o los problemas nuevos, y deja para el final los repasos y las tareas mecánicas, como pasar apuntes a limpio.
