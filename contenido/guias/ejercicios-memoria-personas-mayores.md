@@ -160,7 +160,7 @@ Elige una foto antigua, de una boda, un viaje o la calle donde creciste. Cuenta 
 
 ## 10. El recorrido de memoria
 
-Cierra los ojos y recorre mentalmente un sitio que conozcas bien, por ejemplo tu casa de la infancia o el camino al mercado. Describe en orden lo que ves: la puerta, el portal, la tienda de la esquina… Cuando lo domines, úsalo para recordar listas colocando cada cosa en un punto del recorrido. Es el método que se conoce como palacio de la memoria y lo explicamos con más detalle en los [ejercicios para la memoria en adultos](../ejercicios-para-la-memoria-adultos/).
+Cierra los ojos y recorre mentalmente un sitio que conozcas bien, por ejemplo tu casa de la infancia o el camino al mercado. Describe en orden lo que ves: la puerta, el portal, la tienda de la esquina… Cuando lo domines, úsalo para recordar listas colocando cada cosa en un punto del recorrido. Es el método que se conoce como palacio de la memoria y lo explicamos paso a paso, con ejercicios, en la guía del [palacio de la memoria](../palacio-de-la-memoria/).
 
 :::
 

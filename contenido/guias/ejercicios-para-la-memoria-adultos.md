@@ -51,7 +51,7 @@ Retenemos mejor pocos bloques que muchos elementos sueltos. Un número de teléf
 
 Elige un recorrido que conozcas muy bien, por ejemplo de la puerta de tu casa hasta la cocina. Para recordar una lista, coloca cada elemento en un punto del recorrido con una imagen exagerada: un pollo gigante sentado en el felpudo, botellas de leche colgando del perchero, un saco de patatas en el sofá.
 
-Para recordar la lista, solo tienes que recorrer mentalmente tu casa. La técnica se conoce como método de los lugares y se usa desde la Antigua Grecia. Los campeones de memoria la utilizan para recordar cientos de cifras.
+Para recordar la lista, solo tienes que recorrer mentalmente tu casa. La técnica se conoce como método de los lugares y se usa desde la Antigua Grecia. Los campeones de memoria la utilizan para recordar cientos de cifras. Si quieres montarlo bien, tienes los pasos y ejercicios en la guía del [palacio de la memoria](../palacio-de-la-memoria/).
 
 ## 5. Inventa una historia
 
