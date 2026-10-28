@@ -32,6 +32,17 @@ MESES = ["enero", "febrero", "marzo", "abril", "mayo", "junio", "julio",
          "agosto", "septiembre", "octubre", "noviembre", "diciembre"]
 
 
+# Páginas legales. Al cambiar el texto de una, actualiza también su fecha aquí.
+LEGAL = [
+    {"path": "privacidad/", "archivo": "privacidad.html", "titulo": "Política de privacidad",
+     "descripcion": "Qué datos utiliza Mentalit, para qué, con qué proveedores y cómo ejercer tus derechos o eliminar tu cuenta.",
+     "actualizado": "2026-10-28"},
+    {"path": "terminos/", "archivo": "terminos.html", "titulo": "Términos de servicio",
+     "descripcion": "Condiciones de uso de Mentalit: cuenta, suscripciones, cancelación, reembolsos y derechos aplicables.",
+     "actualizado": "2026-10-05"},
+]
+
+
 def fecha_larga(iso):
     d = date.fromisoformat(iso)
     return f"{d.day} de {MESES[d.month - 1]} de {d.year}"
@@ -395,6 +406,14 @@ def main():
         write("herramientas/", env.get_template("herramientas.html").render(
             tools=tools, interactivas=interactivas, **ctx("herramientas/", 1)))
 
+    # Páginas legales (contenido en contenido/legal/*.html, sin tocar el texto)
+    for doc in LEGAL:
+        depth = 1
+        body = (ROOT / "contenido" / "legal" / doc["archivo"]).read_text(encoding="utf-8")
+        body = body.replace("{{PRIVACIDAD}}", page_url("privacidad/", depth))
+        write(doc["path"], env.get_template("legal.html").render(
+            doc={**doc, "body": body}, **ctx(doc["path"], depth)))
+
     # Portada
     write("", env.get_template("home.html").render(guides=guides, tools=tools, **ctx("", 0)))
 
@@ -408,6 +427,7 @@ def main():
     if tools:
         urls.append(("herramientas/", max(t["actualizado"] for t in tools)))
     urls += [(g["path"], g["actualizado"]) for g in guides + tools]
+    urls += [(d["path"], d["actualizado"]) for d in LEGAL]
     sm = ['<?xml version="1.0" encoding="UTF-8"?>',
           '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
     for p, lm in urls:

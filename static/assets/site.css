@@ -436,3 +436,13 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
   .art-tile.t1{left:0;top:0} .art-tile.t2{right:0;top:-4px} .art-tile.t3{right:-8px;top:72px}
   .art-tile.t4{left:-8px;top:80px} .art-tile.t5{left:70px;bottom:-12px} .art-tile.t6{right:44px;bottom:-10px}
 }
+
+/* Páginas legales */
+.legal-nav{display:flex;flex-wrap:wrap;gap:8px}
+.legal-nav a{padding:8px 14px;border-radius:999px;border:1px solid var(--line);text-decoration:none;font-weight:800;font-size:.92rem;color:var(--ink-2)}
+.legal-nav a[aria-current="page"]{background:var(--violet);border-color:var(--violet);color:#fff}
+.legal .prose section{scroll-margin-top:90px}
+.legal .prose section>*+*{margin-top:.9em}
+.legal .prose section h2{margin-top:0}
+.legal .prose section+section{margin-top:2.2em}
+.legal .prose{padding-top:24px}
