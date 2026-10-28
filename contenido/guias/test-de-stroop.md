@@ -58,6 +58,8 @@ Si te interesa la rapidez pura, sin la trampa de la palabra, prueba el [test de 
 - **Cambia la regla a mitad.** Unas rondas respondes al color y otras a la palabra. Cambiar de regla añade carga de flexibilidad.
 - **Usa otro idioma.** Si lees en otro idioma con menos soltura, el efecto suele ser menor. Es una forma curiosa de comprobar lo automática que es tu lectura en cada lengua.
 
+Si quieres más práctica de este tipo, tienes una versión con números y otros nueve retos en [ejercicios de atención y concentración para adultos](../ejercicios-atencion-concentracion-adultos/).
+
 ## Preguntas frecuentes
 
 **¿Qué significa tardar mucho en el test de Stroop?** En una versión de juego como esta, casi nada por sí solo: influye el cansancio, el dispositivo y la práctica. En un contexto clínico, el resultado lo interpreta un profesional comparándolo con tablas de referencia.
