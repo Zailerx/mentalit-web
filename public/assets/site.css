@@ -446,3 +446,6 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .legal .prose section h2{margin-top:0}
 .legal .prose section+section{margin-top:2.2em}
 .legal .prose{padding-top:24px}
+
+/* Dentro de la app: solo el contenido */
+.embebida .site-head,.embebida .site-foot,.embebida .skip,.embebida .sticky-cta,.embebida .crumbs{display:none!important}

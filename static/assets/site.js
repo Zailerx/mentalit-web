@@ -1,6 +1,8 @@
 /* Mentalit web: demos jugables y barra de descarga. Sin dependencias ni cookies. */
 (function () {
   "use strict";
+  // Dentro de la app (privacidad y términos) se ocultan la cabecera y el pie de la web.
+  try { if (window.self !== window.top) document.documentElement.classList.add("embebida"); } catch (e) { document.documentElement.classList.add("embebida"); }
   var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   function $(root, role) { return root.querySelector('[data-role="' + role + '"]'); }
   function shuffle(a) { for (var i = a.length - 1; i > 0; i--) { var j = Math.floor(Math.random() * (i + 1)); var t = a[i]; a[i] = a[j]; a[j] = t; } return a; }
