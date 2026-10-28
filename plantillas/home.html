@@ -1,12 +1,12 @@
 {% extends "base.html" %}
 {% import "_iconos.html" as ico %}
 {% block title %}Mentalit: juegos de memoria, atención y cálculo mental{% endblock %}
-{% block description %}Entrena memoria, atención, cálculo mental y lógica con {{ c.num_juegos }} juegos cortos. Incluye temporizador de foco y meditación guiada. App para iPhone y iPad.{% endblock %}
+{% block description %}Entrena memoria, atención, cálculo mental y lógica con {{ c.num_juegos }} juegos cortos. Incluye temporizador de foco y meditación guiada. App para iPhone, iPad y Android.{% endblock %}
 {% block schema %}
 <script type="application/ld+json">
 {"@context":"https://schema.org","@graph":[
  {"@type":"WebSite","name":"Mentalit","url":"{{ site }}/","inLanguage":"es-ES"},
- {"@type":"MobileApplication","name":"Mentalit - Entrena tu Mente","operatingSystem":"iOS 15.0 o posterior","applicationCategory":"HealthApplication","inLanguage":"es","url":"{{ c.app_store_url }}","offers":{"@type":"Offer","price":"0","priceCurrency":"EUR"}}
+ {"@type":"MobileApplication","name":"Mentalit - Entrena tu Mente","operatingSystem":"iOS, Android","applicationCategory":"HealthApplication","inLanguage":"es","url":"{{ c.app_store_url }}","offers":{"@type":"Offer","price":"0","priceCurrency":"EUR"}}
 ]}
 </script>
 {% endblock %}
@@ -15,9 +15,9 @@
   <div class="wrap hero-grid">
     <div class="hero-copy">
       <h1>Entrena la mente con retos de dos minutos</h1>
-      <p class="lead">Mentalit reúne {{ c.num_juegos }} juegos de memoria, atención, cálculo mental y lógica, un entrenamiento diario de cuatro retos, un temporizador para concentrarte y meditaciones cortas. Para iPhone y iPad.</p>
+      <p class="lead">Mentalit reúne {{ c.num_juegos }} juegos de memoria, atención, cálculo mental y lógica, un entrenamiento diario de cuatro retos, un temporizador para concentrarte y meditaciones cortas. Para iPhone, iPad y Android.</p>
       <div class="hero-actions">
-        <a class="btn" href="{{ c.app_store_url }}" data-cta="hero">Descargar en la App Store</a>
+        <a class="btn" href="{{ u('app/') }}?de=web" data-cta="hero">Descargar Mentalit</a>
         <a class="link-quiet" href="{{ u('guias/') }}">Leer las guías</a>
       </div>
       <p class="fine">Empiezas con un test inicial que ajusta la dificultad. Los juegos requieren suscripción.</p>
@@ -115,11 +115,11 @@
   <h2 id="preguntas">Preguntas frecuentes</h2>
   <details>
     <summary>¿Cuánto cuesta?</summary>
-    <p>La descarga, la bienvenida y el test inicial son gratis. Para usar Juegos, Hoy, Foco y Meditación necesitas una suscripción. Los precios de referencia en España son 19,99 € al año o 5,99 € a la semana. El precio exacto de tu país aparece en la App Store antes de confirmar.</p>
+    <p>La descarga, la bienvenida y el test inicial son gratis. Para usar Juegos, Hoy, Foco y Meditación necesitas una suscripción. Los precios de referencia en España son 19,99 € al año o 5,99 € a la semana. El precio exacto de tu país aparece en la App Store o en Google Play antes de confirmar.</p>
   </details>
   <details>
     <summary>¿Está para Android?</summary>
-    <p>Por ahora, Mentalit está disponible solo en iPhone y iPad, a través de la App Store.</p>
+    <p>Sí. Mentalit está en Google Play para móviles Android y en la App Store para iPhone y iPad.</p>
   </details>
   <details>
     <summary>¿Dónde se guarda mi progreso?</summary>

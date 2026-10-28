@@ -39,7 +39,11 @@
     return APP_STORE;
   }
   function playReferrer() {
-    return source ? encodeURIComponent('utm_source=' + source + '&utm_medium=bio&utm_campaign=link_bio') : '';
+    if (!source) return '';
+    // Los botones de la propia web llegan con ?de=web; los de las bios, con ?de=tiktok, etc.
+    var medium = source === 'web' ? 'website' : 'bio';
+    var campaign = source === 'web' ? 'web' : 'link_bio';
+    return encodeURIComponent('utm_source=' + source + '&utm_medium=' + medium + '&utm_campaign=' + campaign);
   }
   function playUrl() {
     var r = playReferrer();

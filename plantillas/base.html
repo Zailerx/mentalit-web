@@ -41,7 +41,7 @@
     <nav class="head-nav" aria-label="Principal">
       <a href="{{ u('herramientas/') }}"{% if path.startswith('herramientas') %} aria-current="page"{% endif %}>Herramientas</a>
       <a href="{{ u('guias/') }}"{% if path.startswith('guias') %} aria-current="page"{% endif %}>Guías</a>
-      <a class="btn btn-small" href="{{ c.app_store_url }}" data-cta="cabecera">Descargar</a>
+      <a class="btn btn-small" href="{{ u('app/') }}?de=web" data-cta="cabecera">Descargar</a>
     </nav>
   </div>
 </header>
@@ -64,6 +64,7 @@
       <a href="{{ u('herramientas/') }}">Herramientas gratis</a>
       <a href="{{ u('guias/') }}">Todas las guías</a>
       <a href="{{ c.app_store_url }}">Mentalit en la App Store</a>
+      <a href="{{ c.google_play_url }}">Mentalit en Google Play</a>
       <a href="{{ u('privacidad/') }}">Privacidad</a>
       <a href="{{ u('terminos/') }}">Términos</a>
       <span class="foot-mail">Contacto: {{ c.contacto }}</span>

@@ -4,7 +4,7 @@
   <div>
     <p class="cta-title">{{ cta.titulo }}</p>
     <p>{{ cta.texto }}</p>
-    <a class="btn" href="{{ c.app_store_url }}" data-cta="articulo">{{ cta.boton }}</a>
+    <a class="btn" href="/app/?de=web" data-cta="articulo">{{ cta.boton }}</a>
   </div>
 </aside>
 {% else %}
@@ -14,7 +14,7 @@
     <div>
       <h2 id="cta-final">{{ cta.titulo }}</h2>
       <p>{{ cta.texto }}</p>
-      <a class="btn btn-light" href="{{ c.app_store_url }}" data-cta="final">{{ cta.boton }}</a>
+      <a class="btn btn-light" href="/app/?de=web" data-cta="final">{{ cta.boton }}</a>
     </div>
   </div>
 </section>
