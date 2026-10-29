@@ -70,6 +70,8 @@ Para estudiar, combina los pomodoros con el estudio activo: dedica un pomodoro a
 
 Tienes más ideas en la guía sobre [cómo mejorar la concentración al estudiar](../como-mejorar-la-concentracion-al-estudiar/).
 
+Si trabajas en casa, en [cómo concentrarse trabajando desde casa](../concentrarse-trabajando-desde-casa/) tienes un plan de 8 pasos que combina los pomodoros con un ritual de inicio y otro de cierre.
+
 ## Preguntas frecuentes
 
 **¿Sirve para niños?** Sí, con bloques más cortos. Para niños de primaria, 10 o 15 minutos de trabajo y 5 de descanso suelen funcionar mejor.

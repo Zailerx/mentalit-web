@@ -71,6 +71,8 @@ La atención también se puede practicar. Dos opciones sencillas:
 
 Y si quieres más, tienes 10 [ejercicios de atención y concentración para adultos](../ejercicios-atencion-concentracion-adultos/) con soluciones para hacer en la propia página.
 
+Si además trabajas en remoto, tienes un plan específico en [cómo concentrarse trabajando desde casa](../concentrarse-trabajando-desde-casa/).
+
 ## Un plan para tu próxima sesión
 
 1. Deja el móvil fuera de la habitación.
