@@ -167,6 +167,8 @@ Rellena las casillas vacías con los números del 1 al 4. Cada fila, cada column
 4 . 2 .
 :::
 
+Si es tu primer sudoku, en la guía de [sudoku para principiantes](../sudoku-para-principiantes/) tienes las técnicas básicas explicadas paso a paso y más sudokus para jugar.
+
 :::
 
 ## Juegos de palabras, memoria y atención

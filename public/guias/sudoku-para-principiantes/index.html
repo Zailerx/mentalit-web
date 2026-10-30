@@ -1,0 +1,335 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Sudoku para principiantes: cómo resolverlo paso a paso</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Aprende a resolver un sudoku paso a paso con 4 técnicas básicas, ejercicios con solución y sudokus de 4×4 y 6×6 para jugar aquí mismo.">
+<link rel="canonical" href="https://mentalitapp.com/guias/sudoku-para-principiantes/">
+<meta name="apple-itunes-app" content="app-id=6817341061">
+<meta name="facebook-domain-verification" content="z3efrrbx5aguyi6grt5w4f5kbq2pfy">
+<meta name="theme-color" content="#f6f4ff" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#141029" media="(prefers-color-scheme: dark)">
+<meta property="og:site_name" content="Mentalit">
+<meta property="og:locale" content="es_ES">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Sudoku para principiantes: cómo resolverlo paso a paso">
+<meta property="og:description" content="Aprende a resolver un sudoku paso a paso con 4 técnicas básicas, ejercicios con solución y sudokus de 4×4 y 6×6 para jugar aquí mismo.">
+<meta property="og:url" content="https://mentalitapp.com/guias/sudoku-para-principiantes/">
+<meta property="og:image" content="https://mentalitapp.com/img/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../../img/icon-180.png">
+<link rel="preload" href="../../assets/fonts/fredoka-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../../assets/fonts/nunito-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../../assets/site.css?v=c747ff133b">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+ {"@type":"Article","headline":"Sudoku para principiantes: c\u00f3mo resolverlo paso a paso","description":"Aprende a resolver un sudoku paso a paso con 4 t\u00e9cnicas b\u00e1sicas, ejercicios con soluci\u00f3n y sudokus de 4\u00d74 y 6\u00d76 para jugar aqu\u00ed mismo.","inLanguage":"es-ES","datePublished":"2026-10-30","dateModified":"2026-10-30","author":{"@type":"Organization","name":"Mentalit","url":"https://mentalitapp.com/"},"publisher":{"@type":"Organization","name":"Mentalit","logo":{"@type":"ImageObject","url":"https://mentalitapp.com/img/icon-512.png"}},"mainEntityOfPage":"https://mentalitapp.com/guias/sudoku-para-principiantes/","image":"https://mentalitapp.com/img/og.png"},
+ 
+ {"@type":"BreadcrumbList","itemListElement":[
+  {"@type":"ListItem","position":1,"name":"Inicio","item":"https://mentalitapp.com/"},
+  {"@type":"ListItem","position":2,"name":"Guías","item":"https://mentalitapp.com/guias/"},
+  {"@type":"ListItem","position":3,"name":"Sudoku para principiantes: c\u00f3mo resolverlo paso a paso","item":"https://mentalitapp.com/guias/sudoku-para-principiantes/"}]}
+]}
+</script>
+
+</head>
+<body class="">
+<a class="skip" href="#contenido">Saltar al contenido</a>
+<header class="site-head">
+  <div class="wrap head-row">
+    <a class="brand" href="../../">
+      <img src="../../img/icon-96.webp" width="36" height="36" alt="">
+      <span>Mentalit</span>
+    </a>
+    <nav class="head-nav" aria-label="Principal">
+      <a href="../../herramientas/">Herramientas</a>
+      <a href="../../guias/" aria-current="page">Guías</a>
+      <a class="btn btn-small" href="../../app/?de=web" data-cta="cabecera">Descargar</a>
+    </nav>
+  </div>
+</header>
+
+<main id="contenido">
+
+<article class="article">
+  <header class="wrap article-head">
+    <nav class="crumbs" aria-label="Ruta">
+      <a href="../../">Inicio</a><span aria-hidden="true">/</span><a href="../../guias/">Guías</a><span aria-hidden="true">/</span><span>Lógica</span>
+    </nav>
+    <h1>Sudoku para principiantes: cómo resolverlo paso a paso</h1>
+    <p class="lead">Para resolver un sudoku no hace falta saber matemáticas ni adivinar: se trata de descartar. Buscas la casilla donde solo cabe un número, o el número que solo cabe en una casilla, y repites. Abajo tienes las 4 técnicas básicas con ejercicios para practicarlas y tres sudokus jugables, de 4×4 y 6×6, para empezar sin agobios.</p>
+    <p class="byline">Equipo de Mentalit. Actualizado el <time datetime="2026-10-30">30 de octubre de 2026</time>. 8 min de lectura.</p>
+  </header>
+  <div class="wrap prose">
+    <p>Si nunca has terminado un sudoku, empieza por los pequeños. Un 4×4 o un 6×6 usa exactamente las mismas reglas y técnicas que el 9×9 de los periódicos, pero se resuelve en unos minutos y ves enseguida por qué funciona cada paso.</p>
+<h2 id="las-reglas-del-sudoku-en-30-segundos">Las reglas del sudoku en 30 segundos</h2>
+<p>Un sudoku clásico es una cuadrícula de 9×9 dividida en nueve bloques de 3×3. Algunas casillas ya traen un número: son las pistas. Tienes que rellenar el resto con los números del 1 al 9 de forma que:</p>
+<ol>
+<li>Cada <strong>fila</strong> tenga los nueve números, sin repetir.</li>
+<li>Cada <strong>columna</strong> tenga los nueve números, sin repetir.</li>
+<li>Cada <strong>bloque</strong> de 3×3 tenga los nueve números, sin repetir.</li>
+</ol>
+<p>Eso es todo. Los números no se suman ni se restan: podrían ser letras o colores. Un sudoku bien hecho tiene una sola solución, y siempre se puede llegar a ella razonando, sin probar a ciegas.</p>
+<p>En los sudokus pequeños cambia solo el tamaño: en el 4×4 usas del 1 al 4 y los bloques son de 2×2; en el 6×6, del 1 al 6 y bloques de 2×3.</p>
+<h2 id="tecnica-1-el-ultimo-hueco">Técnica 1: el último hueco</h2>
+<p>Es la más sencilla. Si a una fila, columna o bloque solo le falta un número, ese número va en la casilla vacía. Parece obvio, pero al principio se escapan muchos, sobre todo al final de la partida, cuando la cuadrícula está casi llena.</p>
+<section class="ex-card"><p class="ex-meta">2 minutos</p>
+<h2 id="encuentra-el-numero-que-falta">Encuentra el número que falta</h2>
+<p>Cada línea es una fila de un sudoku de 9×9. El punto es la casilla vacía. Escribe qué número va en ella.</p>
+<ol class="ix ix-qa" data-demo="preguntas"><li class="qa" data-answer="4"><p class="qa-q">5 3 · 7 9 1 8 2 6</p><details class="qa-sol"><summary>Ver respuesta</summary><p>4</p></details></li><li class="qa" data-answer="5"><p class="qa-q">8 · 1 6 4 9 7 3 2</p><details class="qa-sol"><summary>Ver respuesta</summary><p>5</p></details></li><li class="qa" data-answer="7"><p class="qa-q">2 6 4 9 · 3 1 5 8</p><details class="qa-sol"><summary>Ver respuesta</summary><p>7</p></details></li><li class="qa" data-answer="6"><p class="qa-q">9 7 3 1 8 5 · 4 2</p><details class="qa-sol"><summary>Ver respuesta</summary><p>6</p></details></li></ol>
+<details class="ex-sol"><summary>Ver solución</summary><div class="ex-sol-body">
+<ul>
+<li><strong>4</strong>: la fila tiene 1, 2, 3, 5, 6, 7, 8 y 9.</li>
+<li><strong>5</strong>: tiene 1, 2, 3, 4, 6, 7, 8 y 9.</li>
+<li><strong>7</strong>: tiene 1, 2, 3, 4, 5, 6, 8 y 9.</li>
+<li><strong>6</strong>: tiene 1, 2, 3, 4, 5, 7, 8 y 9.</li>
+</ul>
+<p>Truco: repasa del 1 al 9 en orden, en vez de mirar los números como salen. Así no te saltas ninguno.</p>
+</div></details>
+</section>
+<h2 id="tecnica-2-mirar-en-cruz-la-casilla-donde-solo-cabe-uno">Técnica 2: mirar en cruz (la casilla donde solo cabe uno)</h2>
+<p>Elige una casilla vacía y mira tres cosas: su fila, su columna y su bloque. Tacha mentalmente todos los números que ya aparecen ahí. Si solo queda uno posible, ya lo tienes.</p>
+<section class="ex-card"><p class="ex-meta">2 minutos</p>
+<h2 id="que-numero-va-en-la-casilla">¿Qué número va en la casilla «?»</h2>
+<p>Sudoku de 4×4 (números del 1 al 4, bloques de 2×2). Fíjate solo en la casilla marcada.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>?</th>
+<th>·</th>
+<th>3</th>
+<th>·</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>·</td>
+<td>4</td>
+<td>·</td>
+<td>·</td>
+</tr>
+<tr>
+<td>2</td>
+<td>·</td>
+<td>·</td>
+<td>·</td>
+</tr>
+<tr>
+<td>·</td>
+<td>·</td>
+<td>·</td>
+<td>·</td>
+</tr>
+</tbody>
+</table></div>
+<ol class="ix ix-qa" data-demo="preguntas"><li class="qa" data-answer="1"><p class="qa-q">Número de la casilla «?»</p><details class="qa-sol"><summary>Ver respuesta</summary><p>1</p></details></li></ol>
+<details class="ex-sol"><summary>Ver solución</summary><div class="ex-sol-body">
+<p><strong>El 1.</strong> En su fila ya está el 3. En su columna, el 2. En su bloque (el de arriba a la izquierda), el 4. Del 1 al 4 solo queda el 1.</p>
+</div></details>
+</section>
+<h2 id="tecnica-3-el-numero-que-solo-cabe-en-un-sitio">Técnica 3: el número que solo cabe en un sitio</h2>
+<p>Ahora al revés: en vez de elegir una casilla, eliges un número y un bloque. Te preguntas: «¿dónde puede ir el 1 en este bloque?». Mira qué filas y columnas ya tienen un 1 y descarta esas casillas. Si solo queda una libre, el 1 va ahí.</p>
+<p>Es la técnica que más avanza en los sudokus fáciles y medios. Funciona igual con filas y columnas: «¿dónde puede ir el 7 en esta fila?».</p>
+<section class="ex-card"><p class="ex-meta">2 minutos</p>
+<h2 id="donde-va-el-1">¿Dónde va el 1?</h2>
+<p>Sudoku de 4×4. Busca la casilla del bloque de arriba a la izquierda (filas 1 y 2, columnas 1 y 2) donde tiene que ir el 1.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>·</th>
+<th>·</th>
+<th>·</th>
+<th>1</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>·</td>
+<td>·</td>
+<td>·</td>
+<td>·</td>
+</tr>
+<tr>
+<td>1</td>
+<td>·</td>
+<td>·</td>
+<td>·</td>
+</tr>
+<tr>
+<td>·</td>
+<td>·</td>
+<td>·</td>
+<td>·</td>
+</tr>
+</tbody>
+</table></div>
+<ol class="ix ix-qa" data-demo="preguntas"><li class="qa" data-answer="2"><p class="qa-q">¿En qué fila va el 1?</p><details class="qa-sol"><summary>Ver respuesta</summary><p>2</p></details></li><li class="qa" data-answer="2"><p class="qa-q">¿En qué columna va el 1?</p><details class="qa-sol"><summary>Ver respuesta</summary><p>2</p></details></li></ol>
+<details class="ex-sol"><summary>Ver solución</summary><div class="ex-sol-body">
+<p><strong>Fila 2, columna 2.</strong> La fila 1 ya tiene un 1 (en la columna 4), así que el 1 del bloque no puede ir arriba. La columna 1 también tiene un 1 (en la fila 3), así que no puede ir a la izquierda. De las cuatro casillas del bloque solo queda la de la fila 2, columna 2.</p>
+</div></details>
+</section>
+<p>Practica las dos técnicas con este primer sudoku completo. Empieza por los números que más se repiten en la cuadrícula: suelen ser los más fáciles de colocar.</p>
+<section class="ex-card"><p class="ex-meta">5 minutos</p>
+<h2 id="tu-primer-sudoku-de-44">Tu primer sudoku de 4×4</h2>
+<p>Usa las técnicas 2 y 3. Si te atascas, pulsa Pista.</p>
+<div class="demo ix ix-sudoku" data-demo="sudoku" data-n="4" data-bh="2" data-bw="2" data-sol="1324241332414132"><div class="demo-top"><p class="demo-name">Sudoku 4×4</p><p class="demo-meta" data-role="meta">10 casillas vacías</p></div><p class="demo-ask">Rellena la cuadrícula para que cada fila, cada columna y cada bloque de 2×2 tenga los números del 1 al 4, sin repetir.</p><div class="sdk sdk-4" data-role="board" style="--n:4"><button type="button" class="sdk-c given" data-i="0" aria-disabled="true" aria-label="Fila 1, columna 1: 1">1</button><button type="button" class="sdk-c br" data-i="1" aria-label="Fila 1, columna 2: vacía"></button><button type="button" class="sdk-c" data-i="2" aria-label="Fila 1, columna 3: vacía"></button><button type="button" class="sdk-c lc" data-i="3" aria-label="Fila 1, columna 4: vacía"></button><button type="button" class="sdk-c bb" data-i="4" aria-label="Fila 2, columna 1: vacía"></button><button type="button" class="sdk-c br bb given" data-i="5" aria-disabled="true" aria-label="Fila 2, columna 2: 4">4</button><button type="button" class="sdk-c bb" data-i="6" aria-label="Fila 2, columna 3: vacía"></button><button type="button" class="sdk-c bb lc" data-i="7" aria-label="Fila 2, columna 4: vacía"></button><button type="button" class="sdk-c given" data-i="8" aria-disabled="true" aria-label="Fila 3, columna 1: 3">3</button><button type="button" class="sdk-c br given" data-i="9" aria-disabled="true" aria-label="Fila 3, columna 2: 2">2</button><button type="button" class="sdk-c" data-i="10" aria-label="Fila 3, columna 3: vacía"></button><button type="button" class="sdk-c lc" data-i="11" aria-label="Fila 3, columna 4: vacía"></button><button type="button" class="sdk-c lr given" data-i="12" aria-disabled="true" aria-label="Fila 4, columna 1: 4">4</button><button type="button" class="sdk-c br lr" data-i="13" aria-label="Fila 4, columna 2: vacía"></button><button type="button" class="sdk-c lr" data-i="14" aria-label="Fila 4, columna 3: vacía"></button><button type="button" class="sdk-c lc lr given" data-i="15" aria-disabled="true" aria-label="Fila 4, columna 4: 2">2</button></div><div class="sdk-pad" data-role="pad" style="--k:5"><button type="button" class="key" data-num="1">1</button><button type="button" class="key" data-num="2">2</button><button type="button" class="key" data-num="3">3</button><button type="button" class="key" data-num="4">4</button><button type="button" class="key" data-num="0" aria-label="Borrar">⌫</button></div><p class="ix-feedback" data-role="feedback" aria-live="polite" hidden></p><div class="demo-foot" data-role="foot"><button type="button" class="btn btn-small" data-act="hint">Pista</button><button type="button" class="key key-wide" data-act="reset">Borrar todo</button><span class="demo-hint">Toca una casilla vacía y después el número. Si no es el correcto, se marcará en rojo.</span></div></div>
+</section>
+
+<aside class="cta-inline" aria-label="Mentalit">
+  <img src="../../img/icon-96.webp" width="56" height="56" alt="">
+  <div>
+    <p class="cta-title">Practica series y lógica cada día</p>
+    <p>Mentalit incluye series numéricas, sudoku y otros retos de lógica con seis niveles de dificultad. El entrenamiento diario te propone cuatro juegos distintos cada día, así practicas sin pensar qué toca.</p>
+    <a class="btn" href="/app/?de=web" data-cta="articulo">Descargar Mentalit</a>
+  </div>
+</aside>
+
+<h2 id="tecnica-4-apuntar-candidatos-cuando-te-atascas">Técnica 4: apuntar candidatos cuando te atascas</h2>
+<p>En los sudokus más difíciles llega un momento en que ninguna casilla tiene un solo número posible. Entonces se apuntan los <strong>candidatos</strong>: en cada casilla vacía escribes, en pequeño, los números que todavía podrían ir. Al ir colocando números, borras candidatos, y aparecen casillas con uno solo.</p>
+<p>Un caso que se repite mucho son las <strong>parejas</strong>: si dos casillas de la misma fila solo admiten el 2 y el 5, esos dos números van ahí (aunque aún no sepas en qué orden). Puedes quitar el 2 y el 5 de las demás casillas de esa fila.</p>
+<section class="ex-card"><p class="ex-meta">3 minutos</p>
+<h2 id="razona-con-candidatos">Razona con candidatos</h2>
+<p>En una fila de un sudoku de 6×6 quedan tres casillas vacías, A, B y C, y faltan el <strong>1</strong>, el <strong>3</strong> y el <strong>4</strong>. Sabes que:</p>
+<ul>
+<li>En la columna de A ya hay un 1.</li>
+<li>En el bloque de B ya hay un 1 y un 3.</li>
+<li>C no tiene ninguna limitación más.</li>
+</ul>
+<ol class="ix ix-qa" data-demo="preguntas"><li class="qa" data-answer="4"><p class="qa-q">¿Qué número va en B?</p><details class="qa-sol"><summary>Ver respuesta</summary><p>4</p></details></li><li class="qa" data-answer="3"><p class="qa-q">¿Qué número va en A?</p><details class="qa-sol"><summary>Ver respuesta</summary><p>3</p></details></li><li class="qa" data-answer="1"><p class="qa-q">¿Qué número va en C?</p><details class="qa-sol"><summary>Ver respuesta</summary><p>1</p></details></li></ol>
+<details class="ex-sol"><summary>Ver solución</summary><div class="ex-sol-body">
+<ul>
+<li><strong>B = 4.</strong> De los que faltan (1, 3 y 4), su bloque ya tiene el 1 y el 3. Solo queda el 4.</li>
+<li><strong>A = 3.</strong> Con el 4 colocado, quedan el 1 y el 3. A no puede ser 1 porque su columna ya lo tiene.</li>
+<li><strong>C = 1.</strong> Es el último hueco de la fila.</li>
+</ul>
+<p>Fíjate en el orden: empiezas por la casilla con menos candidatos y cada número que colocas resuelve el siguiente.</p>
+</div></details>
+</section>
+<h2 id="como-resolver-un-sudoku-paso-a-paso-la-rutina">Cómo resolver un sudoku paso a paso: la rutina</h2>
+<p>Cuando te pongas con un sudoku de 9×9, sigue siempre el mismo orden:</p>
+<ol>
+<li><strong>Recorre los números del 1 al 9.</strong> Para cada uno, mira bloque por bloque dónde puede ir (técnica 3). Es la pasada que más casillas rellena.</li>
+<li><strong>Busca filas, columnas y bloques casi llenos.</strong> Los que tienen 7 u 8 números suelen salir con el último hueco o mirando en cruz (técnicas 1 y 2).</li>
+<li><strong>Vuelve al paso 1.</strong> Cada número nuevo abre otras posibilidades. Repite hasta que una vuelta completa no añada nada.</li>
+<li><strong>Solo entonces, apunta candidatos</strong> en las casillas vacías y busca las que tienen uno solo o las parejas (técnica 4).</li>
+<li><strong>No adivines.</strong> Si pones un número «a ver si cuadra» y te equivocas, el error aparece muchas casillas después y cuesta encontrarlo. Si no sabes qué número va, sigue buscando en otra parte de la cuadrícula.</li>
+</ol>
+<p>Los errores típicos de quien empieza son tres: no comprobar el bloque al mirar en cruz, apuntar candidatos desde el principio (es lento y agobia) y no borrarlos cuando colocas un número.</p>
+<h2 id="sube-de-nivel-dos-sudokus-de-66">Sube de nivel: dos sudokus de 6×6</h2>
+<p>Los bloques son de 2 filas por 3 columnas. Aplica la rutina: primero recorre los números del 1 al 6 bloque por bloque y después busca las filas y columnas más llenas.</p>
+<section class="ex-card"><p class="ex-meta">8 minutos</p>
+<h2 id="sudoku-66-numero-1">Sudoku 6×6 número 1</h2>
+<div class="demo ix ix-sudoku" data-demo="sudoku" data-n="6" data-bh="2" data-bw="3" data-sol="314625625314146253253146462531531462"><div class="demo-top"><p class="demo-name">Sudoku 6×6</p><p class="demo-meta" data-role="meta">22 casillas vacías</p></div><p class="demo-ask">Rellena la cuadrícula para que cada fila, cada columna y cada bloque de 2×3 tenga los números del 1 al 6, sin repetir.</p><div class="sdk sdk-6" data-role="board" style="--n:6"><button type="button" class="sdk-c" data-i="0" aria-label="Fila 1, columna 1: vacía"></button><button type="button" class="sdk-c given" data-i="1" aria-disabled="true" aria-label="Fila 1, columna 2: 1">1</button><button type="button" class="sdk-c br" data-i="2" aria-label="Fila 1, columna 3: vacía"></button><button type="button" class="sdk-c" data-i="3" aria-label="Fila 1, columna 4: vacía"></button><button type="button" class="sdk-c" data-i="4" aria-label="Fila 1, columna 5: vacía"></button><button type="button" class="sdk-c lc given" data-i="5" aria-disabled="true" aria-label="Fila 1, columna 6: 5">5</button><button type="button" class="sdk-c bb given" data-i="6" aria-disabled="true" aria-label="Fila 2, columna 1: 6">6</button><button type="button" class="sdk-c bb given" data-i="7" aria-disabled="true" aria-label="Fila 2, columna 2: 2">2</button><button type="button" class="sdk-c br bb given" data-i="8" aria-disabled="true" aria-label="Fila 2, columna 3: 5">5</button><button type="button" class="sdk-c bb" data-i="9" aria-label="Fila 2, columna 4: vacía"></button><button type="button" class="sdk-c bb" data-i="10" aria-label="Fila 2, columna 5: vacía"></button><button type="button" class="sdk-c bb lc" data-i="11" aria-label="Fila 2, columna 6: vacía"></button><button type="button" class="sdk-c" data-i="12" aria-label="Fila 3, columna 1: vacía"></button><button type="button" class="sdk-c" data-i="13" aria-label="Fila 3, columna 2: vacía"></button><button type="button" class="sdk-c br" data-i="14" aria-label="Fila 3, columna 3: vacía"></button><button type="button" class="sdk-c given" data-i="15" aria-disabled="true" aria-label="Fila 3, columna 4: 2">2</button><button type="button" class="sdk-c" data-i="16" aria-label="Fila 3, columna 5: vacía"></button><button type="button" class="sdk-c lc given" data-i="17" aria-disabled="true" aria-label="Fila 3, columna 6: 3">3</button><button type="button" class="sdk-c bb" data-i="18" aria-label="Fila 4, columna 1: vacía"></button><button type="button" class="sdk-c bb given" data-i="19" aria-disabled="true" aria-label="Fila 4, columna 2: 5">5</button><button type="button" class="sdk-c br bb given" data-i="20" aria-disabled="true" aria-label="Fila 4, columna 3: 3">3</button><button type="button" class="sdk-c bb given" data-i="21" aria-disabled="true" aria-label="Fila 4, columna 4: 1">1</button><button type="button" class="sdk-c bb" data-i="22" aria-label="Fila 4, columna 5: vacía"></button><button type="button" class="sdk-c bb lc" data-i="23" aria-label="Fila 4, columna 6: vacía"></button><button type="button" class="sdk-c" data-i="24" aria-label="Fila 5, columna 1: vacía"></button><button type="button" class="sdk-c" data-i="25" aria-label="Fila 5, columna 2: vacía"></button><button type="button" class="sdk-c br" data-i="26" aria-label="Fila 5, columna 3: vacía"></button><button type="button" class="sdk-c" data-i="27" aria-label="Fila 5, columna 4: vacía"></button><button type="button" class="sdk-c given" data-i="28" aria-disabled="true" aria-label="Fila 5, columna 5: 3">3</button><button type="button" class="sdk-c lc" data-i="29" aria-label="Fila 5, columna 6: vacía"></button><button type="button" class="sdk-c lr" data-i="30" aria-label="Fila 6, columna 1: vacía"></button><button type="button" class="sdk-c lr" data-i="31" aria-label="Fila 6, columna 2: vacía"></button><button type="button" class="sdk-c br lr" data-i="32" aria-label="Fila 6, columna 3: vacía"></button><button type="button" class="sdk-c lr given" data-i="33" aria-disabled="true" aria-label="Fila 6, columna 4: 4">4</button><button type="button" class="sdk-c lr given" data-i="34" aria-disabled="true" aria-label="Fila 6, columna 5: 6">6</button><button type="button" class="sdk-c lc lr given" data-i="35" aria-disabled="true" aria-label="Fila 6, columna 6: 2">2</button></div><div class="sdk-pad" data-role="pad" style="--k:7"><button type="button" class="key" data-num="1">1</button><button type="button" class="key" data-num="2">2</button><button type="button" class="key" data-num="3">3</button><button type="button" class="key" data-num="4">4</button><button type="button" class="key" data-num="5">5</button><button type="button" class="key" data-num="6">6</button><button type="button" class="key" data-num="0" aria-label="Borrar">⌫</button></div><p class="ix-feedback" data-role="feedback" aria-live="polite" hidden></p><div class="demo-foot" data-role="foot"><button type="button" class="btn btn-small" data-act="hint">Pista</button><button type="button" class="key key-wide" data-act="reset">Borrar todo</button><span class="demo-hint">Toca una casilla vacía y después el número. Si no es el correcto, se marcará en rojo.</span></div></div>
+</section>
+<section class="ex-card"><p class="ex-meta">10 minutos</p>
+<h2 id="sudoku-66-numero-2">Sudoku 6×6 número 2</h2>
+<p>Un poco más difícil: aquí te tocará apuntar algún candidato.</p>
+<div class="demo ix ix-sudoku" data-demo="sudoku" data-n="6" data-bh="2" data-bw="3" data-sol="324615615324246153153246461532532461"><div class="demo-top"><p class="demo-name">Sudoku 6×6</p><p class="demo-meta" data-role="meta">22 casillas vacías</p></div><p class="demo-ask">Rellena la cuadrícula para que cada fila, cada columna y cada bloque de 2×3 tenga los números del 1 al 6, sin repetir.</p><div class="sdk sdk-6" data-role="board" style="--n:6"><button type="button" class="sdk-c" data-i="0" aria-label="Fila 1, columna 1: vacía"></button><button type="button" class="sdk-c" data-i="1" aria-label="Fila 1, columna 2: vacía"></button><button type="button" class="sdk-c br given" data-i="2" aria-disabled="true" aria-label="Fila 1, columna 3: 4">4</button><button type="button" class="sdk-c" data-i="3" aria-label="Fila 1, columna 4: vacía"></button><button type="button" class="sdk-c" data-i="4" aria-label="Fila 1, columna 5: vacía"></button><button type="button" class="sdk-c lc given" data-i="5" aria-disabled="true" aria-label="Fila 1, columna 6: 5">5</button><button type="button" class="sdk-c bb" data-i="6" aria-label="Fila 2, columna 1: vacía"></button><button type="button" class="sdk-c bb given" data-i="7" aria-disabled="true" aria-label="Fila 2, columna 2: 1">1</button><button type="button" class="sdk-c br bb" data-i="8" aria-label="Fila 2, columna 3: vacía"></button><button type="button" class="sdk-c bb given" data-i="9" aria-disabled="true" aria-label="Fila 2, columna 4: 3">3</button><button type="button" class="sdk-c bb" data-i="10" aria-label="Fila 2, columna 5: vacía"></button><button type="button" class="sdk-c bb lc" data-i="11" aria-label="Fila 2, columna 6: vacía"></button><button type="button" class="sdk-c given" data-i="12" aria-disabled="true" aria-label="Fila 3, columna 1: 2">2</button><button type="button" class="sdk-c" data-i="13" aria-label="Fila 3, columna 2: vacía"></button><button type="button" class="sdk-c br given" data-i="14" aria-disabled="true" aria-label="Fila 3, columna 3: 6">6</button><button type="button" class="sdk-c" data-i="15" aria-label="Fila 3, columna 4: vacía"></button><button type="button" class="sdk-c given" data-i="16" aria-disabled="true" aria-label="Fila 3, columna 5: 5">5</button><button type="button" class="sdk-c lc given" data-i="17" aria-disabled="true" aria-label="Fila 3, columna 6: 3">3</button><button type="button" class="sdk-c bb" data-i="18" aria-label="Fila 4, columna 1: vacía"></button><button type="button" class="sdk-c bb" data-i="19" aria-label="Fila 4, columna 2: vacía"></button><button type="button" class="sdk-c br bb" data-i="20" aria-label="Fila 4, columna 3: vacía"></button><button type="button" class="sdk-c bb given" data-i="21" aria-disabled="true" aria-label="Fila 4, columna 4: 2">2</button><button type="button" class="sdk-c bb" data-i="22" aria-label="Fila 4, columna 5: vacía"></button><button type="button" class="sdk-c bb lc" data-i="23" aria-label="Fila 4, columna 6: vacía"></button><button type="button" class="sdk-c" data-i="24" aria-label="Fila 5, columna 1: vacía"></button><button type="button" class="sdk-c" data-i="25" aria-label="Fila 5, columna 2: vacía"></button><button type="button" class="sdk-c br given" data-i="26" aria-disabled="true" aria-label="Fila 5, columna 3: 1">1</button><button type="button" class="sdk-c given" data-i="27" aria-disabled="true" aria-label="Fila 5, columna 4: 5">5</button><button type="button" class="sdk-c" data-i="28" aria-label="Fila 5, columna 5: vacía"></button><button type="button" class="sdk-c lc" data-i="29" aria-label="Fila 5, columna 6: vacía"></button><button type="button" class="sdk-c lr" data-i="30" aria-label="Fila 6, columna 1: vacía"></button><button type="button" class="sdk-c lr given" data-i="31" aria-disabled="true" aria-label="Fila 6, columna 2: 3">3</button><button type="button" class="sdk-c br lr" data-i="32" aria-label="Fila 6, columna 3: vacía"></button><button type="button" class="sdk-c lr" data-i="33" aria-label="Fila 6, columna 4: vacía"></button><button type="button" class="sdk-c lr given" data-i="34" aria-disabled="true" aria-label="Fila 6, columna 5: 6">6</button><button type="button" class="sdk-c lc lr given" data-i="35" aria-disabled="true" aria-label="Fila 6, columna 6: 1">1</button></div><div class="sdk-pad" data-role="pad" style="--k:7"><button type="button" class="key" data-num="1">1</button><button type="button" class="key" data-num="2">2</button><button type="button" class="key" data-num="3">3</button><button type="button" class="key" data-num="4">4</button><button type="button" class="key" data-num="5">5</button><button type="button" class="key" data-num="6">6</button><button type="button" class="key" data-num="0" aria-label="Borrar">⌫</button></div><p class="ix-feedback" data-role="feedback" aria-live="polite" hidden></p><div class="demo-foot" data-role="foot"><button type="button" class="btn btn-small" data-act="hint">Pista</button><button type="button" class="key key-wide" data-act="reset">Borrar todo</button><span class="demo-hint">Toca una casilla vacía y después el número. Si no es el correcto, se marcará en rojo.</span></div></div>
+</section>
+<p>Si te gustan los retos de lógica con números, prueba también las <a href="../../herramientas/series-numericas/">series numéricas</a> o los acertijos de <a href="../juegos-mentales-para-adultos/">juegos mentales para adultos</a>, que también tienen un sudoku de 4×4.</p>
+<h2 id="preguntas-frecuentes">Preguntas frecuentes</h2>
+<h3 id="hace-falta-saber-matematicas-para-jugar-al-sudoku">¿Hace falta saber matemáticas para jugar al sudoku?</h3>
+<p>No. No se hacen cuentas: los números solo sirven como símbolos distintos. Lo que se entrena es la lógica y la paciencia para descartar.</p>
+<h3 id="cuantas-pistas-necesita-un-sudoku-como-minimo">¿Cuántas pistas necesita un sudoku como mínimo?</h3>
+<p>Diecisiete. En 2012, un equipo de matemáticos hizo una búsqueda exhaustiva por ordenador y comprobó que no existe ningún sudoku de 9×9 con 16 pistas que tenga solución única. Eso no quiere decir que menos pistas sea siempre más difícil: la dificultad depende sobre todo de qué técnicas hacen falta para avanzar.</p>
+<h3 id="de-donde-viene-el-sudoku">¿De dónde viene el sudoku?</h3>
+<p>Lo inventó el estadounidense Howard Garns, que lo llamó <em>Number Place</em>. El editor japonés Kaji Maki lo llevó a su revista de pasatiempos, Nikoli, en 1984 y le puso el nombre de sudoku, abreviatura de una frase japonesa que viene a decir que cada número tiene que ir solo. Se hizo famoso en todo el mundo a partir de 2005.</p>
+<h3 id="el-sudoku-es-bueno-para-la-memoria">¿El sudoku es bueno para la memoria?</h3>
+<p>Es un buen ejercicio de lógica y te obliga a mantener la atención un buen rato, pero no hay pruebas de que hacer sudokus mejore la memoria en general: lo que más mejora es tu habilidad con el sudoku. Si quieres trabajar la memoria, combínalo con ejercicios específicos, como los de <a href="../memoria-a-corto-plazo-ejercicios/">memoria a corto plazo</a>.</p>
+<h3 id="donde-puedo-seguir-practicando">¿Dónde puedo seguir practicando?</h3>
+<p>Con los tres sudokus de esta página ya tienes para un rato. Si quieres jugar desde el iPhone o el iPad, Mentalit incluye sudoku entre sus más de 40 juegos, con seis niveles de dificultad, de Suave a Extremo, y un entrenamiento diario de cuatro juegos.</p>
+
+    
+    <section class="sources" aria-labelledby="fuentes">
+      <h2 id="fuentes">Fuentes</h2>
+      <ul>
+        <li><a href="https://arxiv.org/abs/1201.0749" rel="noopener">McGuire, Tugemann y Civario (2012). There is no 16-Clue Sudoku: Solving the Sudoku Minimum Number of Clues Problem. arXiv</a></li><li><a href="https://www.nippon.com/es/japan-topics/g01191/" rel="noopener">Nippon.com. Kaji Maki, el padre del «sudoku»: el hombre que cambió los pasatiempos del mundo</a></li>
+      </ul>
+    </section>
+    
+  </div>
+</article>
+
+<section class="wrap section related" aria-labelledby="sigue">
+  <h2 id="sigue">Sigue leyendo</h2>
+  <ul class="guide-list">
+    
+    <li>
+      <a href="../../guias/juegos-mentales-para-adultos/">
+        <span class="guide-cat"><span class="cat-ico cat-logica" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3.5l3.8 6.5H3.2z"/><rect x="13.5" y="3.8" width="6.5" height="6.5" rx="1.5"/><circle cx="7" cy="17" r="3.3"/><path d="M17 13.5l3.5 3.5-3.5 3.5-3.5-3.5z"/></svg></span>Lógica</span>
+        <span class="guide-title">Juegos mentales para adultos con respuesta: 12 para jugar aquí</span>
+        <span class="guide-desc">12 juegos mentales para adultos con respuesta: acertijos de lógica, series, cálculo, palabras, memoria y un sudoku, para resolver aquí y comprobar al momento.</span>
+      </a>
+    </li>
+    
+    <li>
+      <a href="../../guias/ejercicios-atencion-concentracion-adultos/">
+        <span class="guide-cat"><span class="cat-ico cat-atencion" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg></span>Atención</span>
+        <span class="guide-title">Ejercicios de atención y concentración para adultos: 10 para hacer aquí</span>
+        <span class="guide-desc">10 ejercicios de atención y concentración para adultos, con soluciones, para hacer aquí o en papel, y un plan semanal de 10 minutos al día.</span>
+      </a>
+    </li>
+    
+    <li>
+      <a href="../../guias/memoria-a-corto-plazo-ejercicios/">
+        <span class="guide-cat"><span class="cat-ico cat-memoria" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6M10 21h4"/><path d="M12 3a6 6 0 0 0-3.6 10.8c.6.5 1 1.2 1 2v.2h5.2v-.2c0-.8.4-1.5 1-2A6 6 0 0 0 12 3z"/></svg></span>Memoria</span>
+        <span class="guide-title">Memoria a corto plazo: 8 ejercicios para entrenarla aquí</span>
+        <span class="guide-desc">Ocho ejercicios para la memoria a corto plazo que puedes hacer aquí: series de números, listas, parejas y cálculo, con soluciones y rutina de 10 minutos.</span>
+      </a>
+    </li>
+    
+  </ul>
+</section>
+
+
+<section class="cta-end" aria-labelledby="cta-final">
+  <div class="wrap cta-end-inner">
+    <img src="../../img/train.webp" width="406" height="720" alt="" loading="lazy">
+    <div>
+      <h2 id="cta-final">Entrena unos minutos al día con Mentalit</h2>
+      <p>Juegos cortos de memoria, atención, cálculo y lógica, con un entrenamiento diario de cuatro retos. Empieza con un test inicial que ajusta la dificultad a tu nivel.</p>
+      <a class="btn btn-light" href="/app/?de=web" data-cta="final">Descargar Mentalit</a>
+    </div>
+  </div>
+</section>
+
+
+</main>
+
+<footer class="site-foot">
+  <div class="wrap foot-grid">
+    <div>
+      <a class="brand" href="../../">
+        <img src="../../img/icon-96.webp" width="32" height="32" alt="">
+        <span>Mentalit</span>
+      </a>
+      <p class="foot-note">Juegos para practicar memoria, atención, cálculo y lógica, con temporizador de foco y meditación. Mentalit ofrece práctica y bienestar personal; no es un producto sanitario ni previene o trata enfermedades.</p>
+      <p class="foot-note">© 2026 Mentalit · Titular: Viktoras Sirvidas Daunoravicius</p>
+    </div>
+    <nav aria-label="Pie de página" class="foot-links">
+      <a href="../../herramientas/">Herramientas gratis</a>
+      <a href="../../guias/">Todas las guías</a>
+      <a href="https://apps.apple.com/app/apple-store/id6817341061?pt=129128602&amp;ct=web&amp;mt=8">Mentalit en la App Store</a>
+      <a href="https://play.google.com/store/apps/details?id=com.mente.entrenamiento">Mentalit en Google Play</a>
+      <a href="../../privacidad/">Privacidad</a>
+      <a href="../../terminos/">Términos</a>
+      <span class="foot-mail">Contacto: zailerx@gmail.com</span>
+    </nav>
+  </div>
+</footer>
+
+
+<div class="sticky-cta" data-role="sticky" hidden>
+  <img src="../../img/icon-96.webp" width="36" height="36" alt="">
+  <p><strong>Mentalit</strong><span>Juegos para entrenar la mente</span></p>
+  <a class="btn btn-small" href="../../app/?de=web" data-cta="barra">Descargar</a>
+  <button type="button" class="sticky-close" aria-label="Cerrar">×</button>
+</div>
+
+<script src="../../assets/site.js?v=d3d8f8edf3" defer></script>
+</body>
+</html>
