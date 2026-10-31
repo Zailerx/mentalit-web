@@ -254,4 +254,4 @@ Las series (juego 5) o las ciudades desordenadas (juego 9). Después, los acerti
 
 ### ¿Dónde encuentro más juegos así?
 
-En esta web tienes tests gratuitos, como el de [tiempo de reacción](../../herramientas/test-tiempo-de-reaccion/) o el [test de Stroop](../test-de-stroop/). Si prefieres jugar desde el móvil, Mentalit tiene más de 40 juegos de memoria, atención, cálculo, lógica y palabras, entre ellos sudoku, series numéricas, crucigramas y sopas de letras, con seis niveles de dificultad.
+En esta web tienes tests gratuitos, como el de [tiempo de reacción](../../herramientas/test-tiempo-de-reaccion/) o el [test de Stroop](../test-de-stroop/). Para retos visuales, prueba los [ejercicios de rotación mental](../rotacion-mental-ejercicios/), con figuras giradas, dados y cubos desplegados. Si prefieres jugar desde el móvil, Mentalit tiene más de 40 juegos de memoria, atención, cálculo, lógica y palabras, entre ellos sudoku, series numéricas, crucigramas y sopas de letras, con seis niveles de dificultad.

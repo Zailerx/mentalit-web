@@ -207,7 +207,7 @@ Un poco más difícil: aquí te tocará apuntar algún candidato.
 
 :::
 
-Si te gustan los retos de lógica con números, prueba también las [series numéricas](../../herramientas/series-numericas/) o los acertijos de [juegos mentales para adultos](../juegos-mentales-para-adultos/), que también tienen un sudoku de 4×4.
+Si te gustan los retos de lógica con números, prueba también las [series numéricas](../../herramientas/series-numericas/) o los acertijos de [juegos mentales para adultos](../juegos-mentales-para-adultos/), que también tienen un sudoku de 4×4. Y si quieres ejercitar la visión espacial, tienes [ejercicios de rotación mental](../rotacion-mental-ejercicios/) con un test de figuras giradas.
 
 ## Preguntas frecuentes
 
