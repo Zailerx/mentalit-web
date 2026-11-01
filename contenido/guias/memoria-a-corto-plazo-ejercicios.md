@@ -191,7 +191,7 @@ Cambia las listas cada semana para no memorizar siempre lo mismo. Puedes inventa
 
 ## Memoria a corto plazo y memoria de trabajo
 
-Se suelen confundir. La memoria a corto plazo **guarda** información un momento; la memoria de trabajo la guarda **y la manipula** a la vez, como cuando repites una serie al revés o haces una cuenta de cabeza. Los ejercicios 1 en modo Al revés y 7 ya trabajan la memoria de trabajo. Si quieres un reto más exigente, prueba el [N-back](../n-back/).
+Se suelen confundir. La memoria a corto plazo **guarda** información un momento; la memoria de trabajo la guarda **y la manipula** a la vez, como cuando repites una serie al revés o haces una cuenta de cabeza. Los ejercicios 1 en modo Al revés y 7 ya trabajan la memoria de trabajo. Si quieres un reto más exigente, prueba el [N-back](../n-back/). Y si quieres practicarla a fondo, tienes una guía de [ejercicios de memoria de trabajo](../memoria-de-trabajo-ejercicios/).
 
 ## Preguntas frecuentes
 

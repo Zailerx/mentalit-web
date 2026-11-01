@@ -57,7 +57,7 @@ Depende de lo que busques. A favor:
 
 Si lo que te atrae es el rompecabezas, también te pueden gustar estos [juegos mentales para adultos con respuesta](../juegos-mentales-para-adultos/): acertijos de lógica, series y cálculo para resolver en la página.
 
-Si te gusta este tipo de reto, prueba también el [test de memoria visual](../../herramientas/test-de-memoria/), que trabaja la memoria de trabajo con posiciones en lugar de letras.
+Si te gusta este tipo de reto, prueba también el [test de memoria visual](../../herramientas/test-de-memoria/), que trabaja la memoria de trabajo con posiciones en lugar de letras. Y si buscas más variedad, tienes estos [ejercicios de memoria de trabajo](../memoria-de-trabajo-ejercicios/) con un test de dígitos al revés para medirla.
 
 Si tu objetivo es recordar mejor cosas concretas, como lo que estudias o los nombres de la gente, te servirán más las técnicas de la guía de [ejercicios para la memoria](../ejercicios-para-la-memoria-adultos/), como recordar sin mirar o el palacio de la memoria.
 
