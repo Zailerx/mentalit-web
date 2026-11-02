@@ -23,7 +23,7 @@ Ponerlo boca abajo no basta. Mientras lo tengas al alcance, una parte de tu aten
 
 ## 3. Trabaja en bloques cortos con descansos
 
-Pocos estudiantes mantienen una concentración alta durante dos horas seguidas. Funciona mejor trabajar en bloques de 25 a 50 minutos con descansos de 5 a 10. La [técnica Pomodoro](../tecnica-pomodoro/) es la versión más conocida de esta idea: 25 minutos de trabajo y 5 de descanso, con una pausa larga cada cuatro bloques.
+Pocos estudiantes mantienen una concentración alta durante dos horas seguidas. Funciona mejor trabajar en bloques de 25 a 50 minutos con descansos de 5 a 10. La [técnica Pomodoro](../tecnica-pomodoro/) es la versión más conocida de esta idea: 25 minutos de trabajo y 5 de descanso, con una pausa larga cada cuatro bloques. Si opositas, tienes un plan adaptado en [técnica Pomodoro para oposiciones](../pomodoro-oposiciones/).
 
 El truco está en respetar el final del bloque aunque estés a gusto, y en no empezar el descanso antes de tiempo aunque te aburras.
 

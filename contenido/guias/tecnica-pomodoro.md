@@ -68,7 +68,7 @@ Lo importante es mantener la estructura: bloques con un final claro y descansos 
 
 Para estudiar, combina los pomodoros con el estudio activo: dedica un pomodoro a leer y hacer un esquema, y el siguiente a responder preguntas sin mirar los apuntes. Llevar la cuenta de los pomodoros por asignatura también te da una idea realista de cuánto tiempo necesitas para cada una.
 
-Tienes más ideas en la guía sobre [cómo mejorar la concentración al estudiar](../como-mejorar-la-concentracion-al-estudiar/).
+Tienes más ideas en la guía sobre [cómo mejorar la concentración al estudiar](../como-mejorar-la-concentracion-al-estudiar/). Si preparas una oposición, en [técnica Pomodoro para oposiciones](../pomodoro-oposiciones/) tienes un plan de mañana con 8 pomodoros.
 
 Si trabajas en casa, en [cómo concentrarse trabajando desde casa](../concentrarse-trabajando-desde-casa/) tienes un plan de 8 pasos que combina los pomodoros con un ritual de inicio y otro de cierre.
 
