@@ -63,7 +63,7 @@ Al terminar, anota en una línea cómo ha ido: cuántas veces crees que te has d
 
 Según el Centro Nacional de Salud Complementaria e Integrativa de Estados Unidos (NCCIH), las prácticas de atención plena pueden ayudar con la ansiedad, la depresión y el insomnio, y en algunos estudios sus efectos se parecen a los de la terapia cognitivo-conductual. En otros campos, como el dolor, los resultados son más dispares.
 
-Se consideran prácticas de bajo riesgo, pero no inocuas para todo el mundo: en estudios con más de 6.000 participantes, alrededor del 8 % contó algún efecto negativo, sobre todo ansiedad o bajo estado de ánimo. Si meditar te hace sentir peor, para. Y si tienes ansiedad intensa, depresión u otro problema de salud mental, habla con un profesional antes de usar la meditación como única herramienta.
+Se consideran prácticas de bajo riesgo, pero no inocuas para todo el mundo: en estudios con más de 6.000 participantes, alrededor del 8 % contó algún efecto negativo, sobre todo ansiedad o bajo estado de ánimo. Si meditar te hace sentir peor, para. Y si tienes ansiedad intensa, depresión u otro problema de salud mental, habla con un profesional antes de usar la meditación como única herramienta. Para momentos puntuales de nervios, tienes una [meditación de 5 minutos para la ansiedad](../meditacion-para-la-ansiedad/) con ejercicios paso a paso.
 
 ## Preguntas frecuentes
 
