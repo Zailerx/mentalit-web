@@ -55,7 +55,7 @@ Una forma de decidir:
 | Tareas profundas en las que ya tienes ritmo | 50 / 10 |
 | Estudiar para un examen durante toda la tarde | 25 / 5 o 50 / 10, alternando materias |
 
-Lo importante es mantener la estructura: bloques con un final claro y descansos de verdad.
+Lo importante es mantener la estructura: bloques con un final claro y descansos de verdad. Si te cuesta arrancar incluso el primer bloque, tienes ideas en [cómo dejar de procrastinar al estudiar](../dejar-de-procrastinar-al-estudiar/).
 
 ## Errores habituales
 
