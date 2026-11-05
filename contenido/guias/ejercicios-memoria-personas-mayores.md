@@ -87,6 +87,8 @@ Es un clásico para jugar en familia. Una persona pone entre 8 y 12 objetos en u
 
 **Variante más difícil:** en lugar de tapar la bandeja, se quita un objeto a escondidas y hay que adivinar cuál falta.
 
+Si os gusta, tienes más ideas para jugar con nietos e hijos en nuestros [juegos de memoria para jugar en familia](../juegos-de-memoria-en-familia/).
+
 :::
 
 :::ejercicio 3 minutos

@@ -240,7 +240,7 @@ Verás números de uno en uno. Escríbelos **en orden inverso**, empezando por e
 - **Primero intenta, luego mira.** Date al menos un minuto en cada acertijo antes de abrir la solución.
 - **Explica tu respuesta en voz alta.** Si no sabes por qué es correcta, quizá has acertado por casualidad.
 - **Varía el tipo de juego.** Lógica un día, números otro, palabras el siguiente.
-- **Juega con alguien.** Uno lee el acertijo y los demás compiten por resolverlo.
+- **Juega con alguien.** Uno lee el acertijo y los demás compiten por resolverlo. Si buscas algo para toda la familia, prueba estos [juegos de memoria para jugar en familia](../juegos-de-memoria-en-familia/).
 
 ## Preguntas frecuentes
 
