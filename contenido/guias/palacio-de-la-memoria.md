@@ -225,7 +225,7 @@ La primera lista puedes hacerla hoy mismo. Para usarlo con soltura hace falta pr
 
 ### ¿Sirve para estudiar?
 
-Sirve sobre todo para información que va en orden o en listas: fechas, pasos de un proceso, artículos de una ley, los puntos de un tema. Para entender un tema hace falta, además, estudiarlo y explicarlo con tus palabras.
+Sirve sobre todo para información que va en orden o en listas: fechas, pasos de un proceso, artículos de una ley, los puntos de un tema. Para entender un tema hace falta, además, estudiarlo y explicarlo con tus palabras. Si tienes un examen cerca, combínalo con las técnicas de [cómo memorizar rápido para un examen](../memorizar-rapido-examen/).
 
 ### ¿Cuántas paradas puede tener un palacio?
 

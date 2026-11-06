@@ -47,6 +47,8 @@ Otras formas de estudio activo:
 - Explicar el tema a alguien, o a una silla vacía.
 - Convertir un texto en un esquema sin copiar frases enteras.
 
+Tienes ejercicios para practicar estas técnicas en [cómo memorizar rápido para un examen](../memorizar-rapido-examen/).
+
 Si lo que más te cuesta es no perder el hilo con los apuntes, tienes ejercicios concretos en [cómo mejorar la concentración al leer](../concentracion-al-leer/).
 
 ## 7. Empieza por lo que más cuesta
