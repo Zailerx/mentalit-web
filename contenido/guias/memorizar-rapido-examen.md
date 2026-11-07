@@ -149,7 +149,7 @@ Por ejemplo, una mitocondria con forma de pila gigante dando energía a la célu
 
 ## Plan de repaso según los días que te quedan
 
-El otro pilar es repartir el estudio. En un estudio con más de mil participantes, Cepeda y su equipo vieron que cuanto más lejos está el examen, más conviene separar los repasos entre sí. Y, en general, varias sesiones cortas separadas rinden más que el mismo tiempo de estudio de un tirón.
+El otro pilar es repartir el estudio. En un estudio con más de mil participantes, Cepeda y su equipo vieron que cuanto más lejos está el examen, más conviene separar los repasos entre sí. Y, en general, varias sesiones cortas separadas rinden más que el mismo tiempo de estudio de un tirón. Si quieres montar un calendario de repasos completo, lo tienes en la guía de [repetición espaciada](../repeticion-espaciada/).
 
 | Te quedan | Cómo repartirlo |
 |---|---|

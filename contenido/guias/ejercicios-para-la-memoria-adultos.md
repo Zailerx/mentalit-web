@@ -30,7 +30,7 @@ En un experimento clásico de Roediger y Karpicke, un grupo de estudiantes reley
 
 ## 2. Reparte el repaso en varios días
 
-Repasar diez minutos durante cuatro días funciona mejor que cuarenta minutos seguidos. Es lo que se llama práctica espaciada, y está entre los resultados más sólidos de la psicología de la memoria.
+Repasar diez minutos durante cuatro días funciona mejor que cuarenta minutos seguidos. Es lo que se llama práctica espaciada, y está entre los resultados más sólidos de la psicología de la memoria. En la guía de [repetición espaciada](../repeticion-espaciada/) tienes un calendario de repasos listo para copiar.
 
 Un calendario sencillo para algo que quieras aprender:
 
