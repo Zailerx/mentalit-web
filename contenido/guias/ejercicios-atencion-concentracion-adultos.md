@@ -223,7 +223,7 @@ Al terminar, anota cuántas veces has tenido el impulso de cambiar de tarea. Con
 | Viernes | ¿Son iguales? (5) y el autobús (6) |
 | Fin de semana | Descanso o repite el que más te haya costado |
 
-Para repetir los ejercicios con material nuevo, cambia la frase, la letra o la cifra que buscas, o escribe tú mismo una fila de letras y pide a alguien que te diga cuántas «AX» hay.
+Para repetir los ejercicios con material nuevo, cambia la frase, la letra o la cifra que buscas, o escribe tú mismo una fila de letras y pide a alguien que te diga cuántas «AX» hay. Si te cuesta sobre todo frenar respuestas que van solas, prueba los [ejercicios Go/No-Go de control de impulsos](../test-go-no-go/).
 
 ## Trucos para concentrarte en el día a día
 

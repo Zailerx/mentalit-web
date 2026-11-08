@@ -55,7 +55,7 @@ Si te interesa la rapidez pura, sin la trampa de la palabra, prueba el [test de 
 ## Variantes para ponértelo más difícil
 
 - **Hazlo en voz alta.** Decir el color es más difícil que pulsar un botón, porque hablar compite directamente con la lectura.
-- **Cambia la regla a mitad.** Unas rondas respondes al color y otras a la palabra. Cambiar de regla añade carga de flexibilidad.
+- **Cambia la regla a mitad.** Unas rondas respondes al color y otras a la palabra. Cambiar de regla añade carga de flexibilidad. Si lo que quieres es practicar solo el freno, sin la interferencia de la lectura, tienes ejercicios en la guía del [test Go/No-Go](../test-go-no-go/).
 - **Usa otro idioma.** Si lees en otro idioma con menos soltura, el efecto suele ser menor. Es una forma curiosa de comprobar lo automática que es tu lectura en cada lengua.
 
 Si quieres más práctica de este tipo, tienes una versión con números y otros nueve retos en [ejercicios de atención y concentración para adultos](../ejercicios-atencion-concentracion-adultos/).
