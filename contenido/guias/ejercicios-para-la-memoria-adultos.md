@@ -12,7 +12,7 @@ fuentes:
   - Melby-Lervåg, Redick y Hulme (2016). Working memory training does not improve performance on measures of intelligence or other measures of far transfer | https://pmc.ncbi.nlm.nih.gov/articles/PMC4968033/
 ---
 
-La memoria no es un músculo único que se fortalece con cualquier ejercicio. Es un conjunto de habilidades: fijarte en algo, organizarlo y recuperarlo cuando lo necesitas. Por eso los ejercicios que mejor funcionan son los que se parecen a lo que quieres recordar en tu día a día: nombres, listas, lo que has leído, dónde dejaste las llaves.
+La memoria no es un músculo único que se fortalece con cualquier ejercicio. Es un conjunto de habilidades: fijarte en algo, organizarlo y recuperarlo cuando lo necesitas. Por eso los ejercicios que mejor funcionan son los que se parecen a lo que quieres recordar en tu día a día: nombres, listas, lo que has leído, dónde dejaste las llaves. Si lo que más se te escapa son los nombres, tienes una guía específica sobre [cómo recordar nombres](../recordar-nombres/).
 
 ## Empieza por medir tu punto de partida
 

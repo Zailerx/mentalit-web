@@ -137,7 +137,7 @@ Nuria = gatos
 Pablo = ajedrez
 :::
 
-En la vida real, repite el nombre en voz alta al saludar («Encantado, Jorge») y úsalo una vez más antes de despedirte.
+En la vida real, repite el nombre en voz alta al saludar («Encantado, Jorge») y úsalo una vez más antes de despedirte. Tienes más trucos en la guía de [cómo recordar nombres](../recordar-nombres/).
 
 :::
 
