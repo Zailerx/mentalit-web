@@ -57,7 +57,7 @@ Es lo que más preocupa al principio, y es completamente normal. En cinco minuto
 
 ## Lleva un registro
 
-Al terminar, anota en una línea cómo ha ido: cuántas veces crees que te has distraído y qué tipo de pensamientos han aparecido. Con unas semanas de notas verás patrones, por ejemplo que los lunes te distraes más o que meditar por la mañana te resulta más fácil.
+Al terminar, anota en una línea cómo ha ido: cuántas veces crees que te has distraído y qué tipo de pensamientos han aparecido. Con unas semanas de notas verás patrones, por ejemplo que los lunes te distraes más o que meditar por la mañana te resulta más fácil. Cuando quieras llevar esta atención al resto del día, prueba estos [ejercicios de mindfulness de 5 minutos](../ejercicios-mindfulness/).
 
 ## ¿Qué dice la ciencia?
 

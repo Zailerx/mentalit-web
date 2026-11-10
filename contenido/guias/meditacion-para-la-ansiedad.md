@@ -130,7 +130,7 @@ Al acabar, quédate unos segundos con los ojos abiertos antes de levantarte y vu
 
 ## Reto de 7 días
 
-Haz la sesión completa cada día a la misma hora durante una semana, **también los días que estés tranquilo**. Practicar en calma es lo que hace que luego te acuerdes de usarla cuando estás nervioso. Apunta cada día dos números: tu tensión antes y después.
+Haz la sesión completa cada día a la misma hora durante una semana, **también los días que estés tranquilo**. Practicar en calma es lo que hace que luego te acuerdes de usarla cuando estás nervioso. Apunta cada día dos números: tu tensión antes y después. Si te gusta la práctica, tienes más [ejercicios de mindfulness para principiantes](../ejercicios-mindfulness/) para hacer en momentos del día.
 
 :::solucion
 No hay un resultado correcto. Lo habitual es que algunos días bajes dos puntos, otros ninguno y alguno incluso subas un poco. Fíjate en la tendencia de la semana, no en un día concreto. Si notas que meditar te hace sentir peor de forma repetida, para y coméntalo con un profesional.
