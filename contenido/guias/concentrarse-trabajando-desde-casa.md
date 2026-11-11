@@ -193,7 +193,7 @@ Pacta con los demás unas franjas de concentración (por ejemplo, de 9 a 11) y u
 
 ### ¿Cuánto tiempo seguido puedo concentrarme?
 
-No hay una cifra fija: depende del cansancio, de la tarea y de si te interesa. Por eso los bloques de 25 a 50 minutos con descansos funcionan para la mayoría. Empieza por 25 y alarga si te sobra concentración.
+No hay una cifra fija: depende del cansancio, de la tarea y de si te interesa. Por eso los bloques de 25 a 50 minutos con descansos funcionan para la mayoría. Empieza por 25 y alarga si te sobra concentración. Si quieres saber cuál es tu punto de partida, mira [cuánto tiempo puede concentrarse una persona](../cuanto-tiempo-puede-concentrarse/), donde tienes un test y una forma de medir tu racha.
 
 ### ¿Cuándo conviene consultar a un profesional?
 

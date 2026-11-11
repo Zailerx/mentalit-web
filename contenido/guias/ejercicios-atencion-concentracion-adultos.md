@@ -239,7 +239,7 @@ Si lo que más te cuesta es concentrarte con un libro o unos apuntes delante, ti
 
 ### ¿Cuánto tiempo al día hay que dedicarle?
 
-Con 10 minutos es suficiente. Es mejor un rato corto casi todos los días que una sesión larga de vez en cuando.
+Con 10 minutos es suficiente. Es mejor un rato corto casi todos los días que una sesión larga de vez en cuando. Y si te preguntas cuánto aguantas concentrado seguido, en [cuánto tiempo puede concentrarse una persona](../cuanto-tiempo-puede-concentrarse/) desmontamos el mito de los 8 segundos y te enseñamos a medirlo.
 
 ### ¿Qué diferencia hay entre atención y concentración?
 
