@@ -2,3 +2,7 @@ preview/
 __pycache__/
 *.pyc
 PLAN-DE-CONTENIDO.md
+
+# Claves de Google (viven en el repo privado mentalit-secrets, nunca aquí)
+mentalit-seo-*.json
+*service-account*.json
