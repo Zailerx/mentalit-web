@@ -52,7 +52,7 @@ Es lo que más preocupa al principio, y es completamente normal. En cinco minuto
 
 - **Empezar con sesiones largas.** Veinte minutos el primer día suelen acabar en abandono. Mejor cinco minutos durante una semana.
 - **Juzgar cada sesión.** No hay meditaciones buenas o malas. La sesión en la que más te distraes es la que más practicas el gesto de volver.
-- **Meditar tumbado en la cama.** Si estás cansado, te dormirás. Siéntate.
+- **Meditar tumbado en la cama.** Si estás cansado, te dormirás. Siéntate (salvo que lo que busques sea dormirte: para eso tienes estos [ejercicios de meditación para dormir](../meditacion-para-dormir/)).
 - **Esperar resultados inmediatos.** Lo útil de la meditación aparece con la constancia, no en una sesión.
 
 ## Lleva un registro
