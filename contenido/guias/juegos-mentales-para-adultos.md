@@ -15,7 +15,7 @@ Escribe tu respuesta y pulsa Comprobar, o abre la solución cuando hayas termina
 
 ## Acertijos de lógica: la respuesta rápida suele fallar
 
-Los tres primeros acertijos forman el Test de Reflexión Cognitiva que publicó el investigador Shane Frederick en 2005. Tienen una respuesta que sale sola y es incorrecta. Para acertar hay que frenar ese primer impulso y comprobarlo.
+Los tres primeros acertijos forman el Test de Reflexión Cognitiva que publicó el investigador Shane Frederick en 2005. Tienen una respuesta que sale sola y es incorrecta. Para acertar hay que frenar ese primer impulso y comprobarlo. Si buscas deducciones, problemas de verdad o mentira y tablas lógicas, tienes más en estos [ejercicios de lógica para adultos](../ejercicios-de-logica-para-adultos/).
 
 :::ejercicio 3 minutos
 
