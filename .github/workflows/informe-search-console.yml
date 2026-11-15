@@ -47,6 +47,8 @@ jobs:
             python3 scripts/gsc_report.py --key "$KEY" --days 28
           } > "$RUNNER_TEMP/informe.txt"
           rm -f "$KEY"
+          echo >> "$RUNNER_TEMP/informe.txt"
+          python3 scripts/autocompletar.py "$RUNNER_TEMP/informe.txt" datos/semillas.txt >> "$RUNNER_TEMP/informe.txt" || echo "(autocompletado no disponible)" >> "$RUNNER_TEMP/informe.txt"
           mkdir -p datos
           openssl enc -aes-256-cbc -pbkdf2 -iter 200000 -salt \
             -pass env:GSC_REPORT_PASS \
