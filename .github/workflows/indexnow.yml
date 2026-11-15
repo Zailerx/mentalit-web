@@ -1,0 +1,46 @@
+# Tras cada push a main que cambie guías o herramientas, espera a que Cloudflare
+# publique y avisa a los buscadores con IndexNow.
+name: IndexNow
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "public/guias/**"
+      - "public/herramientas/**"
+  workflow_dispatch:
+
+jobs:
+  indexnow:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+
+      - name: Avisar a IndexNow
+        env:
+          KEY: c322375a12fe1ca5bb484da61fc255cf
+          SITE: https://mentalitapp.com
+        run: |
+          set -uo pipefail
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ] || ! git rev-parse -q --verify HEAD~1 >/dev/null; then
+            FILES=$(git ls-files 'public/guias/*/index.html' 'public/herramientas/*/index.html')
+          else
+            FILES=$(git diff --name-only --diff-filter=AM HEAD~1 HEAD -- 'public/guias/*/index.html' 'public/herramientas/*/index.html')
+          fi
+          [ -z "$FILES" ] && { echo "Sin páginas nuevas o cambiadas"; exit 0; }
+          URLS=$(echo "$FILES" | sed -e 's#^public/#'"$SITE"'/#' -e 's#index\.html$##')
+          echo "Páginas:"; echo "$URLS"
+          # Espera a que la primera URL esté publicada (máx. ~10 min).
+          FIRST=$(echo "$URLS" | head -1)
+          for i in $(seq 1 20); do
+            code=$(curl -s -o /dev/null -w '%{http_code}' "$FIRST")
+            [ "$code" = "200" ] && break
+            sleep 30
+          done
+          echo "Estado de $FIRST: $code"
+          LIST=$(echo "$URLS" | python3 -c 'import sys,json;print(json.dumps([l.strip() for l in sys.stdin if l.strip()]))')
+          BODY="{\"host\":\"mentalitapp.com\",\"key\":\"$KEY\",\"keyLocation\":\"$SITE/$KEY.txt\",\"urlList\":$LIST}"
+          curl -s -o /dev/null -w 'IndexNow: HTTP %{http_code}\n' -X POST "https://api.indexnow.org/indexnow" \
+            -H "Content-Type: application/json; charset=utf-8" -d "$BODY"

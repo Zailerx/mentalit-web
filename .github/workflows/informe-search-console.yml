@@ -1,0 +1,65 @@
+# Genera cada mañana el informe de Search Console, lo cifra y lo deja en datos/.
+# La tarea diaria de guías lo descifra para elegir qué escribir.
+# Secretos necesarios (Settings → Secrets and variables → Actions):
+#   GSC_KEY_JSON     contenido completo del .json de la cuenta de servicio (solo lectura)
+#   GSC_REPORT_PASS  contraseña para cifrar el informe
+name: Informe de Search Console
+
+on:
+  schedule:
+    - cron: "5 5 * * *"   # 05:05 UTC = 06:05 (invierno) / 07:05 (verano) en Madrid
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: informe-search-console
+  cancel-in-progress: false
+
+jobs:
+  informe:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Instalar dependencias
+        run: pip install pyjwt cryptography
+
+      - name: Generar y cifrar el informe
+        env:
+          GSC_KEY_JSON: ${{ secrets.GSC_KEY_JSON }}
+          GSC_REPORT_PASS: ${{ secrets.GSC_REPORT_PASS }}
+        run: |
+          set -euo pipefail
+          if [ -z "$GSC_KEY_JSON" ] || [ -z "$GSC_REPORT_PASS" ]; then
+            echo "Faltan los secretos GSC_KEY_JSON o GSC_REPORT_PASS"; exit 1
+          fi
+          KEY="$RUNNER_TEMP/clave.json"
+          printf '%s' "$GSC_KEY_JSON" > "$KEY"
+          {
+            echo "Generado: $(date -u +%Y-%m-%dT%H:%MZ)"
+            echo
+            python3 scripts/gsc_report.py --key "$KEY" --days 28
+          } > "$RUNNER_TEMP/informe.txt"
+          rm -f "$KEY"
+          mkdir -p datos
+          openssl enc -aes-256-cbc -pbkdf2 -iter 200000 -salt \
+            -pass env:GSC_REPORT_PASS \
+            -in "$RUNNER_TEMP/informe.txt" -out datos/gsc-informe.enc
+          rm -f "$RUNNER_TEMP/informe.txt"
+
+      - name: Subir el informe cifrado
+        run: |
+          git config user.name "Zailerx"
+          git config user.email "zailerx@users.noreply.github.com"
+          git add datos/gsc-informe.enc
+          git commit -m "Informe de Search Console (cifrado)" || exit 0
+          for i in 1 2 3; do
+            git pull --rebase -q origin main && git push -q origin HEAD:main && break
+            sleep 10
+          done
