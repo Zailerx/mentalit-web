@@ -165,7 +165,7 @@ Cuánto aguantas concentrado depende de la tarea, el interés y el cansancio. = 
 
 ## 7. La lista de «luego»
 
-Ten un papel al lado mientras trabajas. Cuando te venga algo a la cabeza («tengo que llamar al dentista»), apúntalo en una palabra y sigue. Muchas interrupciones no vienen de fuera, sino de pendientes que la mente repite para no olvidarlos. Al acabar el bloque, repasa la lista.
+Ten un papel al lado mientras trabajas. Cuando te venga algo a la cabeza («tengo que llamar al dentista»), apúntalo en una palabra y sigue. Muchas interrupciones no vienen de fuera, sino de pendientes que la mente repite para no olvidarlos. Al acabar el bloque, repasa la lista. Si aun así te quedas atascado, en [bloqueo mental: qué hacer cuando no te concentras](../bloqueo-mental/) tienes un plan para salir en 10 minutos.
 
 :::
 

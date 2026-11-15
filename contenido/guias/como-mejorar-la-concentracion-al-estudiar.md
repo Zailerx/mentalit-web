@@ -29,7 +29,7 @@ El truco está en respetar el final del bloque aunque estés a gusto, y en no em
 
 ## 4. Descansa sin pantallas
 
-Si en el descanso abres redes sociales, la pausa se alarga y vuelves con la cabeza en otra parte. Levántate, bebe agua, estira las piernas o mira por la ventana. Cinco minutos de movimiento sientan mejor que cinco minutos de vídeos.
+Si en el descanso abres redes sociales, la pausa se alarga y vuelves con la cabeza en otra parte. Levántate, bebe agua, estira las piernas o mira por la ventana. Cinco minutos de movimiento sientan mejor que cinco minutos de vídeos. Y si ya estás atascado y no entra nada, sigue el plan de rescate de 10 minutos de la guía sobre el [bloqueo mental](../bloqueo-mental/).
 
 ## 5. Ten una hoja para las distracciones
 
