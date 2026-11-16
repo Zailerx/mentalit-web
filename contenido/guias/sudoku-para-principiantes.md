@@ -1,8 +1,8 @@
 ---
-titulo: Sudoku para principiantes: cómo resolverlo paso a paso
-seo_titulo: Sudoku para principiantes: cómo resolverlo paso a paso
-descripcion: Aprende a resolver un sudoku paso a paso con 4 técnicas básicas, ejercicios con solución y sudokus de 4×4 y 6×6 para jugar aquí mismo.
-entradilla: Para resolver un sudoku no hace falta saber matemáticas ni adivinar: se trata de descartar. Buscas la casilla donde solo cabe un número, o el número que solo cabe en una casilla, y repites. Abajo tienes las 4 técnicas básicas con ejercicios para practicarlas y tres sudokus jugables, de 4×4 y 6×6, para empezar sin agobios.
+titulo: Sudoku fácil para principiantes: cómo resolverlo paso a paso
+seo_titulo: Sudoku fácil para principiantes: cómo resolverlo y jugar aquí
+descripcion: Sudokus fáciles de 4×4 y 6×6 para jugar gratis aquí, uno resuelto paso a paso y las 4 técnicas básicas para resolver un sudoku, con ejercicios.
+entradilla: El sudoku es un pasatiempo de lógica: rellenas una cuadrícula para que cada fila, columna y bloque tenga todos los números sin repetir. No hace falta saber matemáticas ni adivinar, solo descartar. Abajo tienes sudokus fáciles de 4×4 y 6×6 para jugar aquí mismo, uno resuelto paso a paso contigo y las 4 técnicas básicas con ejercicios.
 fecha: 2026-10-30
 categoria: Lógica
 relacionadas: juegos-mentales-para-adultos, ejercicios-atencion-concentracion-adultos, memoria-a-corto-plazo-ejercicios
@@ -11,7 +11,7 @@ fuentes:
   - Nippon.com. Kaji Maki, el padre del «sudoku»: el hombre que cambió los pasatiempos del mundo | https://www.nippon.com/es/japan-topics/g01191/
 ---
 
-Si nunca has terminado un sudoku, empieza por los pequeños. Un 4×4 o un 6×6 usa exactamente las mismas reglas y técnicas que el 9×9 de los periódicos, pero se resuelve en unos minutos y ves enseguida por qué funciona cada paso.
+Si nunca has terminado un sudoku, empieza por los pequeños: un 4×4 o un 6×6 usa las mismas reglas y técnicas que el 9×9 de los periódicos, pero se resuelve en minutos.
 
 ## Las reglas del sudoku en 30 segundos
 
@@ -21,9 +21,55 @@ Un sudoku clásico es una cuadrícula de 9×9 dividida en nueve bloques de 3×3.
 2. Cada **columna** tenga los nueve números, sin repetir.
 3. Cada **bloque** de 3×3 tenga los nueve números, sin repetir.
 
-Eso es todo. Los números no se suman ni se restan: podrían ser letras o colores. Un sudoku bien hecho tiene una sola solución, y siempre se puede llegar a ella razonando, sin probar a ciegas.
+Los números no se suman ni se restan: podrían ser letras o colores. Un sudoku bien hecho tiene una sola solución, a la que se llega razonando.
 
 En los sudokus pequeños cambia solo el tamaño: en el 4×4 usas del 1 al 4 y los bloques son de 2×2; en el 6×6, del 1 al 6 y bloques de 2×3.
+
+## Un sudoku fácil resuelto paso a paso
+
+Antes de ver las técnicas, resuelve este 4×4 conmigo. Contesta cada pregunta y comprueba; si dudas, abre la explicación.
+
+| · | · | 4 | · |
+|---|---|---|---|
+| 4 | · | 3 | 2 |
+| · | · | 1 | · |
+| · | 3 | · | · |
+
+:::ejercicio 4 minutos
+
+## Resuélvelo casilla a casilla
+
+Las filas se cuentan de arriba abajo y las columnas de izquierda a derecha.
+
+:::preguntas
+Paso 1. Fila 2, columna 2 = 1
+Paso 2. Fila 1, columna 2 = 2
+Paso 3. Fila 1, columna 1 = 3
+Paso 4. Fila 1, columna 4 = 1
+Paso 5. Fila 4, columna 4 = 4
+Paso 6. Fila 3, columna 4 = 3
+Paso 7. Fila 3, columna 1 = 2
+Paso 8. Fila 3, columna 2 = 4
+Paso 9. Fila 4, columna 1 = 1
+Paso 10. Fila 4, columna 3 = 2
+:::
+
+:::solucion
+1. **1.** A la fila 2 (4 · 3 2) solo le falta el 1.
+2. **2.** En el bloque de arriba a la izquierda faltan el 2 y el 3. La columna 2 ya tiene un 3 (abajo), así que ahí va el 2.
+3. **3.** Es el último hueco de ese bloque.
+4. **1.** La fila 1 ya tiene 3, 2 y 4.
+5. **4.** A la columna 4 le faltan el 3 y el 4. La fila 4 ya tiene un 3, así que ahí va el 4.
+6. **3.** Último hueco de la columna 4.
+7. **2.** A la fila 3 le faltan el 2 y el 4. La columna 1 ya tiene un 4, así que ahí va el 2.
+8. **4.** Último hueco de la fila 3.
+9. **1.** La columna 1 tiene 3, 4 y 2.
+10. **2.** Último hueco de la fila 4.
+
+La solución completa es: 3 2 4 1 / 4 1 3 2 / 2 4 1 3 / 1 3 2 4. Fíjate en que nunca has adivinado: cada número sale de descartar.
+:::
+
+:::
 
 ## Técnica 1: el último hueco
 
@@ -171,6 +217,27 @@ Cuando te pongas con un sudoku de 9×9, sigue siempre el mismo orden:
 
 Los errores típicos de quien empieza son tres: no comprobar el bloque al mirar en cruz, apuntar candidatos desde el principio (es lento y agobia) y no borrarlos cuando colocas un número.
 
+## Qué hace que un sudoku sea fácil
+
+Un sudoku fácil o sencillo es el que se resuelve solo con las técnicas 1, 2 y 3: en todo momento hay alguna casilla con un único número posible. Depende más de qué técnicas pide que de cuántas pistas trae.
+
+Para empezar de cero, el orden que mejor funciona es: dos o tres sudokus de 4×4, luego 6×6 y, cuando los 6×6 te salgan sin candidatos, el 9×9 fácil. El 4×4 también es buena puerta de entrada para niños que ya conocen los números del 1 al 4.
+
+:::ejercicio 4 minutos
+
+## Sudoku sencillo de 4×4
+
+Otro para coger soltura. Empieza por la fila 4: ya tiene dos números.
+
+:::sudoku
+. 3 4 .
+. 1 . .
+3 . . .
+1 2 . .
+:::
+
+:::
+
 ## Sube de nivel: dos sudokus de 6×6
 
 Los bloques son de 2 filas por 3 columnas. Aplica la rutina: primero recorre los números del 1 al 6 bloque por bloque y después busca las filas y columnas más llenas.
@@ -207,7 +274,7 @@ Un poco más difícil: aquí te tocará apuntar algún candidato.
 
 :::
 
-Si te gustan los retos de lógica con números, prueba también las [series numéricas](../../herramientas/series-numericas/) o los acertijos de [juegos mentales para adultos](../juegos-mentales-para-adultos/), que también tienen un sudoku de 4×4. Para otro sudoku de 6×6 y problemas de deducción, mira estos [ejercicios de lógica para adultos](../ejercicios-de-logica-para-adultos/). Y si quieres ejercitar la visión espacial, tienes [ejercicios de rotación mental](../rotacion-mental-ejercicios/) con un test de figuras giradas.
+Si te gustan los retos de lógica con números, prueba las [series numéricas](../../herramientas/series-numericas/), los acertijos de [juegos mentales para adultos](../juegos-mentales-para-adultos/) o estos [ejercicios de lógica para adultos](../ejercicios-de-logica-para-adultos/), con otro sudoku de 6×6. Para la visión espacial, tienes [ejercicios de rotación mental](../rotacion-mental-ejercicios/).
 
 ## Preguntas frecuentes
 
@@ -217,16 +284,16 @@ No. No se hacen cuentas: los números solo sirven como símbolos distintos. Lo q
 
 ### ¿Cuántas pistas necesita un sudoku como mínimo?
 
-Diecisiete. En 2012, un equipo de matemáticos hizo una búsqueda exhaustiva por ordenador y comprobó que no existe ningún sudoku de 9×9 con 16 pistas que tenga solución única. Eso no quiere decir que menos pistas sea siempre más difícil: la dificultad depende sobre todo de qué técnicas hacen falta para avanzar.
+Diecisiete. En 2012, un equipo de matemáticos comprobó con una búsqueda exhaustiva por ordenador que no existe ningún sudoku de 9×9 con 16 pistas y solución única.
 
 ### ¿De dónde viene el sudoku?
 
-Lo inventó el estadounidense Howard Garns, que lo llamó *Number Place*. El editor japonés Kaji Maki lo llevó a su revista de pasatiempos, Nikoli, en 1984 y le puso el nombre de sudoku, abreviatura de una frase japonesa que viene a decir que cada número tiene que ir solo. Se hizo famoso en todo el mundo a partir de 2005.
+Lo inventó el estadounidense Howard Garns con el nombre de *Number Place*. El editor japonés Kaji Maki lo publicó en su revista Nikoli en 1984 y le puso el nombre de sudoku.
 
 ### ¿El sudoku es bueno para la memoria?
 
-Es un buen ejercicio de lógica y te obliga a mantener la atención un buen rato, pero no hay pruebas de que hacer sudokus mejore la memoria en general: lo que más mejora es tu habilidad con el sudoku. Si quieres trabajar la memoria, combínalo con ejercicios específicos, como los de [memoria a corto plazo](../memoria-a-corto-plazo-ejercicios/).
+Es un buen ejercicio de lógica y de atención sostenida, pero no hay pruebas de que mejore la memoria en general: lo que más mejora es tu habilidad con el sudoku. Si quieres trabajar la memoria, combínalo con ejercicios específicos, como los de [memoria a corto plazo](../memoria-a-corto-plazo-ejercicios/).
 
 ### ¿Dónde puedo seguir practicando?
 
-Con los tres sudokus de esta página ya tienes para un rato. Si quieres jugar desde el iPhone o el iPad, Mentalit incluye sudoku entre sus más de 40 juegos, con seis niveles de dificultad, de Suave a Extremo, y un entrenamiento diario de cuatro juegos.
+Con los cuatro sudokus jugables de esta página ya tienes para un rato. Si quieres jugar desde el iPhone o el iPad, Mentalit incluye sudoku entre sus más de 40 juegos, con seis niveles de dificultad, de Suave a Extremo, y un entrenamiento diario de cuatro juegos.
