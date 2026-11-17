@@ -204,7 +204,7 @@ Cambia las palabras, los números y los recorridos cada semana para no aprendert
 
 ## Qué puedes esperar si la entrenas
 
-Con la práctica mejoras en los ejercicios que haces y en tareas parecidas: las series al revés te salen más largas y las cuentas encadenadas, más fluidas. Lo que no está demostrado es que ese entrenamiento se traslade a cosas lejanas. Una revisión de 2016 que reunió 87 publicaciones concluyó que entrenar la memoria de trabajo produce mejoras a corto plazo en tareas parecidas a las entrenadas, pero no en medidas de inteligencia, lectura o aritmética.
+Con la práctica mejoras en los ejercicios que haces y en tareas parecidas: las series al revés te salen más largas y las cuentas encadenadas, más fluidas. Lo que no está demostrado es que ese entrenamiento se traslade a cosas lejanas. Una revisión de 2016 que reunió 87 publicaciones concluyó que entrenar la memoria de trabajo produce mejoras a corto plazo en tareas parecidas a las entrenadas, pero no en medidas de inteligencia, lectura o aritmética. Si quieres comprobarlo en ti, en la guía de [brain training](../brain-training/) tienes un experimento de dos semanas.
 
 Por eso conviene elegir ejercicios parecidos a lo que necesitas en tu día a día y aprender a cargar menos la memoria: agrupar, apuntar lo importante y no hacer dos cosas a la vez. En los [ejercicios de atención y concentración para adultos](../ejercicios-atencion-concentracion-adultos/) tienes más prácticas para reducir las distracciones.
 

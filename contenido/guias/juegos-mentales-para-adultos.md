@@ -246,7 +246,7 @@ Verás números de uno en uno. Escríbelos **en orden inverso**, empezando por e
 
 ### ¿Los juegos mentales hacen más inteligente?
 
-No hay pruebas de eso. Una revisión amplia publicada en 2016 en *Psychological Science in the Public Interest* concluyó que practicar una tarea mejora sobre todo esa tarea, que hay menos pruebas de mejora en tareas parecidas y muy pocas en el rendimiento del día a día. Tómalos como lo que son: un rato entretenido en el que piensas, aprendes trucos y te pones a prueba.
+No hay pruebas de eso. Una revisión amplia publicada en 2016 en *Psychological Science in the Public Interest* concluyó que practicar una tarea mejora sobre todo esa tarea, que hay menos pruebas de mejora en tareas parecidas y muy pocas en el rendimiento del día a día. Lo explicamos con más detalle en [qué dice la ciencia sobre el brain training](../brain-training/). Tómalos como lo que son: un rato entretenido en el que piensas, aprendes trucos y te pones a prueba.
 
 ### ¿Qué juegos son buenos para empezar?
 
