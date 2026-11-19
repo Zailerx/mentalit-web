@@ -169,7 +169,7 @@ Para que el entrenamiento no se quede corto, cambia los ejemplos cuando te los s
 - **Elige lo que quieres practicar.** Si te cuesta el cálculo de cabeza, entrena cálculo. Como la mejora se queda cerca de lo que practicas, conviene que el ejercicio se parezca a lo que quieres hacer mejor. Para la vida diaria, prueba también los [juegos mentales para adultos con respuesta](../juegos-mentales-para-adultos/), que mezclan lógica, palabras y números.
 - **Ajusta la dificultad.** Un ejercicio que te sale perfecto ya no te exige nada; uno en el que fallas casi siempre te desanima. Lo ideal es acertar la mayoría con algo de esfuerzo.
 - **Varía.** Mezclar memoria, atención, cálculo y lógica hace la práctica más entretenida y te da una visión más completa de tus puntos fuertes.
-- **Busca un hábito, no un milagro.** Diez minutos diarios son fáciles de mantener. Tómalo como un pasatiempo que te hace pensar, igual que un crucigrama, no como un tratamiento.
+- **Busca un hábito, no un milagro.** Diez minutos diarios son fáciles de mantener. Si quieres una estructura fija, sigue nuestra [rutina de 10 minutos para entrenar la mente cada mañana](../rutina-entrenar-la-mente/). Tómalo como un pasatiempo que te hace pensar, igual que un crucigrama, no como un tratamiento.
 - **No lo hagas todo con el móvil.** Leer, conversar, aprender algo nuevo, dormir bien y moverte también forman parte de cuidar tu día a día.
 
 ## Preguntas frecuentes
