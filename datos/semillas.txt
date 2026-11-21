@@ -1,7 +1,8 @@
 # Búsquedas para consultar en el autocompletado de Google cada mañana (una por línea).
 # Se suman automáticamente las consultas de Search Console con 3 o más impresiones.
 rutina para entrenar la mente
-psicotécnicos aptitud numérica
+ejercicios de aptitud numérica
+problemas de regla de tres
 calcular porcentajes de cabeza
 ejercicios de memoria
 ejercicios de concentración

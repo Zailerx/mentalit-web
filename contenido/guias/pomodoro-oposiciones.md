@@ -134,7 +134,7 @@ Para fijarlo mejor, puedes colocar cada artículo en un lugar de tu casa, como s
 3. Descanso de 5 minutos.
 4. Pomodoro 2: corrige. Por cada fallo, apunta el tema, la respuesta correcta y por qué fallaste (no lo sabías, lo confundiste o leíste mal la pregunta).
 
-Si tu oposición tiene psicotécnicos, dedica algún pomodoro a practicarlos con el test de [series numéricas](../../herramientas/series-numericas/) o el de [agilidad mental](../../herramientas/test-agilidad-mental/).
+Si tu oposición tiene psicotécnicos, dedica algún pomodoro a practicarlos con el test de [series numéricas](../../herramientas/series-numericas/) o el de [agilidad mental](../../herramientas/test-agilidad-mental/). Para la parte numérica tienes ejercicios resueltos en nuestra guía de [psicotécnicos de aptitud numérica](../psicotecnicos-aptitud-numerica/).
 
 :::
 

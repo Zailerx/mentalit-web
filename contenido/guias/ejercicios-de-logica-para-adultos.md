@@ -254,7 +254,7 @@ Apunta cuánto tardas en cada tipo. Al cabo de unas semanas verás en cuáles va
 
 ### ¿Los ejercicios de lógica te hacen más inteligente?
 
-No hay pruebas de eso. Una revisión amplia publicada en 2016 en *Psychological Science in the Public Interest* concluyó que entrenar una tarea mejora sobre todo esa tarea, y que hay pocas pruebas de que la mejora se traslade a la vida diaria. Lo que sí ganas es soltura con este tipo de problemas, algo útil, por ejemplo, para preparar psicotécnicos, además de un rato entretenido.
+No hay pruebas de eso. Una revisión amplia publicada en 2016 en *Psychological Science in the Public Interest* concluyó que entrenar una tarea mejora sobre todo esa tarea, y que hay pocas pruebas de que la mejora se traslade a la vida diaria. Lo que sí ganas es soltura con este tipo de problemas, algo útil, por ejemplo, para preparar psicotécnicos (si te toca la parte de números, mira nuestros [psicotécnicos de aptitud numérica](../psicotecnicos-aptitud-numerica/)), además de un rato entretenido.
 
 ### ¿Por dónde empiezo si nunca he hecho ejercicios de lógica?
 
