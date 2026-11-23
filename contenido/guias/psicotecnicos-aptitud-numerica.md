@@ -71,6 +71,8 @@ Un precio de 80 € sube un 10 % y después baja un 10 %. ¿Precio final? = 79,2
 La cuarta es la trampa más habitual: subir un 10 % y bajar un 10 % no te deja igual. 80 € + 10 % = 88 €, y 88 € − 10 % (8,80 €) = 79,20 €. El segundo porcentaje se aplica sobre una cantidad mayor.
 :::
 
+Si quieres más práctica con descuentos, IVA y subidas de precio, tienes la guía de [cómo calcular porcentajes de cabeza](../calcular-porcentajes-de-cabeza/).
+
 :::
 
 :::ejercicio 3 minutos

@@ -204,7 +204,7 @@ Pon un temporizador de 60 segundos y di en voz alta todas las palabras que se te
 | Viernes | Recados nuevos | Porcentajes de la compra | Palabras con categoría (10) | Sudoku en papel |
 | Fin de semana | Descanso o tu ejercicio favorito | | | |
 
-Todos los días empiezan con el minuto de respiración y terminan con el plan del día. Para inventar contenido nuevo, cambia las palabras de la lista por objetos de tu casa, pide a alguien que te dicte números o usa los precios del súper para hacer cuentas.
+Todos los días empiezan con el minuto de respiración y terminan con el plan del día. Para inventar contenido nuevo, cambia las palabras de la lista por objetos de tu casa, pide a alguien que te dicte números o usa los precios del súper para hacer cuentas. Para los porcentajes, el truco del 10 % de nuestra guía de [cómo calcular porcentajes de cabeza](../calcular-porcentajes-de-cabeza/) te sirve con cualquier descuento.
 
 ## Cómo convertirla en hábito
 
