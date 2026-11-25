@@ -112,6 +112,8 @@ En un mapa a escala 1:50000, ¿cuántos kilómetros reales son 4 cm? = 2 km
 - **Mapa:** 4 × 50000 = 200000 cm, que son 2000 m, es decir, 2 km.
 :::
 
+Si quieres más práctica, tienes 27 [problemas de regla de tres directa, inversa y compuesta](../problemas-regla-de-tres/) con la solución explicada.
+
 :::
 
 :::ejercicio 6 minutos

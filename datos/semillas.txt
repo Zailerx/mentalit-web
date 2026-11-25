@@ -2,7 +2,6 @@
 # Se suman automáticamente las consultas de Search Console con 3 o más impresiones.
 rutina para entrenar la mente
 ejercicios de aptitud numérica
-problemas de regla de tres
 calcular porcentajes de cabeza
 ejercicios de memoria
 ejercicios de concentración

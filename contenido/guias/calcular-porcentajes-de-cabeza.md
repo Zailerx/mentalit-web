@@ -162,6 +162,8 @@ Pagas 363 € con IVA del 21 % incluido. ¿Cuál era la base sin IVA? = 300 €
 
 Para saber qué porcentaje es una cantidad de otra, divide la parte entre el total y multiplica por 100. De cabeza es más fácil **convertir la fracción en una que tenga 100 abajo**: 18 de 72 es lo mismo que 1 de 4 (dividiendo los dos entre 18), y 1 de 4 es el 25 %. Para subidas y bajadas, el porcentaje se calcula siempre sobre el valor de partida.
 
+En el fondo es una regla de tres directa en la que el total vale 100; si quieres practicar ese razonamiento, tienes [problemas de regla de tres con solución](../problemas-regla-de-tres/).
+
 :::ejercicio 3 minutos
 
 ## 6. Propinas, sueldos y facturas
