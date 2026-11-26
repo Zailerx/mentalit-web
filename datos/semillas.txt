@@ -17,3 +17,6 @@ meditación
 rutina para entrenar la mente cada mañana
 ejercicios para entrenar la mente
 entrenar la mente
+test go no go
+go no go test
+tarea go no go

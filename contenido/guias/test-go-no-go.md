@@ -1,17 +1,18 @@
 ---
-titulo: Test Go/No-Go: qué mide y 7 ejercicios de control de impulsos
-seo_titulo: Test Go/No-Go: qué mide y ejercicios de control de impulsos
-descripcion: Qué es el test Go/No-Go, qué mide y cómo leer tu resultado. Con 7 ejercicios de control de impulsos con soluciones para practicar aquí o en papel.
-entradilla: El test Go/No-Go mide el control inhibitorio: tu capacidad para frenar una respuesta que ya tenías preparada. Respondes lo más rápido posible a casi todo y te quedas quieto ante una señal concreta. Abajo tienes 7 ejercicios con soluciones para practicarlo aquí, en papel o en familia.
+titulo: Test Go/No-Go: hazlo en papel, puntúate y practica con 8 ejercicios
+seo_titulo: Test Go/No-Go: hazlo en papel y practica con 8 ejercicios
+descripcion: Haz un test Go/No-Go de 2 minutos, aprende a puntuar tus falsas alarmas y entrena el control de impulsos con 8 ejercicios con solución.
+entradilla: El test Go/No-Go mide el control inhibitorio, es decir, tu capacidad para frenar una respuesta que ya tenías preparada. Respondes deprisa a casi todos los estímulos y te quedas quieto ante uno concreto y poco frecuente. Abajo puedes hacer una versión de 2 minutos, puntuarte y practicar con 8 ejercicios con solución.
 fecha: 2026-11-08
 categoria: Atención
 relacionadas: test-de-stroop, ejercicios-atencion-concentracion-adultos, n-back
 fuentes:
   - Littman, R. y Takács, Á. (2017). Do all inhibitions act alike? A study of go/no-go and stop-signal paradigms. PLoS ONE | https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5655479/
   - Wessel, J. R. (2018). Prepotent motor activity and inhibitory control demands in different variants of the go/no-go paradigm. Psychophysiology | https://pubmed.ncbi.nlm.nih.gov/28390090/
+  - Robertson, I. H. y otros (1997). 'Oops!': Performance correlates of everyday attentional failures in traumatic brain injured and normal subjects. Neuropsychologia | https://www.mrc-cbu.cam.ac.uk/bibliography/articles/3518/
 ---
 
-Imagina que tienes que tocar la pantalla cada vez que aparece un círculo lleno, y no tocarla cuando aparece uno vacío. Los llenos salen casi siempre, así que el dedo se acostumbra a ir solo. Cuando por fin sale el vacío, el reto es frenarlo a tiempo. Eso es, en esencia, una tarea Go/No-Go: «go» significa responder y «no-go», no hacerlo.
+Imagina que tienes que tocar la pantalla con cada círculo lleno y no tocarla con los vacíos. Los llenos salen casi siempre, así que el dedo se acostumbra a ir solo, y cuando sale el vacío hay que frenarlo a tiempo. Eso es una tarea Go/No-Go: «go» significa responder y «no-go», no hacerlo.
 
 ## Cómo funciona el test Go/No-Go
 
@@ -20,7 +21,7 @@ Hay dos tipos de estímulos:
 - **Go:** aparecen la mayoría de las veces y debes responder rápido (pulsar, tocar, dar una palmada).
 - **No-Go:** aparecen pocas veces y debes quedarte quieto.
 
-El truco está en la proporción. Si las dos señales salieran igual de a menudo, no habría ninguna respuesta «automática» que frenar. Una revisión de Jan Wessel, publicada en *Psychophysiology*, señala precisamente eso: el test solo exige de verdad inhibir una respuesta cuando las señales go son mucho más frecuentes y hay que contestar deprisa. Por eso los ejercicios de abajo tienen pocos no-go y te piden ir rápido.
+El truco está en la proporción. Una revisión de Jan Wessel en *Psychophysiology* señala que el test solo exige de verdad frenar cuando las señales go son mucho más frecuentes y hay que contestar deprisa. Por eso los ejercicios de abajo tienen pocos no-go y te piden ir rápido.
 
 ## Qué mide y cómo leer tu resultado
 
@@ -30,15 +31,49 @@ El Go/No-Go mide el **control inhibitorio**, una de las funciones ejecutivas jun
 2. **Errores de omisión:** no respondiste ante un go. Suelen salir cuando te despistas o vas demasiado prudente.
 3. **Tiempo de reacción** en las señales go.
 
-Las tres están relacionadas. Si vas muy rápido, cometerás más falsas alarmas; si vas muy despacio para no fallar, el test pierde la gracia. Lo interesante es encontrar tu equilibrio y ver cómo cambia con la práctica, el cansancio o la hora del día.
+Si vas muy rápido, cometerás más falsas alarmas; si vas muy despacio, el test pierde la gracia. Busca tu equilibrio y mira cómo cambia con la práctica o el cansancio.
 
-Hay un test parecido, el de señal de stop, en el que la orden de parar llega cuando ya has empezado a responder. Un estudio de Littman y Takács comparó ambos y concluyó que no miden exactamente lo mismo: frenar antes de empezar no es igual que cancelar algo ya en marcha.
+En el test de señal de stop, parecido, la orden de parar llega cuando ya has empezado a responder. Littman y Takács compararon ambos y vieron que no miden exactamente lo mismo.
 
-Una aclaración importante: las versiones de esta página son juegos para practicar. No sirven para diagnosticar nada. Si te preocupa la impulsividad en tu día a día, o la de un familiar, lo adecuado es consultarlo con un profesional.
+Las versiones de esta página son para practicar y no sirven para diagnosticar nada. Si te preocupa tu impulsividad o la de un familiar, consúltalo con un profesional.
 
-## 7 ejercicios Go/No-Go para practicar
+## Haz el test Go/No-Go en papel y puntúate
 
-Haz dos o tres al día. Para que funcionen, ve **lo más rápido que puedas**: si vas despacio, no hay nada que frenar. Las soluciones están ocultas hasta que termines.
+Esta versión se basa en la tarea SART que publicaron Ian Robertson y su equipo en *Neuropsychologia* en 1997: van saliendo cifras del 1 al 9 y hay que responder a todas menos a una, que aparece aproximadamente una de cada diez veces. Ellos la diseñaron para provocar «despistes de acción», justo cuando la tarea se vuelve monótona.
+
+:::ejercicio 2 minutos · test
+
+## Test: palmada con todo menos el 3
+
+Pon un cronómetro y da una palmada por cada cifra, de izquierda a derecha y sin parar entre filas. Con el **3**, nada. Si puedes, pide a alguien que apunte tus fallos, o grábate con el móvil y revísalo después.
+
+```
+5 5 8 1 4 3 1 4 3 5 8 5 1 5 4
+4 5 3 8 7 5 1 3 6 2 1 1 9 7 7
+8 8 5 1 6 5 8 8 4 1 2 2 4 3 1
+8 5 7 2 7 3 3 1 8 9 2 1 7 2 5
+```
+
+:::preguntas
+¿Cuántos treses hay? = 7
+¿Cuántas palmadas tocaban? = 53
+:::
+
+:::solucion
+Hay 60 cifras y **7 treses**, así que tocaban **53 palmadas**. Puntúate así:
+
+1. **Falsas alarmas:** palmadas en un 3. Es tu dato principal.
+2. **Omisiones:** cifras sin palmada.
+3. **Tiempo** total en segundos.
+
+Una regla casera para tener una sola cifra: suma 3 segundos al tiempo por cada error. Repite el test otro día y compara solo contigo mismo. Los dos treses seguidos de la última fila son los que más fallan.
+:::
+
+:::
+
+## 8 ejercicios Go/No-Go para practicar
+
+Haz dos o tres al día y ve **lo más rápido que puedas**: si vas despacio, no hay nada que frenar.
 
 :::ejercicio 2 minutos
 
@@ -151,9 +186,30 @@ La otra persona dice «derecha» o «izquierda» y tú levantas la mano que corr
 
 ## 7. El semáforo del móvil
 
-Elige un gesto automático que repitas mucho, como desbloquear el móvil sin motivo. Durante una semana, cada vez que notes la mano yendo al bolsillo, para dos segundos y pregúntate: «¿para qué lo voy a mirar?». Si tienes un motivo, adelante; si no, déjalo. Apunta en un papel cuántas veces has parado cada día.
+Durante una semana, cada vez que notes la mano yendo a desbloquear el móvil sin motivo, para dos segundos y pregúntate: «¿para qué lo voy a mirar?». Apunta cuántas veces has parado cada día. Es la misma habilidad aplicada a algo real.
 
-No es un test, pero es la misma habilidad aplicada a algo real: detectar la señal y frenar una respuesta que va sola.
+:::
+
+
+:::ejercicio 2 minutos
+
+## 8. Cambio de regla
+
+Lee la fila dos veces, deprisa. En la **primera pasada**, da un toque en la mesa con cada letra excepto con la **O**. En la **segunda**, al revés: toca solo con la O. Cambiar la regla obliga a frenar justo lo que acabas de automatizar.
+
+```
+O O T Z R S K H N O P K S O B
+D P B N C P V O M B O D V P B
+```
+
+:::preguntas
+¿Cuántos toques tocaban en la primera pasada? = 24
+¿Y en la segunda? = 6
+:::
+
+:::solucion
+Hay 30 letras y **6 oes**: 24 toques en la primera pasada y 6 en la segunda. Las dos oes del principio pillan en la primera pasada; en la segunda, lo difícil es no tocar por inercia con el resto.
+:::
 
 :::
 
@@ -163,8 +219,8 @@ No es un test, pero es la misma habilidad aplicada a algo real: detectar la señ
 |---|---|
 | Lunes | Letras (1) y «bum» del 7 (4) |
 | Martes | Palmadas (2) y palabras (3) |
-| Miércoles | Mano contraria (6) |
-| Jueves | Letras (1) con otra letra prohibida, por ejemplo la D |
+| Miércoles | Mano contraria (6) y cambio de regla (8) |
+| Jueves | Test en papel (puntúate) y letras (1) con otra letra prohibida, por ejemplo la D |
 | Viernes | «Bum» con el 6 (4) y palmadas (2) |
 | Fin de semana | Simón dice en familia (5) |
 
@@ -184,6 +240,6 @@ En el Go/No-Go tienes que frenar una respuesta. En el Stroop tienes que frenar u
 
 Practicarlo te hará mejor en la tarea y en otras muy parecidas. Que eso cambie cómo reaccionas en la vida diaria no está demostrado, por eso conviene combinar los ejercicios con hábitos concretos, como el del semáforo del móvil. Si quieres seguir con la atención, tienes más práctica en [ejercicios de atención y concentración para adultos](../ejercicios-atencion-concentracion-adultos/).
 
-### ¿Qué es un buen resultado?
+### ¿Qué es un buen resultado en el test Go/No-Go?
 
-Depende de la versión: la velocidad, la proporción de no-go y el dispositivo cambian mucho los números. Compárate contigo mismo, con la misma versión, y fíjate sobre todo en las falsas alarmas.
+No hay una cifra universal: la velocidad, la proporción de no-go y el dispositivo cambian mucho los números. Repite el test en papel de arriba cada dos semanas y fíjate sobre todo en si bajan tus falsas alarmas sin ir más despacio.
