@@ -229,7 +229,7 @@ Cuando el número es feo, redondea primero para tener una estimación (el 19 % d
 2. **Piezas combinadas (2 minutos):** repite los ejercicios 2 y 3 cambiando los números.
 3. **Vida real (2 minutos):** en la compra o en una tienda online, calcula el precio final de los descuentos antes de mirarlo.
 
-Si estás preparando unas oposiciones, los porcentajes son un clásico de la parte numérica: tienes más práctica en nuestra guía de [psicotécnicos de aptitud numérica](../psicotecnicos-aptitud-numerica/). Y si te apetece entrenar un poco de todo cada día, mira la [rutina de 10 minutos para entrenar la mente](../rutina-entrenar-la-mente/).
+Si estás preparando unas oposiciones, los porcentajes son un clásico de la parte numérica: tienes más práctica en nuestra guía de [psicotécnicos de aptitud numérica](../psicotecnicos-aptitud-numerica/). Si te atascas en las sumas y multiplicaciones que hay detrás, practica con los [ejercicios de cálculo mental para adultos](../ejercicios-calculo-mental/). Y si te apetece entrenar un poco de todo cada día, mira la [rutina de 10 minutos para entrenar la mente](../rutina-entrenar-la-mente/).
 
 ## Preguntas frecuentes
 

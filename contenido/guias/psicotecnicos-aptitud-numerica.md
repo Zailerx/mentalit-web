@@ -41,7 +41,7 @@ Haz cada ejercicio con un cronómetro al lado y apunta cuánto tardas. Las soluc
 
 ## 1. Cálculo rápido
 
-Truco para empezar: multiplicar por 25 es multiplicar por 100 y dividir entre 4. Y para restar a 1000, cuenta lo que falta hasta llegar.
+Truco para empezar: multiplicar por 25 es multiplicar por 100 y dividir entre 4. Y para restar a 1000, cuenta lo que falta hasta llegar. Tienes más trucos como estos en los [ejercicios de cálculo mental para adultos](../ejercicios-calculo-mental/).
 
 :::preguntas
 36 × 25 = 900
