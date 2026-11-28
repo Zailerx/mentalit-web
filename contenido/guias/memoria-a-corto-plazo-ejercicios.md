@@ -1,8 +1,8 @@
 ---
-titulo: Memoria a corto plazo: 8 ejercicios para entrenarla aquí
-seo_titulo: Memoria a corto plazo: 8 ejercicios para entrenarla online
-descripcion: Ocho ejercicios para la memoria a corto plazo que puedes hacer aquí: series de números, listas, parejas y cálculo, con soluciones y rutina de 10 minutos.
-entradilla: La memoria a corto plazo guarda unos pocos elementos, alrededor de cuatro bloques de información, durante unos segundos si no los repasas. Se entrena practicando lo que hace: retener, agrupar y repetir. Abajo tienes 8 ejercicios para hacer aquí mismo, una prueba para medir tu punto de partida y una rutina de 10 minutos.
+titulo: Ejercicios para la memoria a corto plazo: 9 para hacer aquí
+seo_titulo: Ejercicios para la memoria a corto plazo: 9 con solución
+descripcion: 9 ejercicios para la memoria a corto plazo que haces aquí: test de dígitos, listas, nombres y cálculo, con soluciones, rutina y versión para mayores.
+entradilla: Los mejores ejercicios para la memoria a corto plazo te obligan a retener unos pocos datos durante segundos y a usar tres trucos: agrupar, repetir y dar sentido. Abajo tienes 9 para hacer aquí mismo, con soluciones: una prueba de dígitos para evaluar tu punto de partida, listas, nombres, cálculo, una versión suave para personas mayores y una rutina de 10 minutos.
 fecha: 2026-10-25
 categoria: Memoria
 relacionadas: n-back, ejercicios-para-la-memoria-adultos, juegos-mentales-para-adultos
@@ -12,7 +12,7 @@ fuentes:
   - Simply Psychology. Short-Term Memory in Psychology (resume el experimento de Peterson y Peterson, 1959) | https://www.simplypsychology.org/short-term-memory.html
 ---
 
-La memoria a corto plazo es la que usas para retener un número de teléfono mientras lo marcas, el nombre de alguien que te acaban de presentar o lo que te han pedido que compres al volver a casa. Es pequeña y se vacía rápido. La buena noticia es que hay maneras de aprovecharla mejor, y se aprenden practicando.
+La memoria a corto plazo es la que usas para retener un número de teléfono mientras lo marcas o el nombre de alguien que te acaban de presentar. Es pequeña y se vacía rápido, pero hay maneras de aprovecharla mejor, y se aprenden practicando.
 
 ## Cuánto dura y cuánto cabe
 
@@ -22,7 +22,7 @@ La memoria a corto plazo es la que usas para retener un número de teléfono mie
 
 De ahí salen los tres trucos que vas a practicar: **agrupar** para que quepa más, **repetir** para que dure más y **dar sentido** para que pase a la memoria a largo plazo.
 
-## Mide tu punto de partida
+## Cómo evaluar tu memoria a corto plazo
 
 Antes de entrenar, comprueba cuántos dígitos retienes. Pulsa Empezar y escribe cada serie. La más larga que aciertes es tu amplitud de dígitos; en adultos suele rondar entre cinco y nueve.
 
@@ -177,6 +177,29 @@ Variante más difícil: antes de repetir el recado, hay que decirlo empezando po
 
 Si te apetece una prueba visual, el [test de memoria visual](../../herramientas/test-de-memoria/) te pide recordar casillas iluminadas en una cuadrícula, que sube de nivel cuando aciertas.
 
+## Ejercicios para la memoria a corto plazo en adultos mayores
+
+Si te cuesta seguir los números en pantalla, empieza por versiones más tranquilas: menos elementos, más tiempo y objetos de casa. Cuando salgan bien, pasa a los ejercicios de arriba. Tienes más ideas en los [ejercicios de memoria para personas mayores](../ejercicios-memoria-personas-mayores/).
+
+:::ejercicio 5 minutos · con objetos
+
+## 9. La bandeja tapada
+
+Se hace mejor con alguien que ayude, aunque también vale en solitario.
+
+1. Pon cinco objetos de casa en una bandeja: por ejemplo, una cuchara, unas gafas, una llave, una pinza y una naranja.
+2. Míralos durante 30 segundos y di el nombre de cada uno en voz alta.
+3. Tápalos con un paño y cuenta despacio hasta 20.
+4. Di todos los que recuerdes. Después destapa y comprueba.
+
+Para subir la dificultad, añade un objeto más o pide a quien te ayuda que quite uno a escondidas: al destapar, tienes que decir cuál falta. Para practicar ahora en pantalla, memoriza esta lista de la compra:
+
+:::recordar 30
+leche, tomates, pan, jabón
+:::
+
+:::
+
 ## Rutina de 10 minutos al día
 
 | Día | Ejercicios |
@@ -185,7 +208,7 @@ Si te apetece una prueba visual, el [test de memoria visual](../../herramientas/
 | Martes | Siglas (2) y lista con historia (5) |
 | Miércoles | Nombres con un detalle (6) y cálculo sin papel (7) |
 | Jueves | Repetir o no repetir (4) y dígitos al revés (1, modo Al revés) |
-| Viernes | Recado encadenado en pareja (8) |
+| Viernes | Recado encadenado en pareja (8) o bandeja tapada (9) |
 
 Cambia las listas cada semana para no memorizar siempre lo mismo. Puedes inventar las tuyas con palabras de una revista o pedirle a alguien que te dicte series de números.
 
@@ -201,11 +224,15 @@ Lo que mejora con la práctica es sobre todo la tarea que practicas y tu forma d
 
 ### ¿Cuánto tiempo hay que practicar?
 
-Diez minutos al día bastan. Es mejor un rato corto a diario que una sesión larga a la semana.
+Con diez minutos al día es suficiente; mejor un rato corto a diario que una sesión larga a la semana.
 
 ### ¿Cómo paso algo de la memoria a corto plazo a la de largo plazo?
 
 Dándole sentido y repasándolo en días distintos. En los [ejercicios para la memoria en adultos](../ejercicios-para-la-memoria-adultos/) tienes un calendario de repasos y la técnica de recordar antes de releer.
+
+### ¿Se puede recuperar la memoria a corto plazo?
+
+Depende de la causa. El cansancio, el estrés, dormir poco o hacer varias cosas a la vez empeoran mucho estos olvidos, y suelen mejorar al corregirlos. Si el problema viene de una enfermedad, una lesión o un medicamento, quien debe valorarlo es un profesional sanitario. Los ejercicios de esta página sirven para practicar, no como tratamiento.
 
 ### ¿Es normal olvidar lo que acabo de oír?
 
